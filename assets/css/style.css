@@ -44,6 +44,12 @@
     text-decoration: none;
  }
 
+a:link {
+    color: #afafaf;
+    background-color: transparent;
+    text-decoration: none;
+}
+
  a:visited {
     color: #afafaf;
     background-color: transparent;
