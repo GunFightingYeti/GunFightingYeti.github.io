@@ -189,7 +189,7 @@
  }
  img {
      margin: 10px;
-     background-color: #afafaf;
+     background-color: #f3f1f1;
  }
 
  .portfolio-image {
@@ -202,8 +202,6 @@
  .bottom-center {
     position: absolute;
     bottom: 20px;
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
     color: white;
     background-color: #4aaaa5;
     width: 87.4%;
