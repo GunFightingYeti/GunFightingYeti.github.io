@@ -16,7 +16,7 @@
 
  .name {
     background-color: #4aaaa5;
-  }
+ }
 
  h1 {
     color: #eee;
@@ -45,22 +45,22 @@
     text-decoration: none;
  }
 
-a:link {
+ a:link {
     color: #afafaf;
     background-color: transparent;
     text-decoration: none;
-}
+ }
 
  a:visited {
     color: #afafaf;
     background-color: transparent;
     text-decoration: none;
-}
+ }
  a:hover {
     color: rgb(0, 0, 0);
     background-color: transparent;
     
-}
+ }
  a:active {
     color: rgb(223, 63, 0);
     background-color: transparent;
@@ -199,9 +199,9 @@ a:link {
     margin-left: 30px;
     margin-top: 30px;
     position: relative;
-}
+ }
 
-.bottom-center {
+ .bottom-center {
     position: absolute;
     bottom: 20px;
     /* left: 50%; */
@@ -212,4 +212,4 @@ a:link {
     height: 40px;
     padding-top: 10px;
     text-align: center;
-}
+ }
