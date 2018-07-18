@@ -67,6 +67,13 @@ a:link {
     
  }
 
+ .divider {
+     border-right: #afafaf;
+     border-right-style: solid;
+     border-right-width: 1px;
+     padding-right: 8px;
+ }
+
  h2 {
     font-size: 28px;
     color: #4aaaa5;
@@ -184,7 +191,7 @@ a:link {
  }
  img {
      margin: 10px;
-     background-color: #e2dbc1;
+     background-color: #afafaf;
  }
 
  .portfolio-image {
