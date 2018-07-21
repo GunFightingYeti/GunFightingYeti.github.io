@@ -106,6 +106,9 @@
     float: left;
     width: 200px;
     margin-right: 18px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(100, 100, 100);
  }
 
  p {
@@ -201,9 +204,6 @@
  img {
      margin: 10px;
      background-color: #f3f1f1;
-     border-color: black;
-     border-width: 1px;
-     border-style: solid;
  }
 
  .portfolio-image {
