@@ -1,6 +1,6 @@
 #mainNav {
   min-height: 56px;
-  background-color: #fff;
+  background-color: rgb(230, 230, 230);
 }
 
 #mainNav .navbar-toggler {
@@ -55,7 +55,7 @@
     color: white;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: rgb(230, 230, 230);
   }
   #mainNav.navbar-shrink .navbar-brand {
     color: #161616;
@@ -270,7 +270,7 @@ a {
 
 a:focus, a:hover {
   text-decoration: none;
-  color: #ffffff;
+  color: #b91919;
 }
 
 .bg-black {
