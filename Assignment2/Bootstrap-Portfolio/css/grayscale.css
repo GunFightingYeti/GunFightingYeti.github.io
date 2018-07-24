@@ -6,8 +6,8 @@
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.75rem;
-  color: #64a19d;
-  border: 1px solid #64a19d;
+  color: #a14007;
+  border: 1px solid #a14007;
 }
 
 #mainNav .navbar-toggler:focus {
@@ -66,15 +66,15 @@
     border-bottom: 0.25rem solid transparent;
   }
   #mainNav.navbar-shrink .nav-link:hover {
-    color: #64a19d;
+    color: #a14007;
   }
   #mainNav.navbar-shrink .nav-link:active {
     color: #467370;
   }
   #mainNav.navbar-shrink .nav-link.active {
-    color: #64a19d;
+    color: #a14007;
     outline: none;
-    border-bottom: 0.25rem solid #64a19d;
+    border-bottom: 0.25rem solid #a14007;
   }
 }
 
@@ -140,20 +140,20 @@
 }
 
 .btn-primary {
-  background-color: #64a19d;
+  background-color: #a14007;
 }
 
 .btn-primary:hover {
-  background-color: #4f837f;
+  background-color: #a14007;
 }
 
 .btn-primary:focus {
-  background-color: #4f837f;
+  background-color: #a14007;
   color: white;
 }
 
 .btn-primary:active {
-  background-color: #467370 !important;
+  background-color: #a14007 !important;
 }
 
 .about-section {
@@ -166,7 +166,7 @@
 }
 
 .projects-section {
-  padding: 10rem 0;
+  padding: 5rem 0;
 }
 
 .projects-section .featured-text {
@@ -176,7 +176,7 @@
 @media (min-width: 992px) {
   .projects-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #64a19d;
+    border-left: 0.5rem solid #a14007;
   }
 }
 
@@ -190,7 +190,7 @@
     padding: 5rem;
   }
   .projects-section .project-text hr {
-    border-color: #64a19d;
+    border-color: #a14007;
     border-width: .25rem;
     width: 30%;
   }
@@ -221,7 +221,7 @@
 
 .contact-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #64a19d;
+  border-bottom: 0.25rem solid #a14007;
 }
 
 .contact-section .card h4 {
@@ -232,7 +232,7 @@
 }
 
 .contact-section .card hr {
-  border-color: #64a19d;
+  border-color: #a14007;
   border-width: 0.25rem;
   width: 3rem;
 }
@@ -265,7 +265,7 @@ body {
 }
 
 a {
-  color: #64a19d;
+  color: #a14007;
 }
 
 a:focus, a:hover {
@@ -278,13 +278,13 @@ a:focus, a:hover {
 }
 
 .bg-primary {
-  background-color: #64a19d !important;
+  background-color: #a14007 !important;
 }
 
 .text-primary {
-  color: #64a19d !important;
+  color: #a14007 !important;
 }
 
 footer {
-  padding: 5rem 0;
+  padding: 2rem 0;
 }
