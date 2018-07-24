@@ -88,11 +88,8 @@
 
  .about {
     float: left;
-    margin: 20px auto;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 70px;
-    margin-top: 100px;
+    width: 960px;
+    margin: 100px 10% 70px 10%;
     padding: 20px;
     background-color: #fff;
     border-style: solid;
@@ -135,19 +132,15 @@
 /* contact.html specific */
 
  .contact {
-    margin: 20px auto;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 70px;
-    margin-top: 100px;
+    float: left;
+    width: 960px;
+    margin: 100px 10% 70px 10%;
     padding: 20px;
     background-color: #fff;
     border-style: solid;
     border-color: lightgrey;
     border-width: 1px;
     border-radius: 4px;
-    margin-top: 100px;
-    
  }
 
  input[type=text], input[type=email], select, textarea {
@@ -181,11 +174,8 @@
 
  .portfolio {
     overflow: auto;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 70px;
-    margin-top: 100px;
-    padding: 20px;
+    width: 960px;
+    margin: 100px 10% 70px 10%;
     background-color: #fff;
     border-style: solid;
     border-color: lightgrey;
@@ -228,3 +218,5 @@
     margin-left: 11px;
     text-align: center;
  }
+
+ @media screen and (max width)
