@@ -129,6 +129,54 @@
      border-top-width: 4px;
  }
 
+/* portfolio.html specific */
+
+.portfolio {
+    float: left;
+    width: 960px;
+    margin: 100px 10% 70px 10%;
+    padding: 20px;
+    background-color: #fff;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.apps {
+    float: left;
+    width: 98.5%;
+    height: auto;
+    padding: 10px;
+    margin: 6px;
+}
+
+img {
+    background-color: #f3f1f1;
+}
+
+.portfolio-image {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.portfolio-image:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 25px;
+    color: white;
+    background-color: #4aaaa5;
+    width: 100%;
+    height: 40px;
+    padding-top: 10px;
+    text-align: center;
+}
+
  /* contact.html specific */
 
  .contact {
@@ -172,55 +220,16 @@
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
- /* portfolio.html specific */
+ /*Media Queries*/
 
- .portfolio {
-     overflow: auto;
-     width: 960px;
-     margin: 100px 10% 70px 10%;
-     background-color: #fff;
-     border-style: solid;
-     border-color: lightgrey;
-     border-width: 1px;
-     border-radius: 4px;
+ @media only screen and (max-width: 980px) {
+
  }
 
- .apps {
-     float: left;
-     width: 98.5%;
-     height: auto;
-     padding: 10px;
-     margin: 6px;
+ @media only screen and (max-width: 768) {
+
  }
 
- img {
-     background-color: #f3f1f1;
+ @media only screen and (max-width: 640) {
+     
  }
-
- .portfolio-image {
-     display: inline-block;
-     margin-left: 30px;
-     margin-top: 30px;
-     position: relative;
- }
-
- .portfolio-image:hover {
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
- }
-
- .bottom-center {
-     position: absolute;
-     bottom: 25px;
-     color: white;
-     background-color: #4aaaa5;
-     width: 100%;
-     height: 40px;
-     padding-top: 10px;
-     text-align: center;
- }
-
- @media only screen and (max-width: 980px) {}
-
- @media only screen and (max-width: 768) {}
-
- @media only screen and (max-width: 640) {}
