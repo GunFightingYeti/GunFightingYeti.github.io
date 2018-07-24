@@ -86,7 +86,7 @@
      background-image: url(../images/funky-lines.png);
  }
 
- .about {
+ .container {
      float: left;
      width: 960px;
      margin: 100px 10% 70px 10%;
@@ -131,18 +131,6 @@
 
 /* portfolio.html specific */
 
-.portfolio {
-    float: left;
-    width: 960px;
-    margin: 100px 10% 70px 10%;
-    padding: 20px;
-    background-color: #fff;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
-    border-radius: 4px;
-}
-
 .apps {
     float: left;
     width: 98.5%;
@@ -179,18 +167,6 @@ img {
 
  /* contact.html specific */
 
- .contact {
-     float: left;
-     width: 960px;
-     margin: 100px 10% 70px 10%;
-     padding: 20px;
-     background-color: #fff;
-     border-style: solid;
-     border-color: lightgrey;
-     border-width: 1px;
-     border-radius: 4px;
- }
-
  input[type=text],
  input[type=email],
  select,
@@ -223,7 +199,10 @@ img {
  /*Media Queries*/
 
  @media only screen and (max-width: 980px) {
-
+    .container {
+        Padding: 0 20px;
+        max-width: 768px;
+    }
  }
 
  @media only screen and (max-width: 768) {
