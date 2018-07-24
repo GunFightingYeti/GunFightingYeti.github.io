@@ -1,67 +1,69 @@
  /*Inherited*/
+
  * {
-    box-sizing: border-box;
-    margin: 0 auto;
+     box-sizing: border-box;
+     margin: 0 auto;
  }
 
  /*Header and navigation bar*/
+
  nav {
-    float: right;
-    height: auto;
-    padding: 8px 0px;
-    margin-top: 20px;
-    margin-right: 10%;
+     float: right;
+     height: auto;
+     padding: 8px 0px;
+     margin-top: 20px;
+     margin-right: 10%;
  }
 
  .name {
-    background-color: #4aaaa5;
+     background-color: #4aaaa5;
  }
 
  h1 {
-    color: #eee;
-    padding: 20px;
-    float: left;
-    margin-left: 10%;
+     color: #eee;
+     padding: 20px;
+     float: left;
+     margin-left: 10%;
  }
 
  .navbar {
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    background-color: #fff;
-    display: inline-block;
-    width: 100%;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
+     position: fixed;
+     z-index: 9999;
+     top: 0;
+     background-color: #fff;
+     display: inline-block;
+     width: 100%;
+     border-style: solid;
+     border-color: lightgrey;
+     border-width: 1px;
  }
 
-/*Links*/
+ /*Links*/
 
  a {
-    text-decoration: none;
+     text-decoration: none;
  }
 
  a:link {
-    color: #afafaf;
-    background-color: transparent;
-    text-decoration: none;
+     color: #afafaf;
+     background-color: transparent;
+     text-decoration: none;
  }
 
  a:visited {
-    color: #afafaf;
-    background-color: transparent;
-    text-decoration: none;
+     color: #afafaf;
+     background-color: transparent;
+     text-decoration: none;
  }
+
  a:hover {
-    color: rgb(0, 0, 0);
-    background-color: transparent;
-    
+     color: rgb(0, 0, 0);
+     background-color: transparent;
  }
+
  a:active {
-    color: rgb(223, 63, 0);
-    background-color: transparent;
-    
+     color: rgb(223, 63, 0);
+     background-color: transparent;
  }
 
  .divider {
@@ -72,39 +74,37 @@
  }
 
  h2 {
-    font-size: 28px;
-    color: #4aaaa5;
-    padding: 20px;
-
-/*About section*/
-
+     font-size: 28px;
+     color: #4aaaa5;
+     padding: 20px;
+     /*About section*/
  }
 
  body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #777777;
-    background-image: url(../images/funky-lines.png);
+     font-family: Georgia, 'Times New Roman', Times, serif;
+     color: #777777;
+     background-image: url(../images/funky-lines.png);
  }
 
  .about {
-    float: left;
-    width: 960px;
-    margin: 100px 10% 70px 10%;
-    padding: 20px;
-    background-color: #fff;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
-    border-radius: 4px;
+     float: left;
+     width: 960px;
+     margin: 100px 10% 70px 10%;
+     padding: 20px;
+     background-color: #fff;
+     border-style: solid;
+     border-color: lightgrey;
+     border-width: 1px;
+     border-radius: 4px;
  }
- 
+
  #bio-image {
-    float: left;
-    width: 200px;
-    margin-right: 18px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(100, 100, 100);
+     float: left;
+     width: 200px;
+     margin-right: 18px;
+     border-width: 1px;
+     border-style: solid;
+     border-color: rgb(100, 100, 100);
  }
 
  p {
@@ -129,27 +129,30 @@
      border-top-width: 4px;
  }
 
-/* contact.html specific */
+ /* contact.html specific */
 
  .contact {
-    float: left;
-    width: 960px;
-    margin: 100px 10% 70px 10%;
-    padding: 20px;
-    background-color: #fff;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
-    border-radius: 4px;
+     float: left;
+     width: 960px;
+     margin: 100px 10% 70px 10%;
+     padding: 20px;
+     background-color: #fff;
+     border-style: solid;
+     border-color: lightgrey;
+     border-width: 1px;
+     border-radius: 4px;
  }
 
- input[type=text], input[type=email], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    clear: both;
+ input[type=text],
+ input[type=email],
+ select,
+ textarea {
+     width: 100%;
+     padding: 12px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     resize: vertical;
+     clear: both;
  }
 
  input[type=submit] {
@@ -159,64 +162,65 @@
      color: #fff;
  }
 
-
  input:hover {
-    color: rgb(0, 0, 0);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     color: rgb(0, 0, 0);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
  textarea:hover {
-    color: rgb(0, 0, 0);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     color: rgb(0, 0, 0);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
-/* portfolio.html specific */
+ /* portfolio.html specific */
 
  .portfolio {
-    overflow: auto;
-    width: 960px;
-    margin: 100px 10% 70px 10%;
-    background-color: #fff;
-    border-style: solid;
-    border-color: lightgrey;
-    border-width: 1px;
-    border-radius: 4px;
+     overflow: auto;
+     width: 960px;
+     margin: 100px 10% 70px 10%;
+     background-color: #fff;
+     border-style: solid;
+     border-color: lightgrey;
+     border-width: 1px;
+     border-radius: 4px;
  }
 
  .apps {
-    float: left;
-    width: 98.5%;
-    height: auto;
-    padding: 10px;
-    margin: 6px;
+     float: left;
+     width: 98.5%;
+     height: auto;
+     padding: 10px;
+     margin: 6px;
  }
+
  img {
-     margin: 10px;
      background-color: #f3f1f1;
  }
 
  .portfolio-image {
-    display: inline-block;
-    margin-left: 30px;
-    margin-top: 30px;
-    position: relative;
-
+     display: inline-block;
+     margin-left: 30px;
+     margin-top: 30px;
+     position: relative;
  }
 
  .portfolio-image:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
  .bottom-center {
-    position: absolute;
-    bottom: 20px;
-    color: white;
-    background-color: #4aaaa5;
-    width: 87.4%;
-    height: 40px;
-    padding-top: 10px;
-    margin-left: 11px;
-    text-align: center;
+     position: absolute;
+     bottom: 25px;
+     color: white;
+     background-color: #4aaaa5;
+     width: 100%;
+     height: 40px;
+     padding-top: 10px;
+     text-align: center;
  }
 
- @media screen and (max width)
+ @media only screen and (max-width: 980px) {}
+
+ @media only screen and (max-width: 768) {}
+
+ @media only screen and (max-width: 640) {}
