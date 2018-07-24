@@ -26,7 +26,8 @@
   background-color: transparent;
 }
 
-#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+#mainNav .navbar-nav .nav-item:active,
+#mainNav .navbar-nav .nav-item:focus {
   outline: none;
   background-color: transparent;
 }
@@ -259,6 +260,10 @@
   color: #fff;
 }
 
+.social {
+  height: 0em;
+}
+
 body {
   font-family: 'Nunito';
   letter-spacing: 0.0625em;
@@ -268,7 +273,8 @@ a {
   color: #a14007;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
   text-decoration: none;
   color: #b91919;
 }
