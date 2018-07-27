@@ -19,9 +19,9 @@
             </div>
             <div class="aria-expanded navbar-expand" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.html">About Me</a>
+                    <a class="nav-item nav-link" href="index.html">About Me</a>
                     <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
-                    <a class="nav-item nav-link" href="contact.html">Contact</a>
+                    <a class="nav-item nav-link active" href="contact.html">Contact</a>
                     <span class="sr-only">(current)</span>
                     </a>
                 </div>
@@ -29,30 +29,26 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h2 style="color: #4aaaa5">Contact</h2>
+    <div class="row mt-5"></div>
+
+    <div class="container border my-5 mx-5" style="background-color: #fff">
+        <div class="row ml-4 mt-4">
+            <h1 style="color: #4aaaa5">Contact</h1>
+        </div>
         <hr>
-        <section class="row">
+        <section class="row mb-4">
             <form method="post" action="mailto:youremail@youremail.com" class="col-md-12">
-                <br> Name:
-                <br>
-                <input type="text" name="name" placeholder="John Smith" class="col-md-12">
-                <br>
-                <br> Email:
-                <br>
-                <input type="email" name="email" placeholder="example@gmail.com" class="col-md-12">
-                <br>
-                <br> Message:
-                <br>
-                <textarea name="message" rows="8" cols="30" placeholder="Write your message here" class="col-md-12"></textarea>
-                <br>
-                <br>
-                <input type="submit" value="Submit">
+                Name:
+                <input type="text" name="name" placeholder="John Smith" class="col-md-12 rounded"> Email:
+                <input type="email" name="email" placeholder="example@gmail.com" class="col-md-12 rounded"> Message:
+                <textarea name="message" rows="8" cols="30" placeholder="Write our message here" class="col-md-12 rounded"></textarea>
+
+                <input type="submit" value="Submit" class="rounded">
             </form>
         </section>
     </div>
 
-    <footer class="container-fluid">
+    <footer class="container-fluid fixed-bottom">
         <div class="row">
             <div class="col-md-12 bg-dark text-center text-white">
                 &copy; Tim Lewis - 2018
