@@ -2,7 +2,27 @@ body {
     background-image: src="/assets/images/funky-lines.png"
 }
 
-.thumbnail {
-    height: 200px;
-    width: 200px;
+a {
+text-decoration: none;
+}
+
+a:link {
+color: #afafaf;
+background-color: transparent;
+text-decoration: none;
+}
+
+a:visited {
+color: #afafaf;
+background-color: transparent;
+text-decoration: none;
+}
+a:hover {
+color: rgb(0, 0, 0);
+background-color: transparent;
+
+}
+a:active {
+color: rgb(223, 63, 0);
+background-color: transparent; 
 }
