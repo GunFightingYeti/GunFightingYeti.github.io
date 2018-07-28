@@ -6,13 +6,19 @@
   <title>Rock Paper Scissors Part 6</title>
 </head>
 
-<body style="background-color: #bada55">
+<body style="background-color: #bada55; margin: 20px">
 
   <div id="game">
       <div>
         <h1>Rock, Paper, Scissors</h1>
-        <h2>Press R, P or S to start playing</h2>
+        <h2>Use R, P or S to start playing</h2>
         <hr>
+        <h3>You chose: ?</h3>
+        <h3>The computer chose: ?</h3>
+        <h3>Wins: 0</h3>
+        <h3>Losses: 0</h3>
+        <h3>Ties: 0</h3>
+           
       </div>
   </div>
 
@@ -88,15 +94,15 @@
           "<hr>" +
           "<h3>You chose: " + userGuess.toUpperCase() + "</h3>" +
           "<h3>The computer chose: " + computerGuess.toUpperCase() + "</h3>" +
-          "<h3>wins: " + wins + "</h3>" +
-          "<h3>losses: " + losses + "</h3>" +
-          "<h3>ties: " + ties + "</h3>";
+          "<h3>Wins: " + wins + "</h3>" +
+          "<h3>Losses: " + losses + "</h3>" +
+          "<h3>Ties: " + ties + "</h3>";
 
         // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
       }
       else {
-            alert("Wrong key. Don't think outside the box!");
+            alert("Wrong key. Stop thinking outside the box!");
           }
     };
   </script>
