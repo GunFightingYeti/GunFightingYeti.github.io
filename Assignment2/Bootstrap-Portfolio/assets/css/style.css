@@ -24,5 +24,14 @@ background-color: transparent;
 }
 a:active {
 color: rgb(223, 63, 0);
-background-color: transparent; 
+background-color: transparent;
+}
+
+.img-text {
+    background-color: #4aaaa5;
+    color: black;
+}
+
+.navbar-brand {
+    padding: 1rem;
 }
