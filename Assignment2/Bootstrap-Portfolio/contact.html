@@ -35,16 +35,29 @@
         </div>
         <hr>
         <section class="row">
-            <div class=" col-md-10 mb-4">
-                <form method="post" action="mailto:youremail@youremail.com" class="col-md-12">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" placeholder="John Smith" class="col-md-12 rounded mb-3">
-                    <strong>Email:</strong>
-                    <input type="email" name="email" placeholder="example@gmail.com" class="col-md-12 rounded mb-3">
-                    <strong>Message:</strong>
-                    <textarea name="message" rows="8" cols="30" placeholder="Write our message here" class="col-md-12 rounded mb-4"></textarea>
-
-                    <input type="submit" value="Submit" class="rounded" style="background-color: #4aaaa5">
+            <div class=" col-md-10 offset-1 mb-4">
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="First" value="" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last" value="" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault03">Email</label>
+                            <input type="email" class="form-control" id="validationDefault02" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="validationDefault04">Message</label>
+                            <textarea type="text" class="form-control" id="validationDefault04" rows="3" placeholder="Type your message here" required></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Submit form</button>
                 </form>
             </div>
         </section>
