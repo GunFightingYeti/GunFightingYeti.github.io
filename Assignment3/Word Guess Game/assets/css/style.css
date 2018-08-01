@@ -16,6 +16,7 @@ header {
 
 .hangman {
     background-color: white;
+    min-height:371px;
 }
 
 #image {

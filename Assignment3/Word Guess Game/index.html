@@ -12,7 +12,7 @@
 
   <!-- Local files -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  
+
   <title>Tim Lewis' Hangman Game</title>
   <link id="home" rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
 
@@ -20,12 +20,12 @@
 
 <body>
 
-  <!-- Game Board UI -->
+  <!-- Intro and instructions -->
   <header class="container-fluid text-center">
     <h1 class="border-bottom">
-      <strong>Hangman Game</strong>
+      <strong>Fictional Character Hangman</strong>
     </h1>
-    <h2>Start typing letters one at a time to fill in the correct word.</h2>
+    <h2>Type letters one at a time to fill in the correct name or names.</h2>
     <h2>Guess wisely, you have
       <span id="triesLeft">a limited number of</span> tries left.</h2>
     <hr>
@@ -38,25 +38,60 @@
       <!-- Word section -->
       <div class="text-center col-md-6 m-2" id="score">
         <div class="col-md-12">
-          <h3 class="mt-3">Your word is...</h3>
+          <h3 class="mt-3">Your charater(s)...</h3>
           <h3 class="mt-5 mb-5">
             <span id="word">_ _ _ _ _ _ _ _</span>
           </h3>
           <hr>
           <h4>Here are the letters you've guessed</h4>
-          <span class="mt-5" id="guessed">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span>
+          <span class="mt-5" id="guessed"></span>
         </div>
       </div>
 
       <!-- Hangman visual -->
-      <div class="text-center col-md-5 m-2 hangman">
-        <div class="col-md-12">
+      <div class="col-md-5 m-2 hangman">
+        <div class="col-md-12 text-center">
           <img id="hangman" src="assets/images/Hangman/1-Hangman-Gallows.png" alt="image" onclick="change();">
         </div>
       </div>
     </div>
 
   </section>
+
+  <script>
+    // Creates an array that lists out all of the possible fictional characters.
+    var characters = ["Mr Meeseeks", "Finn and Jake", "Rick and Morty", "Malcom Reynolds",
+      "Michael Scott", "Barney Stinson", "Hobart Washburn", "Obiwan Kenobi", "Sterling Archer",
+      "Jack O Neill", "Peter Griffin", "Benjamin Hawkye Pierce", "John Dorian", "Shawn Spencer",
+      "Truman Burbank", "Jeeves and Wooster", "Bruce Wayne", "Steve Rogers", "Tony Stark", "Stephen Strange",
+      "Woody and Buzz", "Wesley and Buttercup", "Scott Pilgrim", 'Han Solo', "Wade Wilson", "Peter Quill"
+    ]
+    // Randomly chooses a word from the array which becomes the word to guess.
+    var word = document.getElementById("word");
+    var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
+    word.innerHTML = mysteryWord;
+    console.log(mysteryWord);
+
+    // Update letters guessed
+    var userinput = [];
+    var guessed = document.getElementById("guessed");
+
+    document.onkeyup = function (event) {
+      event.key.toUpperCase();
+      console.log(event.key);
+      for (var i = 0; i < userinput.length; i++) {
+        guessed.append(userinput);
+
+        console.log(userinput);
+      }
+    }
+
+    //Change hangman image
+    function change() {
+      var image = document.getElementById("hangman");
+      image.src = "assets/images/Hangman/2-Hangman-Head.png";
+    }
+  </script>
 
   <!-- External Javascript -->
   <script src="assets/javascript/game.js"></script>
