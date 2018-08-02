@@ -1,57 +1,25 @@
-   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
-       'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-       'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-   ];
-   var countDown = ["7", "6", "5", "4", "3", "2", "1"]
-   var triesLeft = document.getElementById("triesLeft")
+      // Creates an array that lists out all of the possible fictional characters.
+      var characters = ["Mr Meeseeks", "Finn and Jake", "Rick and Morty", "Malcom Reynolds",
+          "Michael Scott", "Barney Stinson", "Hobart Washburn", "Obiwan Kenobi", "Sterling Archer",
+          "Jack O Neill", "Peter Griffin", "Benjamin Hawkye Pierce", "John Dorian", "Shawn Spencer",
+          "Truman Burbank", "Jeeves and Wooster", "Bruce Wayne", "Steve Rogers", "Tony Stark", "Stephen Strange",
+          "Woody and Buzz", "Wesley and Buttercup", "Scott Pilgrim", 'Han Solo', "Wade Wilson", "Peter Quill"]
+          
+      // Randomly chooses a word from the array which becomes the word to guess.
+      var word = document.getElementById("word");
+      var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
+      word.innerHTML = mysteryWord;
+      console.log(mysteryWord);
 
+      // Displays letters already guessed
+      var guessed = document.getElementById("guessed");
+      document.onkeyup = function (event) {
+          var userInput = event.key.toUpperCase()
+          guessed.innerHTML = userInput
+      }
 
-    document.onclick()
-
-   
-   //    document.onkeyup = function () {
-   //        var word = document.getElementById("word")[0];
-   //        word.innerHTML = mysteryWord;
-   //    }
-
-   //    document.getElementById("word").onload = function () {
-   //        findWord()
-   //    };
-
-   //    document.onkeyup("guessed").innerHTML = guessed;
-
-
-   //    window.onload = function () {
-
-   //        var categories; // Array of topics
-   //        var chosenCategory; // Selected catagory
-   //        var getHint; // Word getHint
-   //        var word; // Selected word
-   //        var guess; // Geuss
-   //        var geusses = []; // Stored geusses
-   //        var lives; // Lives
-   //        var counter; // Count correct geusses
-   //        var space; // Number of spaces in word '-'
-
-   // for (var i = 0; i < letters.length; i++) {
-
-   //     // Each time we print the value inside the array.
-   //     console.log(arr[i]);
-   // }
-
-
-   // Only run the following code block if the user presses a letter.
-   // if (userGuess.toLowerCase() === 'a' || 'b' || 'c' || 'd' || 'e' || 'f' || 'g' ||
-   // 'h' || 'i' || 'j' || 'k' || 'l' || 'm' || 'n' || 'o' || 'p' || 'q' ||
-   // 'r' || 's' || 't' || 'u' || 'v' || 'w' || 'x' || 'y' || 'z') {
-
-   // if (losses === 5) {
-   //   alert("You lose. :( ");
-   //   window.location.reload();
-   // }
-
-   // Set the inner HTML contents of the #game div to our html string
-   //     document.querySelector("#score").innerHTML = html;
-   // } else {
-   //      alert("Wrong key. Stop thinking outside the box!");
-   //   }
+      //Change hangman image
+      function change() {
+          var image = document.getElementById("hangman");
+          image.src = "assets/images/Hangman/2-Hangman-Head.png";
+      }
