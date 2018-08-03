@@ -73,3 +73,8 @@ function change() {
     }
 
 }
+
+function change() {
+    var newGame = document.getElementById("newGame");
+    location.reload();
+}
