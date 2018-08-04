@@ -12,10 +12,10 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
 // Randomly chooses an item from the array which becomes the word(s) to guess.
 var word = document.getElementById("word");
 var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
-console.log(mysteryWord);
+//console.log(mysteryWord);
 //Create array from mysteryWord
 var mwSplit = mysteryWord.split("");
-console.log(mwSplit);
+//console.log(mwSplit);
 //Show word(s) without commas
 var mwArray = mwSplit.join("");
 word.innerHTML = mwArray;
@@ -42,35 +42,36 @@ document.onkeyup = function (event) {
         guessedArray.push(" " + userInput.toUpperCase());
         guessed.innerHTML = guessedArray;
 
-        //Check to see if the userInput is in the mystery word
-        if (mwArray.indexOf(userInput) == -1) {
-            var incorrect = [];
-            incorrect.push(userInput);
-            console.log(incorrect);
-        } else {
-            var correct = [];
-            correct.push(userInput);
-            console.log(correct);
-        }
-
         //Check to see if the userInput is a duplicate
-        // if (guessedArray.indexOf(userInput) == -1) {
-        //     console.log(guessedArray)
-        //     console.log("No!");
-        // } else {
-        //     console.log("Yes!");
-        // }
+        if (userInput.indexOf(guessedArray) == -1) {
+            console.log(userInput + ", first time guessed.");
 
-        //Update how many tries the user has remaining.
-        var countDown = ["7 tries", "6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
-        var triesLeft = document.getElementById("triesLeft");
-        triesLeft.innerHTML = countDown[t];
-        t++;
+            //Check to see if the userInput is in the mystery word
+            if (mwArray.indexOf(userInput) == -1) {
+                var incorrect = [];
+                incorrect.push(userInput);
+                //console.log("Incorrect: " + incorrect);
 
-        //If the number of tries reaches max then alert and reload
-        if (t == 9) {
-            alert("I'm sorry, you are out of guesses.  Want to play another game?");
-            location.reload();
+                //Update how many tries the user has remaining.
+                var countDown = ["7 tries", "6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
+                var triesLeft = document.getElementById("triesLeft");
+                triesLeft.innerHTML = countDown[t];
+                t++;
+
+                //If the number of tries reaches max then alert and reload
+                if (t == 9) {
+                    alert("I'm sorry, you are out of guesses.  Want to play another game?");
+                    location.reload();
+                }
+
+            } else {
+                var correct = [];
+                correct.push(userInput);
+                console.log("Correct: " + correct);
+            }
+        } else {
+            alert("You've already guessed that letter.  Try another one.")
+            console.log("Yes!");
         }
     }
 }
