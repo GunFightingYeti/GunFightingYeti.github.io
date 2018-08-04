@@ -12,10 +12,10 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
 // Randomly chooses an item from the array which becomes the word(s) to guess.
 var word = document.getElementById("word");
 var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
-//console.log(mysteryWord);
+
 //Create array from mysteryWord
 var mwSplit = mysteryWord.split("");
-//console.log(mwSplit);
+
 //Show word(s) without commas
 var mwArray = mwSplit.join("");
 word.innerHTML = mwArray;
@@ -53,13 +53,18 @@ document.onkeyup = function (event) {
                 //console.log("Incorrect: " + incorrect);
 
                 //Update how many tries the user has remaining.
-                var countDown = ["7 tries", "6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
+                var countDown = ["6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
                 var triesLeft = document.getElementById("triesLeft");
                 triesLeft.innerHTML = countDown[t];
+
+                //Change hangman image
+                var hangman = document.getElementById("hangman");
+                var imageArray = ["assets/images/Hangman/2-Hangman-Head.png", "assets/images/Hangman/3-Hangman-Backbone.png", "assets/images/Hangman/4-Hangman-LeftArm.png", "assets/images/Hangman/5-Hangman-RightArm.png", "assets/images/Hangman/6-Hangman-LeftLeg.png", "assets/images/Hangman/7-Hangman-RightLeg.png", "assets/images/Hangman/8-Hangman-GameOver.png"];
+                hangman.src = imageArray[t];
                 t++;
 
                 //If the number of tries reaches max then alert and reload
-                if (t == 9) {
+                if (t == 8) {
                     alert("I'm sorry, you are out of guesses.  Want to play another game?");
                     location.reload();
                 }
