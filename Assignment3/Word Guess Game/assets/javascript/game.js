@@ -6,12 +6,13 @@ var characters = ["mr meeseeks", "finn and jake", "rick and morty", "malcom reyn
 //Array to check if key pressed is a letter
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
     'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', " "
 ];
 
 // Randomly chooses an item from the array which becomes the word(s) to guess.
 var word = document.getElementById("word");
 var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
+console.log(mysteryWord)
 
 //Create array from mysteryWord
 var mwSplit = mysteryWord.split("");
@@ -21,20 +22,18 @@ var mwArray = mwSplit.join("");
 word.innerHTML = mwArray;
 
 //Show underscores instead of mwArray
-var underscores = mwArray.length;
-var usArray = []
-console.log(underscores)
-for (var u = 0; u < underscores.length; u++) {
+var usArray = [];
+var _ = '_';
+for (var u = 0; u < mwArray.length; u++) {
     if (mwArray.indexOf[u] == ['a', 'b', 'c', 'd', 'e', 'f', 'g',
             'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
             'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-        ]) {
-        usArray.push("_")
-
+        ]); {
+        usArray.push(_);
     }
 }
 //word.innerHTML = usArray;
-console.log(underscores)
+word.innerHTML = usArray.join(" ");
 
 // Displays letters already guessed
 var guessedArray = [];
