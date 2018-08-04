@@ -18,10 +18,10 @@
 
 </head>
 
-<body>
+<body id="restart">
 
   <!-- Intro and instructions -->
-  <header class="container-fluid text-center pb-3" id="restart">
+  <header class="container-fluid text-center pb-3">
     <h1 class="border-bottom">
       <strong>Fictional Character Hangman</strong>
     </h1>
@@ -30,7 +30,7 @@
       <span id="triesLeft">a limited number of tries</span> left.</h2>
     <!-- New game button -->
     <div class="container-fluid text-center">
-      <button class="btn btn-success" id="newGame" onclick="change();">
+      <button class="btn btn-success" id="newGame" onclick="restart();">
         <strong>New Game</strong>
       </button>
     </div>
@@ -56,7 +56,7 @@
       <!-- Hangman visual -->
       <div class="col-md-5 m-2 hangman">
         <div class="col-md-12 text-center">
-          <img id="hangman" src="assets/images/Hangman/1-Hangman-Gallows.png" alt="image" onclick="change();">
+          <img id="hangman" src="assets/images/Hangman/1-Hangman-Gallows.png" alt="image" onclick="changeimage();">
         </div>
       </div>
     </div>
