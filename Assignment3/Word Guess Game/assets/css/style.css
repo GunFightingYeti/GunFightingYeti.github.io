@@ -7,11 +7,13 @@ body {
 
 header {
     background-color: rgb(59, 29, 1);
-    color: beige;
+    background-image: url(../images/woodenHeader.jpg);
+    color: darkcyan;
 }
 
 #score {
     background-color: white;
+    color:  rgb(43, 14, 3);
 }
 
 .hangman {
@@ -23,4 +25,9 @@ header {
     background-color: white;
     width: 100%;
     height: auto;
+}
+
+.btn {
+    background-color: sienna;
+    border-color: black;
 }

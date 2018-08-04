@@ -1,6 +1,6 @@
 //alert("Would you like to play a game?");
 
-// Creates an array that lists out all of the possible fictional characters.
+//Creates an array that lists out all of the possible fictional characters.
 var characters = ["mr meeseeks", "finn and jake", "rick and morty", "malcom reynolds", "michael scott", "barney stinson", "hobart washburn", "obiwan kenobi", "sterling archer", "jack o neill", "peter griffin", "benjamin hawkye pierce", "john dorian", "shawn spencer", "truman burbank", "jeeves and wooster", "bruce wayne", "steve rogers", "tony stark", "stephen strange", "woody and buzz", "wesley and buttercup", "scott pilgrim", 'han solo', "wade wilson", "peter quill"];
 
 //Array to check if key pressed is a letter
@@ -9,7 +9,7 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
     'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', " "
 ];
 
-// Randomly chooses an item from the array which becomes the word(s) to guess.
+//Randomly chooses an item from the array which becomes the word(s) to guess.
 var word = document.getElementById("word");
 var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
 console.log(mysteryWord)
@@ -32,10 +32,11 @@ for (var u = 0; u < mwArray.length; u++) {
         usArray.push(_);
     }
 }
-//word.innerHTML = usArray;
+
+//Display underscores in place of mystery word
 word.innerHTML = usArray.join(" ");
 
-// Displays letters already guessed
+//Displays letters already guessed
 var guessedArray = [];
 var guessed = document.getElementById("guessed");
 var t = 0;
@@ -44,7 +45,7 @@ var t = 0;
 document.onkeyup = function (event) {
     var userInput = event.key;
 
-    //Only allow letters
+    //Only allow letters and spacebar
     if (alphabet.indexOf(userInput) == -1) {
         alert("Please press a letter of the alphabet.");
 
@@ -80,23 +81,28 @@ document.onkeyup = function (event) {
 
                     //Show word
 
+
+                    //Restart game after loss
                     alert("I'm sorry, you are out of guesses.  Want to play another game?");
                     location.reload();
                 }
 
+                //Add to correct guess array
             } else {
                 var correct = [];
                 correct.push(userInput);
                 console.log("Correct: " + correct);
             }
+
+            //Duplicate letter alert
         } else {
             alert("You've already guessed that letter.  Try another one.")
-            console.log("Yes!");
+            console.log("Repeat letter");
         }
     }
 }
 
-
+//Restart button
 function restart() {
     var newGame = document.getElementById("restart");
     location.reload();
