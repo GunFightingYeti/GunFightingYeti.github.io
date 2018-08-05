@@ -34,7 +34,7 @@ for (var u = 0; u < mwArray.length; u++) {
 //Display underscores in place of mystery word
 word.innerHTML = usArray.join(" ");
 
-//Letters already guessed variables
+//Guessed letter variables
 var guessedArray = [];
 var guessed = document.getElementById("guessed");
 var t = 0;
@@ -47,70 +47,64 @@ document.onkeyup = function (event) {
     if (alphabet.indexOf(userInput) == -1) {
         alert("Please press a letter of the alphabet.");
 
-    } else {
         //Show already guessed letters on the page
+    } else {
         userInput = event.key.toLowerCase();
         guessedArray.push(userInput.toUpperCase());
         guessed.innerHTML = (guessedArray);
 
-        //Check to see if the userInput is a duplicate
-        if (userInput.indexOf(guessedArray) == -1) {
+        //Check to see if the userInput is in the mystery word
+        if (mwArray.indexOf(userInput) == -1) {
+            var incorrect = [];
+            incorrect.push(userInput);
 
-            //Check to see if the userInput is in the mystery word
-            if (mwArray.indexOf(userInput) == -1) {
-                var incorrect = [];
-                incorrect.push(userInput);
+            //Update how many tries the user has remaining.
+            var countDown = ["6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
+            var triesLeft = document.getElementById("triesLeft");
+            triesLeft.innerHTML = countDown[t];
 
-                //Update how many tries the user has remaining.
-                var countDown = ["6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
-                var triesLeft = document.getElementById("triesLeft");
-                triesLeft.innerHTML = countDown[t];
+            //Change hangman image
+            var hangman = document.getElementById("hangman");
+            var imageArray = ["assets/images/Hangman/2-Hangman-Head.png", "assets/images/Hangman/3-Hangman-Backbone.png", "assets/images/Hangman/4-Hangman-LeftArm.png", "assets/images/Hangman/5-Hangman-RightArm.png", "assets/images/Hangman/6-Hangman-LeftLeg.png", "assets/images/Hangman/7-Hangman-RightLeg.png", "assets/images/Hangman/8-Hangman-GameOver.png"];
+            hangman.src = imageArray[t];
+            t++;
 
-                //Change hangman image
-                var hangman = document.getElementById("hangman");
-                var imageArray = ["assets/images/Hangman/2-Hangman-Head.png", "assets/images/Hangman/3-Hangman-Backbone.png", "assets/images/Hangman/4-Hangman-LeftArm.png", "assets/images/Hangman/5-Hangman-RightArm.png", "assets/images/Hangman/6-Hangman-LeftLeg.png", "assets/images/Hangman/7-Hangman-RightLeg.png", "assets/images/Hangman/8-Hangman-GameOver.png"];
-                hangman.src = imageArray[t];
-                t++;
+            //If the number of tries reaches max then alert and reload
+            if (t == 7) {
 
-                //If the number of tries reaches max then alert and reload
-                if (t == 7) {
+                //Show word after loss
+                word.innerHTML = mwArray;
+                alert("Oh man, you were so close!");
 
-                    //Show word after loss
-                    word.innerHTML = mwArray;
-                    alert("Oh man, you were so close!");
-
-                }
-                if (t == 8) {
-                    //Restart game after loss
-                    alert("I'm sorry, you are out of guesses.  Maybe you won't suck so badly at this next word!");
-                    location.reload();
-                }
-
-                //Add to correct guess array
-            } else {
-                var correct = [];
-                correct.push(userInput);
-
-                //Replace underscore with correct letter
-                for (i = 0; i < mwArray.length; i++) {
-                    if (mwSplit[i] == userInput) {
-                        usArray[i] = userInput;
-                        word.innerHTML = usArray.join(" ");
-                    }
-                }
-
-                //Win Condition
-                if (usArray.indexOf("_") == -1) {
-                    word.innerHTML = mwArray;
-                    alert("You won!");
-                    location.reload;
-                } 
+            }
+            if (t == 8) {
+                //Restart game after loss
+                alert("I'm sorry, you are out of guesses.  Maybe you won't suck so badly at this next word!");
+                location.reload();
             }
 
-            //Duplicate letter alert
+            //Add to correct guess array
         } else {
-            alert("You've already guessed that letter.  Try another one.");
+            var correct = [];
+            correct.push(userInput);
+
+            //Replace underscore with correct letter
+            for (i = 0; i < mwArray.length; i++) {
+                if (mwSplit[i] == userInput) {
+                    usArray[i] = userInput;
+                    word.innerHTML = usArray.join(" ");
+                }
+            }
+
+            //Win Condition
+            if (usArray.indexOf("_") == -1) {
+                word.innerHTML = mwArray;
+                alert('You won!  Click the "New Game" button to play again.');
+            }
         }
+
+        //Duplicate letter alert
+
     }
 }
 
