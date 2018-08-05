@@ -1,18 +1,15 @@
-//alert("Would you like to play a game?");
-
 //Creates an array that lists out all of the possible fictional characters.
-var characters = ["mr meeseeks", "finn and jake", "rick and morty", "malcom reynolds", "michael scott", "barney stinson", "hobart washburn", "obiwan kenobi", "sterling archer", "jack o neill", "peter griffin", "benjamin hawkye pierce", "john dorian", "shawn spencer", "truman burbank", "jeeves and wooster", "bruce wayne", "steve rogers", "tony stark", "stephen strange", "woody and buzz", "wesley and buttercup", "scott pilgrim", 'han solo', "wade wilson", "peter quill"];
+var characters = ["mr meeseeks", "finn and jake", "rick and morty", "malcom reynolds", "michael scott", "barney stinson", "hobart washburn", "obiwan kenobi", "sterling archer", "jack o neill", "peter griffin", "benjamin hawkeye pierce", "john dorian", "shawn spencer", "truman burbank", "jeeves and wooster", "bruce wayne", "steve rogers", "tony stark", "stephen strange", "woody and buzz", "wesley and buttercup", "scott pilgrim", 'han solo', "wade wilson", "peter quill"];
 
 //Array to check if key pressed is a letter
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g',
     'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', " "
+    'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
 
 //Randomly chooses an item from the array which becomes the word(s) to guess.
 var word = document.getElementById("word");
 var mysteryWord = characters[Math.floor(Math.random() * characters.length)];
-console.log(mysteryWord)
 
 //Create array from mysteryWord
 var mwSplit = mysteryWord.split("");
@@ -37,7 +34,7 @@ for (var u = 0; u < mwArray.length; u++) {
 //Display underscores in place of mystery word
 word.innerHTML = usArray.join(" ");
 
-//Displays letters already guessed
+//Letters already guessed variables
 var guessedArray = [];
 var guessed = document.getElementById("guessed");
 var t = 0;
@@ -46,27 +43,23 @@ var t = 0;
 document.onkeyup = function (event) {
     var userInput = event.key;
 
-    //Only allow letters and spacebar
+    //Only allow letters
     if (alphabet.indexOf(userInput) == -1) {
         alert("Please press a letter of the alphabet.");
 
     } else {
         //Show already guessed letters on the page
         userInput = event.key.toLowerCase();
-        var test = userInput.toUpperCase();
         guessedArray.push(userInput.toUpperCase());
-        guessed.innerHTML = guessedArray;
-        console.log(guessedArray);
+        guessed.innerHTML = (guessedArray);
 
         //Check to see if the userInput is a duplicate
-        if (test.indexOf(guessedArray) !== -1) {
-            console.log(userInput + ", first time guessed.");
+        if (userInput.indexOf(guessedArray) == -1) {
 
             //Check to see if the userInput is in the mystery word
             if (mwArray.indexOf(userInput) == -1) {
                 var incorrect = [];
                 incorrect.push(userInput);
-                //console.log("Incorrect: " + incorrect);
 
                 //Update how many tries the user has remaining.
                 var countDown = ["6 tries", "5 tries", "4 tries", "3 tries", "2 tries", "1 try", "0 tries"];
@@ -80,13 +73,16 @@ document.onkeyup = function (event) {
                 t++;
 
                 //If the number of tries reaches max then alert and reload
-                if (t == 8) {
+                if (t == 7) {
 
                     //Show word after loss
+                    word.innerHTML = mwArray;
+                    alert("Oh man, you were so close!");
 
-
+                }
+                if (t == 8) {
                     //Restart game after loss
-                    alert("I'm sorry, you are out of guesses.  Want to play another game?");
+                    alert("I'm sorry, you are out of guesses.  Maybe you won't suck so badly at this next word!");
                     location.reload();
                 }
 
@@ -94,13 +90,26 @@ document.onkeyup = function (event) {
             } else {
                 var correct = [];
                 correct.push(userInput);
-                console.log("Correct: " + correct);
+
+                //Replace underscore with correct letter
+                for (i = 0; i < mwArray.length; i++) {
+                    if (mwSplit[i] == userInput) {
+                        usArray[i] = userInput;
+                        word.innerHTML = usArray.join(" ");
+                    }
+                }
+
+                //Win Condition
+                if (usArray.indexOf("_") == -1) {
+                    word.innerHTML = mwArray;
+                    alert("You won!");
+                    location.reload;
+                } 
             }
 
             //Duplicate letter alert
         } else {
-            alert("You've already guessed that letter.  Try another one.")
-            console.log("Repeat letter");
+            alert("You've already guessed that letter.  Try another one.");
         }
     }
 }
@@ -110,14 +119,3 @@ function restart() {
     var newGame = document.getElementById("restart");
     location.reload();
 }
-
-// Brian's code for changing underscores
-// var placehold = []
-
-// for (i = 0; i < mwArray.length; i++) {
-//     if (mwArray[i] == userInput) {
-//         guessedArray[i] = userInput;
-//         document.getElementById("guessed").innerHTML = placehold;
-//     }
-
-// }

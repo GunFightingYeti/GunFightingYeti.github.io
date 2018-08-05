@@ -31,3 +31,7 @@ header {
     background-color: sienna;
     border-color: black;
 }
+
+#guessed {
+    font-size: 20px;
+}
