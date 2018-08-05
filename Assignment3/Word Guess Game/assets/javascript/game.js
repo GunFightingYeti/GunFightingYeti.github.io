@@ -50,7 +50,7 @@ document.onkeyup = function (event) {
         //Show already guessed letters on the page
     } else {
         userInput = event.key.toLowerCase();
-        guessedArray.push(userInput.toUpperCase());
+        guessedArray.push(" " + userInput.toUpperCase());
         guessed.innerHTML = (guessedArray);
 
         //Check to see if the userInput is in the mystery word
