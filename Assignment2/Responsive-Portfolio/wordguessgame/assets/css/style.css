@@ -1,0 +1,37 @@
+body {
+    background-color: #888;
+    background-image: url(../images/woodBackground.jpg);
+    min-width: 450px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: rgb(59, 29, 1);
+    background-image: url(../images/woodenHeader.jpg);
+    color: darkcyan;
+}
+
+#score {
+    background-color: white;
+    color:  rgb(43, 14, 3);
+}
+
+.hangman {
+    background-color: white;
+    min-height:371px;
+}
+
+#image {
+    background-color: white;
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    background-color: sienna;
+    border-color: black;
+}
+
+#guessed {
+    font-size: 20px;
+}

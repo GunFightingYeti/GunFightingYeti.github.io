@@ -3,10 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
+
+  <link id="home" rel="shortcut icon" type="image/png" href="favicon.png">
   <title>Rock Paper Scissors Part 6</title>
 </head>
 
-<body style="background-color: #bada55; margin: 20px">
+<body style="background-image: url(rpsbackground.jpg); background-size: 100%; margin: 20px">
 
   <div id="game">
       <div>
@@ -79,11 +81,11 @@
         }
 
         if (wins === 5) {
-            alert("You Win! :) ");
+            alert("You Win!\nRandom chance is on your side!");
             window.location.reload();
         }
         if (losses === 5) {
-            alert("You lose. :( ");
+            alert("You lose.\nLady luck must have it out for you.");
             window.location.reload();
         }
 
