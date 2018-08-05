@@ -25,11 +25,12 @@ word.innerHTML = mwArray;
 var usArray = [];
 var _ = '_';
 for (var u = 0; u < mwArray.length; u++) {
-    if (mwArray.indexOf[u] == ['a', 'b', 'c', 'd', 'e', 'f', 'g',
-            'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-            'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-        ]); {
+    var letter = mwArray[u];
+    var index = mwArray.indexOf(u);
+    if (letter.search(/[^a-zA-Z]+/) === -1) {
         usArray.push(_);
+    } else {
+        usArray.push("&nbsp;");
     }
 }
 
@@ -52,11 +53,13 @@ document.onkeyup = function (event) {
     } else {
         //Show already guessed letters on the page
         userInput = event.key.toLowerCase();
-        guessedArray.push(" " + userInput.toUpperCase());
+        var test = userInput.toUpperCase();
+        guessedArray.push(userInput.toUpperCase());
         guessed.innerHTML = guessedArray;
+        console.log(guessedArray);
 
         //Check to see if the userInput is a duplicate
-        if (userInput.indexOf(guessedArray) == -1) {
+        if (test.indexOf(guessedArray) !== -1) {
             console.log(userInput + ", first time guessed.");
 
             //Check to see if the userInput is in the mystery word
@@ -79,7 +82,7 @@ document.onkeyup = function (event) {
                 //If the number of tries reaches max then alert and reload
                 if (t == 8) {
 
-                    //Show word
+                    //Show word after loss
 
 
                     //Restart game after loss
@@ -107,3 +110,14 @@ function restart() {
     var newGame = document.getElementById("restart");
     location.reload();
 }
+
+// Brian's code for changing underscores
+// var placehold = []
+
+// for (i = 0; i < mwArray.length; i++) {
+//     if (mwArray[i] == userInput) {
+//         guessedArray[i] = userInput;
+//         document.getElementById("guessed").innerHTML = placehold;
+//     }
+
+// }
