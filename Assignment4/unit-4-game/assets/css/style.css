@@ -1,0 +1,60 @@
+/* Changes to whole page */
+body {
+    background-image: url(../images/stars.png);
+}
+
+/* Link options */
+a {
+    color: white;
+    text-decoration: none;
+}
+a:link, a:visited, a:hover, a:active {
+    color: white;
+    text-decoration: none;
+}
+
+/* Choose - Landing page */
+.landingjumbo {
+    background-color: black;
+    height: 250px;
+    min-width: 580px;
+}
+
+#lightside {
+    background-image: url(../images/forest.jpg);
+    background-size: 100%;
+}
+
+#darkside {
+    background-image: url(../images/lightning.jpg);
+    background-size: 100%;
+}
+
+/* Light Side Hero page */
+#herocard {
+    background-color: black;
+}
+
+/* Dark Side Villan page */
+#villancard {
+    background-color: black;
+}
+
+/*Fight page*/
+.fight {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.info {
+    color: black;
+}
+
+#hero {
+    background-color: black;
+}
+
+#opponent {
+    background-color: black;
+}
+
+/* */
