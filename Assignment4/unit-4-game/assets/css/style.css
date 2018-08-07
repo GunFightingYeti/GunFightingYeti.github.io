@@ -4,11 +4,7 @@ body {
 }
 
 /* Link options */
-a {
-    color: white;
-    text-decoration: none;
-}
-a:link, a:visited, a:hover, a:active {
+a, a:link, a:visited, a:hover, a:active {
     color: white;
     text-decoration: none;
 }
@@ -20,28 +16,28 @@ a:link, a:visited, a:hover, a:active {
     min-width: 580px;
 }
 
-#lightside {
+#lightsidebtn {
     background-image: url(../images/forest.jpg);
     background-size: 100%;
 }
 
-#darkside {
+#darksidebtn {
     background-image: url(../images/lightning.jpg);
     background-size: 100%;
 }
 
-/* Light Side Hero page */
-#herocard {
-    background-color: black;
+/* Hide all pages */
+.lightside, .lightsideOpp, .darkside, .darksideOpp, .fight {
+    display: none;
 }
 
-/* Dark Side Villan page */
-#villancard {
+/*Hero page */
+.herocard, .villancard {
     background-color: black;
 }
 
 /*Fight page*/
-.fight {
+.fightbtn {
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -49,12 +45,6 @@ a:link, a:visited, a:hover, a:active {
     color: black;
 }
 
-#hero {
+#hero, #opponent {
     background-color: black;
 }
-
-#opponent {
-    background-color: black;
-}
-
-/* */

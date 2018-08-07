@@ -12,6 +12,9 @@
   <!-- Link to Bootstrap CSS-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+  <!-- Local Javascript -->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
   <!-- Local css -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -37,7 +40,7 @@
         <!-- Light Side button -->
         <div class="col-lg-6 text-center my-4">
           <div class="card">
-            <div class="card-body" id="lightside">
+            <div class="card-body" id="lightsidebtn">
               <button class="btn btn-primary btn-success text-center">
                 <h1>Light Side</h1>
               </button>
@@ -48,7 +51,7 @@
         <!-- Dark Side button -->
         <div class="col-lg-6 text-center my-4">
           <div class="card">
-            <div class="card-body" id="darkside">
+            <div class="card-body" id="darksidebtn">
               <button class="btn btn-primary btn-danger text-center">
                 <h1>Dark Side</h1>
               </button>
@@ -63,195 +66,337 @@
   <!-- Choose - close -->
 
 
-  <!-- Light Side Hero - Open -->
+  <!-- Lightside Hero - Open -->
   <!-- Choose your Hero -->
-  <div class="row-fluid text-white">
-    <h1 class="text-center">Choose your Hero!</h1>
+  <div class="lightside">
+    <div class="row-fluid text-white">
+      <h1 class="text-center">Choose your Hero!</h1>
+    </div>
+
+    <!-- Container/row -->
+    <div class="container text-center text-white">
+      <div class="row">
+
+        <!-- Luke Skywalker -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Luke Skywalker</h2>
+                <img src="assets/images/luke.png" alt="Luke Skywalker" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Obiwan Kenobi -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Obiwan Kenobi</h2>
+                <img src="assets/images/obiwan.jpg" alt="Obiwan Kenobi" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Master Yoda -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Yoda</h2>
+                <img src="assets/images/yoda.jpg" alt="Yoda" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
   </div>
+  <!-- Lightside Hero - Close -->
 
-  <!-- Container/row -->
-  <div class="container text-center text-white">
+  <!-- Lightside Opponent - Open -->
+  <!-- Choose your Opponent -->
+  <div class="lightsideOpp">
+    <div class="row-fluid text-white">
+      <h1 class="text-center">Choose your first Opponent!</h1>
+    </div>
+
+    <!-- Container/row -->
+    <div class="container text-center text-white">
+      <div class="row">
+
+        <!-- Luke Skywalker -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Luke Skywalker</h2>
+                <img src="assets/images/luke.png" alt="Luke Skywalker" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Obiwan Kenobi -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Obiwan Kenobi</h2>
+                <img src="assets/images/obiwan.jpg" alt="Obiwan Kenobi" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Master Yoda -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="herocard">
+                <h2 class="align-top">Yoda</h2>
+                <img src="assets/images/yoda.jpg" alt="Yoda" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- Lightside Opponent- Close -->
+
+
+  <!-- Darkside Hero - Open -->
+  <!-- Choose your Hero -->
+  <div class="darkside">
+    <div class="row-fluid text-white">
+      <h1 class="text-center">Choose your Hero!</h1>
+    </div>
+
+    <!-- Container/row -->
+    <div class="container text-center text-white">
+      <div class="row">
+
+        <!-- Darth Vader -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Vader</h2>
+                <img src="assets/images/vader.jpg" alt="Darth Vader" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Darth Maul -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Maul</h2>
+                <img src="assets/images/maul.png" alt="Darth Maul" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Darth Sidious -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Sidious</h2>
+                <img src="assets/images/sidious.jpg" alt="Darth Sidious" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- Darkside Hero - Close -->
+
+  <!-- Dark Side Opponent - Open -->
+  <!-- Choose your Opponent -->
+  <div class="darksideOpp">
+    <div class="row-fluid text-white">
+      <h1 class="text-center">Choose your first Opponent!</h1>
+    </div>
+
+    <!-- Container/row -->
+    <div class="container text-center text-white">
+      <div class="row">
+
+        <!-- Darth Vader -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Vader</h2>
+                <img src="assets/images/vader.jpg" alt="Darth Vader" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Darth Maul -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Maul</h2>
+                <img src="assets/images/maul.png" alt="Darth Maul" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Darth Sidious -->
+        <div class="col-lg-4 text-center my-4">
+          <a href="#">
+            <div class="card">
+              <div class="card-body p-0" class="villancard">
+                <h2 class="align-top">Darth Sidious</h2>
+                <img src="assets/images/sidious.jpg" alt="Darth Sidious" style="height: 350px;">
+                <h3 class="align-bottom">Attack:
+                  <span>#</span> Health:
+                  <span>#</span>
+                </h3>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- Darkside Opponent - Close -->
+
+
+  <!-- Fight - Open -->
+  <!-- Fight banner -->
+  <div class="fight">
+    <div class="row-fluid text-white">
+      <h1 class="text-center">Fight</h1>
+    </div>
+
+    <!-- Container/row -->
+    <div class="container">
+      <div class="row">
+
+        <!-- Hero -->
+        <div class="col-lg-4 text-center my-4">
+          <div class="card">
+            <div class="card-body p-0" id="hero">
+              <h2 class="align-top">Hero</h2>
+              <img src="assets/images/placeholder.jpg" alt="Hero" style="height: 350px;">
+              <h3 class="align-bottom">Attack:
+                <span>#</span> Health:
+                <span>#</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fight button -->
+        <div class="col-lg-4 text-center my-4 p-0">
+          <div class="card fightbtn">
+            <div class="card-body" id="fight">
+              <button class="btn btn-primary btn-warning text-center">
+                <h1>Fight</h1>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opponent -->
+        <div class="col-lg-4 text-center my-4">
+          <div class="card">
+            <div class="card-body p-0" id="opponent">
+              <h2 class="align-top">Opponent</h2>
+              <img src="assets/images/placeholder.jpg" alt="Opponent" style="height: 350px;">
+              <h3 class="align-bottom">Attack:
+                <span>#</span> Health:
+                <span>#</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Info Banner -->
     <div class="row">
-
-      <!-- Luke Skywalker -->
-      <div class="col-lg-4 text-center my-4">
-        <a href="#">
-          <div class="card">
-            <div class="card-body p-0" id="herocard">
-              <h2 class="align-top">Luke Skywalker</h2>
-              <img src="assets/images/luke.png" alt="Luke Skywalker" style="height: 350px;">
-              <h3 class="align-bottom">Attack:
-                <span>#</span> Health:
-                <span>#</span>
-              </h3>
-            </div>
+      <div class="col-lg-12 text-center my-4">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="align-top info">Battle details</h2>
+            <hr>
+            <h3 class="align-bottom">
+              <span id="info"></span>
+            </h3>
           </div>
-        </a>
+        </div>
       </div>
-
-      <!-- Obiwan Kenobi -->
-      <div class="col-lg-4 text-center my-4">
-        <a href="#">
-          <div class="card">
-            <div class="card-body p-0" id="herocard">
-              <h2 class="align-top">Obiwan Kenobi</h2>
-              <img src="assets/images/obiwan.jpg" alt="Obiwan Kenobi" style="height: 350px;">
-              <h3 class="align-bottom">Attack:
-                <span>#</span> Health:
-                <span>#</span>
-              </h3>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Master Yoda -->
-      <div class="col-lg-4 text-center my-4">
-        <a href="#">
-          <div class="card">
-            <div class="card-body p-0" id="herocard">
-              <h2 class="align-top">Yoda</h2>
-              <img src="assets/images/yoda.jpg" alt="Yoda" style="height: 350px;">
-              <h3 class="align-bottom">Attack:
-                <span>#</span> Health:
-                <span>#</span>
-              </h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <!-- Hero - Close -->
-
-
-      <!-- Dark Side Villan - Open -->
-      <!-- Choose your Hero -->
-      <div class="row-fluid text-white">
-        <h1 class="text-center">Choose your Hero!</h1>
-      </div>
-
-      <!-- Container/row -->
-      <div class="container text-center text-white">
-        <div class="row">
-
-          <!-- Darth Vader -->
-          <div class="col-lg-4 text-center my-4">
-            <a href="#">
-              <div class="card">
-                <div class="card-body p-0" id="villancard">
-                  <h2 class="align-top">Darth Vader</h2>
-                  <img src="assets/images/vader.jpg" alt="Darth Vader" style="height: 350px;">
-                  <h3 class="align-bottom">Attack:
-                    <span>#</span> Health:
-                    <span>#</span>
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Darth Maul -->
-          <div class="col-lg-4 text-center my-4">
-            <a href="#">
-              <div class="card">
-                <div class="card-body p-0" id="villancard">
-                  <h2 class="align-top">Darth Maul</h2>
-                  <img src="assets/images/maul.png" alt="Darth Maul" style="height: 350px;">
-                  <h3 class="align-bottom">Attack:
-                    <span>#</span> Health:
-                    <span>#</span>
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <!-- Darth Sidious -->
-          <div class="col-lg-4 text-center my-4">
-            <a href="#">
-              <div class="card">
-                <div class="card-body p-0" id="villancard">
-                  <h2 class="align-top">Darth Sidious</h2>
-                  <img src="assets/images/sidious.jpg" alt="Darth Sidious" style="height: 350px;">
-                  <h3 class="align-bottom">Attack:
-                    <span>#</span> Health:
-                    <span>#</span>
-                  </h3>
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- Dark Side Villan - Close -->
-
-
-          <!-- Fight - Open -->
-          <!-- Fight banner -->
-          <div class="row-fluid text-white">
-            <h1 class="text-center">Fight</h1>
-          </div>
-
-          <!-- Container/row -->
-          <div class="container">
-            <div class="row">
-
-              <!-- Hero -->
-              <div class="col-lg-4 text-center my-4">
-                <div class="card">
-                  <div class="card-body p-0" id="hero">
-                    <h2 class="align-top">Hero</h2>
-                    <img src="assets/images/placeholder.jpg" alt="Hero" style="height: 350px;">
-                    <h3 class="align-bottom">Attack:
-                      <span>#</span> Health:
-                      <span>#</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Fight button -->
-              <div class="col-lg-4 text-center my-4 p-0">
-                <div class="card fight">
-                  <div class="card-body" id="fight">
-                    <button class="btn btn-primary btn-warning text-center">
-                      <h1>Fight</h1>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Opponent -->
-              <div class="col-lg-4 text-center my-4">
-                <div class="card">
-                  <div class="card-body p-0" id="opponent">
-                    <h2 class="align-top">Opponent</h2>
-                    <img src="assets/images/placeholder.jpg" alt="Opponent" style="height: 350px;">
-                    <h3 class="align-bottom">Attack:
-                      <span>#</span> Health:
-                      <span>#</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Info Banner -->
-            <div class="row">
-              <div class="col-lg-12 text-center my-4">
-                <div class="card">
-                  <div class="card-body">
-                    <h2 class="align-top info">Battle details</h2>
-                    <hr>
-                    <h3 class="align-bottom">
-                      <span id="info"></span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fight - close -->
-
-          <link rel="javascript" href="assets/javascript/game.js">
+    </div>
+  </div>
+  <!-- Fight - close -->
 
 </body>
 
