@@ -10,7 +10,7 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 /* Choose - Landing page */
-.landingjumbo {
+.jumbo {
     background-color: black;
     height: 250px;
     min-width: 580px;
@@ -27,17 +27,12 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 /* Hide all pages */
-.lightside, .lightsideOpp, .darkside, .darksideOpp, .fight {
+#lightside, #lightsideOpp, #darkside, #darksideOpp, #fight, #win {
     display: none;
 }
 
-/*Hero page */
-.herocard, .villancard {
-    background-color: black;
-}
-
 /*Fight page*/
-.fightbtn {
+.battlebtn {
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -45,6 +40,6 @@ a, a:link, a:visited, a:hover, a:active {
     color: black;
 }
 
-#hero, #opponent {
+#hero, #opponent, .blackback {
     background-color: black;
 }

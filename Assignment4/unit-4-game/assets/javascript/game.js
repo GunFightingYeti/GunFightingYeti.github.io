@@ -1,28 +1,66 @@
 $(document).ready(function () {
 
+    // New game
     function gamestart() {
-        $(".choose").show();
-        $(".lightside").hide();
-        $(".lightsideOpp").hide();
-        $(".darkside").hide();
-        $(".darksideOpp").hide();
-        $(".fight").hide();
+        $("#choose").show();
+        $("#lightside").hide();
+        $("#lightsideOpp").hide();
+        $("#darkside").hide();
+        $("#darksideOpp").hide();
+        $("#fight").hide();
+        $("#win").hide();
     }
 
     //Choose to Hero
     // Show Lightside
     $(".btn-success").click(function () {
-        $(".lightside").show();
-        $(".choose").hide();
+        $("#choose").hide();
+        $("#lightside").show();
     });
     // Show Darkside
     $(".btn-danger").click(function () {
-        $(".darkside").show();
-        $(".choose").hide();
+        $("#choose").hide();
+        $("#darkside").show();
     });
 
     // Hero to Opponent
-    // Show darkside
+    // Show Dark Opponent
+    $(".lighthero").click(function () {
+        $("#lightside").hide();
+        $("#darksideOpp").show();
+    });
+    // Show Dark Opponent
+    $(".darkhero").click(function () {
+        $("#darkside").hide();
+        $("#lightsideOpp").show();
+    });
+
+    //Opponent to fight
+    //Fight
+    $(".darkOpp").click(function () {
+        $("#darksideOpp").hide();
+        $("#fight").show();
+    });
+    //Fight
+    $(".lightOpp").click(function () {
+        $("#lightsideOpp").hide();
+        $("#fight").show();
+    });
+
+    //Fight to win
+    //Win
+    $(".newOpp").click(function () {
+        $("#fight").hide();
+        $("#win").show();
+    });
+
+    //New Game
+    //Restart
+    $("#newgame").click(function () {
+        gamestart();
+   
+    });
+
 
 });
 
