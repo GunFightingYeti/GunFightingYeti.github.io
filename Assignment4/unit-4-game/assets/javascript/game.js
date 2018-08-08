@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // New game
+    //New game
     function gamestart() {
         $("#choose").show();
         $("#lightside").hide();
@@ -9,8 +9,35 @@ $(document).ready(function () {
         $("#darksideOpp").hide();
         $("#fight").hide();
         $("#win").hide();
+
+        //Character Stat arrays
+        // var attackArray = [10, 15, 20, 25, 30];
+        // var healthArray = [125, 150, 175, 200, 225];
+        // var powerArray = [5, 6, 7, 8, 9];
+
+        //Stat randomizer
+        // for (var s = 0; s < 5; s++) {
+        //Attack
+        // var attack = $(".attack");
+        // attackval = attackArray[Math.floor(Math.random() * attackArray.length)];
+        // console.log("Attack: " + attackval)
+        // attack.html(attackval)
+
+        //Health
+        // var health = $(".health");
+        // healthval = healthArray[Math.floor(Math.random() * healthArray.length)];
+        // console.log("Health: " + healthval)
+        // health.html(healthval)
+
+        //Power
+        // var power = $("");
+        // powerval = powerArray[Math.floor(Math.random() * powerArray.length)];
+        // console.log("Power: " + powerval)
+        // power.html(powerval)
+        // }
     }
 
+    //Navigation - Open
     //Choose to Hero
     // Show Lightside
     $(".btn-success").click(function () {
@@ -48,7 +75,7 @@ $(document).ready(function () {
     });
 
     //Fight to win
-    //Win
+    //New Opponent
     $(".newOpp").click(function () {
         $("#fight").hide();
         $("#win").show();
@@ -58,34 +85,13 @@ $(document).ready(function () {
     //Restart
     $("#newgame").click(function () {
         gamestart();
-   
+
     });
 
+    //Navigation - Close
+    gamestart()
 
 });
-
-
-//     // Make our variables global to the runtime of our application
-//     var firstNumber = 0;
-//     var secondNumber = 0;
-//     var operator = "";
-//     var result = 0;
-//     var isOperatorChosen = false;
-//     var isCalculated = false;
-
-//     // Use a function to initialize our calculator.
-//     // This way when the user hits clear, we can guarantee a reset of the app.
-//     function initializeCalculator() {
-//         firstNumber = "";
-//         secondNumber = "";
-//         operator = "";
-//         isOperatorChosen = false;
-//         isCalculated = false;
-
-//         $("#first-number, #second-number, #operator, #result").empty();
-//     }
-
-//     $(".number").on("click", function () {
 
 //         // Check if we've already run a calculation, if so... we'll just.
 //         if (isCalculated) {
