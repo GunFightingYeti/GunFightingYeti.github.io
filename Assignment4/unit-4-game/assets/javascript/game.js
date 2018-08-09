@@ -3,44 +3,46 @@ var luke = {
     name: "Luke Skywalker",
     health: 175,
     attack: 20,
-    power: 6
+    power: 6,
+    image: "assets/images/luke.png"
 }
+$("lattack").text(luke.attack);
 
-var ben = {
+var obiwan = {
     name: "Obiwan Kenobi",
     health: 200,
     attack: 15,
-    power: 7
+    power: 7,
+    image: "assets/images/obiwan.jpg"
 }
-
 var yoda = {
     name: "Yoda",
     health: 150,
     attack: 25,
-    power: 8
+    power: 8,
+    image: "assets/images/yoda.jpg"
 }
-
 var vader = {
     name: "Darth Vader",
     health: 175,
     attack: 20,
-    power: 7
+    power: 7,
+    image: "assets/images/vader.jpg"
 }
-
 var maul = {
     name: "Darth Maul",
     health: 200,
     attack: 15,
-    power: 6
+    power: 6,
+    image: "assets/images/maul.png"
 }
-
 var sidious = {
     name: "Darth Sidious",
     health: 125,
     attack: 25,
-    power: 8
+    power: 8,
+    image: "assets/images/sidious.jpg"
 }
-
 
 //On ready - Open
 $(document).ready(function () {
@@ -79,11 +81,8 @@ $(document).ready(function () {
     // Hero to Opponent
     // Show Dark Opponent
     $(".lighthero").click(function () {
-        if ($(".heroluke")) {
-            $("#lightside").hide();
-            $("#darksideOpp").show();
-        }
-
+        $("#lightside").hide();
+        $("#darksideOpp").show();
     });
     // Show Dark Opponent
     $(".darkhero").click(function () {
@@ -92,16 +91,23 @@ $(document).ready(function () {
     });
 
     //Opponent to fight
-    //Fight
+    //Dark oppenent to fight
     $(".darkOpp").click(function () {
         $("#darksideOpp").hide();
         $("#fight").show();
     });
-    //Fight
+    //Light opponent to fight
     $(".lightOpp").click(function () {
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
+
+    //Fight to lose
+    //New Opponent
+     $(".newOpp").click(function () {
+         $("#fight").hide();
+         $("#lose").show();
+     });
 
     //Fight to win
     //New Opponent

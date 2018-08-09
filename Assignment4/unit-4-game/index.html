@@ -85,8 +85,8 @@
                 <h2 class="align-top">Luke Skywalker</h2>
                 <img src="assets/images/luke.png" alt="Luke Skywalker" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="lattack">#</span> | Health:
+                  <span id="lhealth">#</span>
                 </h3>
               </div>
             </div>
@@ -101,8 +101,8 @@
                 <h2 class="align-top">Obiwan Kenobi</h2>
                 <img src="assets/images/obiwan.jpg" alt="Obiwan Kenobi" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="oattack">#</span> | Health:
+                  <span id="ohealth">#</span>
                 </h3>
               </div>
             </div>
@@ -117,8 +117,8 @@
                 <h2 class="align-top">Yoda</h2>
                 <img src="assets/images/yoda.jpg" alt="Yoda" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="yattack">#</span> | Health:
+                  <span id="yhealth">#</span>
                 </h3>
               </div>
             </div>
@@ -216,8 +216,8 @@
                 <h2 class="align-top">Darth Vader</h2>
                 <img src="assets/images/vader.jpg" alt="Darth Vader" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="vattack">#</span> | Health:
+                  <span id="vhealth">#</span>
                 </h3>
               </div>
             </div>
@@ -232,8 +232,8 @@
                 <h2 class="align-top">Darth Maul</h2>
                 <img src="assets/images/maul.png" alt="Darth Maul" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="mattack">#</span> | Health:
+                  <span id="mhealth">#</span>
                 </h3>
               </div>
             </div>
@@ -248,8 +248,8 @@
                 <h2 class="align-top">Darth Sidious</h2>
                 <img src="assets/images/sidious.jpg" alt="Darth Sidious" style="height: 350px;">
                 <h3 class="align-bottom">Attack:
-                  <span class="attack">#</span> | Health:
-                  <span class="health">#</span>
+                  <span id="sattack">#</span> | Health:
+                  <span id="shealth">#</span>
                 </h3>
               </div>
             </div>
@@ -353,7 +353,7 @@
           </div>
         </div>
 
-
+        <!-- Buttons column -->
         <div class="col-lg-4">
           <!-- Fight button -->
           <div class="row-fluid text-center">
@@ -372,8 +372,8 @@
           <div class="row-fluid text-center">
             <div class="col-sm-12 text-center my-4 p-0">
               <div class="card noback">
-                <div class="card-body">
-                  <button class="btn btn-info text-center newOpp">
+                <div class="card-body p-0">
+                  <button class="btn btn-info text-center p-0 newOpp">
                     <h1>New Opponent</h1>
                   </button>
                 </div>
@@ -400,19 +400,22 @@
     </div>
 
     <!-- Info Banner -->
-    <div class="row">
-      <div class="col-md-12 text-center my-4">
-        <div class="card">
-          <div class="card-body">
-            <h2 class="align-top info">Battle details</h2>
-            <hr>
-            <h3 class="align-bottom">
-              <span id="info"></span>
-            </h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center my-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="align-top info">Battle details</h2>
+              <hr>
+              <h3 class="align-bottom">
+                <span id="info"></span>
+              </h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
   <!-- Fight - close -->
 
@@ -452,7 +455,7 @@
   </div>
   <!-- Defeat - Close -->
 
-  
+
   <!-- Win - Open -->
   <!-- Title Jumbo -->
   <div id="win">
@@ -461,7 +464,7 @@
     </div>
 
 
-    
+
     <!-- Victory text -->
     <div class="text-center text-white">
       <h1>
