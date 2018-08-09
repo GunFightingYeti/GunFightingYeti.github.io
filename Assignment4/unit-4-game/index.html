@@ -79,7 +79,7 @@
 
         <!-- Luke Skywalker -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lighthero">
+          <a href="#" class="lighthero heroluke">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Luke Skywalker</h2>
@@ -95,7 +95,7 @@
 
         <!-- Obiwan Kenobi -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lighthero">
+          <a href="#" class="lighthero heroben">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Obiwan Kenobi</h2>
@@ -111,7 +111,7 @@
 
         <!-- Master Yoda -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lighthero">
+          <a href="#" class="lighthero heroyoda">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Yoda</h2>
@@ -144,7 +144,7 @@
 
         <!-- Luke Skywalker -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lightOpp">
+          <a href="#" class="lightOpp oppluke">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Luke Skywalker</h2>
@@ -160,7 +160,7 @@
 
         <!-- Obiwan Kenobi -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lightOpp">
+          <a href="#" class="lightOpp oppben">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Obiwan Kenobi</h2>
@@ -176,7 +176,7 @@
 
         <!-- Master Yoda -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="lightOpp">
+          <a href="#" class="lightOpp oppyoda">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Yoda</h2>
@@ -210,7 +210,7 @@
 
         <!-- Darth Vader -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkhero">
+          <a href="#" class="darkhero herovader">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Vader</h2>
@@ -226,7 +226,7 @@
 
         <!-- Darth Maul -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkhero">
+          <a href="#" class="darkhero heromaul">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Maul</h2>
@@ -242,7 +242,7 @@
 
         <!-- Darth Sidious -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkhero">
+          <a href="#" class="darkhero herosidious">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Sidious</h2>
@@ -275,7 +275,7 @@
 
         <!-- Darth Vader -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkOpp">
+          <a href="#" class="darkOpp oppvader">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Vader</h2>
@@ -291,7 +291,7 @@
 
         <!-- Darth Maul -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkOpp">
+          <a href="#" class="darkOpp oppmaul">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Maul</h2>
@@ -307,7 +307,7 @@
 
         <!-- Darth Sidious -->
         <div class="col-lg-4 text-center my-4">
-          <a href="#" class="darkOpp">
+          <a href="#" class="darkOpp oppsidious">
             <div class="card">
               <div class="card-body p-0 blackback">
                 <h2 class="align-top">Darth Sidious</h2>
@@ -342,9 +342,9 @@
         <!-- Hero -->
         <div class="col-lg-4 text-center my-4">
           <div class="card">
-            <div class="card-body text-white p-0" id="hero">
+            <div class="card-body text-white p-0 blackback">
               <h2 class="align-top">Hero</h2>
-              <img src="assets/images/placeholder.jpg" alt="Hero" style="height: 350px;">
+              <img id="hero" src="assets/images/placeholder.jpg" alt="Hero" style="height: 350px;">
               <h3 class="align-bottom">Attack:
                 <span class="attack">#</span> | Health:
                 <span class="health">#</span>
@@ -385,9 +385,9 @@
         <!-- Opponent -->
         <div class="col-lg-4 text-center my-4">
           <div class="card">
-            <div class="card-body text-white p-0" id="opponent">
+            <div class="card-body text-white p-0 blackback">
               <h2 class="align-top">Opponent</h2>
-              <img src="assets/images/placeholder.jpg" alt="Opponent" style="height: 350px;">
+              <img id="opponent" src="assets/images/placeholder.jpg" alt="Opponent" style="height: 350px;">
               <h3 class="align-bottom">Attack:
                 <span class="attack">#</span> | Health:
                 <span class="health">#</span>
@@ -416,6 +416,43 @@
   </div>
   <!-- Fight - close -->
 
+  <!-- Defeat - Open -->
+  <!-- Title Jumbo -->
+  <div id="lose">
+    <div class="jumbotron-fluid text-center jumbo">
+      <img class="jumbo" src="assets/images/starwarsbanner.jpg">
+    </div>
+
+    <!-- Lose text -->
+    <div class="text-center text-white">
+      <h1>
+        <strong>You lose!</strong>
+      </h1>
+      <h3>Oh no, the force is not strong with this one.</h3>
+    </div>
+
+    <!-- New Game button -->
+    <div class="fluid text-center mb-4">
+      <div class="card noback">
+        <div class="card-body">
+          <button class="btn btn-primary text-center" id="newgame">
+            <h1>New Game</h1>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Defeat audio -->
+    <div class="song text-center text-white">
+      <audio controls autoplay>
+        <source src="assets/audio/defeat.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+      </audio>
+    </div>
+
+  </div>
+  <!-- Lose - Close -->
+
+  
   <!-- Win - Open -->
   <!-- Title Jumbo -->
   <div id="win">
@@ -423,9 +460,13 @@
       <img class="jumbo" src="assets/images/starwarsbanner.jpg">
     </div>
 
+
+    
     <!-- Victory text -->
     <div class="text-center text-white">
-      <h1><strong>You win!</strong></h1>
+      <h1>
+        <strong>You win!</strong>
+      </h1>
       <h3>Good work saving the galaxy from those three random dudes!</h3>
     </div>
 
@@ -439,13 +480,13 @@
         </div>
       </div>
     </div>
-    
-      <!-- Victory audio -->
-      <div class="text-center text-white">
-        <audio controls autoplay>
-          <source src="assets/audio/victory.mp3" type="audio/mpeg"> Your browser does not support the audio element.
-        </audio>
-      </div>
+
+    <!-- Victory audio -->
+    <div class="song text-center text-white">
+      <audio controls autoplay>
+        <source src="assets/audio/victory.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+      </audio>
+    </div>
 
   </div>
   <!-- Win - Close -->

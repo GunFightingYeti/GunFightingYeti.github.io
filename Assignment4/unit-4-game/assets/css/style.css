@@ -1,15 +1,22 @@
 /* Changes to whole page */
+
 body {
     background-image: url(../images/stars.png);
 }
 
 /* Link options */
-a, a:link, a:visited, a:hover, a:active {
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
     color: white;
     text-decoration: none;
 }
 
 /* Choose - Landing page */
+
 .jumbo {
     background-color: black;
     height: 250px;
@@ -27,11 +34,18 @@ a, a:link, a:visited, a:hover, a:active {
 }
 
 /* Hide all pages */
-#lightside, #lightsideOpp, #darkside, #darksideOpp, #fight, #win {
+
+#lightside,
+#lightsideOpp,
+#darkside,
+#darksideOpp,
+#fight,
+#win {
     display: none;
 }
 
 /*Fight page*/
+
 .noback {
     background-color: rgba(255, 255, 255, 0);
 }
@@ -40,6 +54,8 @@ a, a:link, a:visited, a:hover, a:active {
     color: black;
 }
 
-#hero, #opponent, .blackback {
+#hero,
+#opponent,
+.blackback {
     background-color: black;
 }
