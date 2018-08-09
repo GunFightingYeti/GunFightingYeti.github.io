@@ -6,6 +6,7 @@ var luke = {
     power: 6,
     image: "assets/images/luke.png"
 }
+
 $("lattack").text(luke.attack);
 
 var obiwan = {
