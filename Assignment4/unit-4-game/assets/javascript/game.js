@@ -57,8 +57,7 @@ $(document).ready(function () {
         $("#win").hide();
         $(".song").stop();
     }
-
-    //Run game start program
+    //Run gamestart program
     gamestart()
 
     //New game - Close
@@ -113,7 +112,7 @@ $(document).ready(function () {
 
     //New Game
     //Restart
-    $("#newgame").click(function () {
+    $(".newgame").click(function () {
         gamestart();
 
     });

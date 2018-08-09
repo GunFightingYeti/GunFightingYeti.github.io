@@ -1,11 +1,9 @@
 /* Changes to whole page */
-
 body {
     background-image: url(../images/stars.png);
 }
 
 /* Link options */
-
 a,
 a:link,
 a:visited,
@@ -16,7 +14,6 @@ a:active {
 }
 
 /* Choose - Landing page */
-
 .jumbo {
     background-color: black;
     height: 250px;
@@ -34,7 +31,6 @@ a:active {
 }
 
 /* Hide all pages */
-
 #lightside,
 #lightsideOpp,
 #darkside,
@@ -45,7 +41,6 @@ a:active {
 }
 
 /*Fight page*/
-
 .noback {
     background-color: rgba(255, 255, 255, 0);
 }
