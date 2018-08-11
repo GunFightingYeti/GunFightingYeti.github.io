@@ -104,19 +104,34 @@ $(document).ready(function () {
     // Light side choice
     // Hero = Obiwan
     $(".heroben").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(obiwan.attack, obiwan.health, obiwan.power, obiwan.name);
+        $(".heroname").text(obiwan.name);
+        $(".heroattack").text(obiwan.attack);
+        $(".herohealth").text(obiwan.health);
+        $(".heroimage").attr("src", obiwan.image);
+        //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
     });
     // Hero = Luke
     $(".heroluke").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(luke.attack, luke.health, luke.power, luke.name);
+        $(".heroname").text(luke.name);
+        $(".heroattack").text(luke.attack);
+        $(".herohealth").text(luke.health);
+        $(".heroimage").attr("src", luke.image);
+        //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
     });
     // Hero = Yoda
     $(".heroyoda").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(yoda.attack, yoda.health, yoda.power, yoda.name);
+        $(".heroname").text(yoda.name);
+        $(".heroattack").text(yoda.attack);
+        $(".herohealth").text(yoda.health);
+        $(".heroimage").attr("src", yoda.image);
+        //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
     });
@@ -124,19 +139,34 @@ $(document).ready(function () {
     // Dark side choice
     // Hero = Vader
     $(".herovader").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(vader.attack, vader.health, vader.power, vader.name);
+        $(".heroname").text(vader.name);
+        $(".heroattack").text(vader.attack);
+        $(".herohealth").text(vader.health);
+        $(".heroimage").attr("src", vader.image);
+        //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
     });
     // Hero = Maul
     $(".heromaul").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(maul.attack, maul.health, maul.power, maul.name);
+        $(".heroname").text(maul.name);
+        $(".heroattack").text(maul.attack);
+        $(".herohealth").text(maul.health);
+        $(".heroimage").attr("src", maul.image);
+        //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
     });
     // Hero = Sidious
     $(".herosidious").click(function () {
-        $(this).appendTo("#hero");
+        herostats.push(sidious.attack, sidious.health, sidious.power, sidious.name);
+        $(".heroname").text(sidious.name);
+        $(".heroattack").text(sidious.attack);
+        $(".herohealth").text(sidious.health);
+        $(".heroimage").attr("src", sidious.image);
+        //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
     });
@@ -147,19 +177,34 @@ $(document).ready(function () {
     //Light side opponent
     //Opponent = Obiwan
     $(".oppben").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(obiwan.attack, obiwan.health, obiwan.name);
+        $(".oppname").text(obiwan.name);
+        $(".oppattack").text(obiwan.attack);
+        $(".opphealth").text(obiwan.health);
+        $(".oppimage").attr("src", obiwan.image);
+        //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Luke
     $(".oppluke").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(luke.attack, luke.health, luke.name);
+        $(".oppname").text(luke.name);
+        $(".oppattack").text(luke.attack);
+        $(".opphealth").text(luke.health);
+        $(".oppimage").attr("src", luke.image);
+        //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Yoda
     $(".oppyoda").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(yoda.attack, yoda.health, yoda.name);
+        $(".oppname").text(yoda.name);
+        $(".oppattack").text(yoda.attack);
+        $(".opphealth").text(yoda.health);
+        $(".oppimage").attr("src", yoda.image);
+        //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
@@ -167,53 +212,98 @@ $(document).ready(function () {
     //Dark side opponent
     //Opponent = Vader
     $(".oppvader").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(vader.attack, vader.health, vader.name);
+        $(".oppname").text(vader.name);
+        $(".oppattack").text(vader.attack);
+        $(".opphealth").text(vader.health);
+        $(".oppimage").attr("src", vader.image);
+        //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Maul
     $(".oppmaul").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(maul.attack, maul.health, maul.name);
+        $(".oppname").text(maul.name);
+        $(".oppattack").text(maul.attack);
+        $(".opphealth").text(maul.health);
+        $(".oppimage").attr("src", maul.image);
+        //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Sidious
     $(".oppsidious").click(function () {
-        $(this).appendTo("#opponent");
+        oppstats.push(sidious.attack, sidious.health, sidious.name);
+        $(".oppname").text(sidious.name);
+        $(".oppattack").text(sidious.attack);
+        $(".opphealth").text(sidious.health);
+        $(".oppimage").attr("src", sidious.image);
+        //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     });
     //Opponent to fight - Close
 
+    //Battle variables
+    var herostats = []; //Attack = 0 | Health = 1 | Power = 2 | Name = 3
+    var oppstats = []; //Attack = 0 | Health = 1 | Name = 2
 
     //Fight Button
-    var battle =
-        $(".fight").click(function () {
-            $("#info").append(battle)
-        });
+    $(".fight").click(function () {
 
-    // If dead then you lose, else you are alive and then yay! 
-    if (hero.health <= 0) {
-        //Fight to lose
-        //New Opponent
-        $(".newOpp").click(function () {
-            $("#fight").hide();
-            $("#lose").show();
-        });
-    } else {
+        //Change opponent's health
+        oppstats[1] = oppstats[1] - herostats[0];
+
+        //Change hero's health
+        herostats[1] = herostats[1] - oppstats[0];
+
+        //Update battle cards
+        $(".heroattack").text(herostats[0]);
+        $(".herohealth").text(herostats[1]);
+        $(".opphealth").text(oppstats[1]);
+
+        //Update battle details
+        $("#info").html(herostats[3] + " does " + herostats[0] + " damage." + "\n" + oppstats[2] + " does " + oppstats[0] + " damage back.");
+        console.log("Hero Health :" + herostats[1]);
+        console.log("Opponent Health :" + oppstats[1]);
+        //Update playing card
+
+        //Hero's Power increase
+        herostats[0] = herostats[0] + herostats[2];
+
+        // If you're dead then you lose 
+        // if (herostats[1] <= 0) {
+        //     //Fight to lose
+        //     //New Opponent
+        //     $("#fight").hide();
+        //     $("#lose").show();
+
+        //     //If the opponent is dead then you choose a new opponent
+        // } else if (oppstats[1] <= 0); {
+        //     $("#fight").hide();
+
+        //     // if (herostats[3] = "Luke Skywalker" || "Obiwan Kenobi" || "Yoda") {
+        //     //     $("#darksideopp").show();
+
+        //     // } else(herostats[3] = "Darth Vader" || "Darth Maul" || "Darth Sidious"); {
+        //     //     $("#lightsideopp")
+        //     // }
+        // }
 
         //Fight to win
         //New Opponent
         $(".newOpp").click(function () {
             $("#fight").hide();
             $("#win").show();
+            $(".song").play();
         });
-    }
-
+    });
     //New Game
     //Restart
     $(".newgame").click(function () {
-        gamestart();
+        location.reload();
+        //gamestart();
     });
     //Navigation - Close
 
