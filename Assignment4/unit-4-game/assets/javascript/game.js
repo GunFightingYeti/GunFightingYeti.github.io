@@ -267,6 +267,8 @@ $(document).ready(function () {
     var herostats = []; //Attack = 0 | Health = 1 | Power = 2 | Name = 3
     var oppstats = []; //Attack = 0 | Health = 1 | Name = 2
     var w = 0; //Win counter
+    var audiolose = new Audio("assets/audio/defeat.mp3");
+    var audiowin = new Audio("assets/audio/victory.mp3");
 
     //Fight Button
     $(".fight").click(function () {
@@ -296,7 +298,7 @@ $(document).ready(function () {
             $("#darksideOpp").hide();
             $("#fight").hide();
             $("#lose").show();
-            $("#song").play();
+            audiolose.play();
         }
 
         //If the oppenent is dead then choose another opponent
@@ -313,7 +315,6 @@ $(document).ready(function () {
                 $("#fight").hide();
                 $("#lightsideOpp").show();
             }
-
             
             //Increment wins
             w++;
@@ -322,7 +323,7 @@ $(document).ready(function () {
             if (w == 3) {
                 $("#fight").hide();
                 $("#win").show();
-                $("#song").play();
+                audiowin.play();
             }
         }
 
