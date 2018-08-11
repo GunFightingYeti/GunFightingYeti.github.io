@@ -23,7 +23,7 @@ $(document).ready(function () {
         name: "Luke Skywalker",
         health: 175,
         attack: 20,
-        power: 6,
+        power: 8,
         image: "assets/images/luke.png"
     };
     $(".lattack").text(luke.attack);
@@ -34,7 +34,7 @@ $(document).ready(function () {
         name: "Obiwan Kenobi",
         health: 200,
         attack: 15,
-        power: 7,
+        power: 9,
         image: "assets/images/obiwan.jpg"
     };
     $(".oattack").text(obiwan.attack);
@@ -45,7 +45,7 @@ $(document).ready(function () {
         name: "Yoda",
         health: 150,
         attack: 25,
-        power: 8,
+        power: 10,
         image: "assets/images/yoda.jpg"
     };
     $(".yattack").text(yoda.attack);
@@ -56,7 +56,7 @@ $(document).ready(function () {
         name: "Darth Vader",
         health: 175,
         attack: 20,
-        power: 7,
+        power: 9,
         image: "assets/images/vader.jpg"
     };
     $(".vattack").text(vader.attack);
@@ -67,7 +67,7 @@ $(document).ready(function () {
         name: "Darth Maul",
         health: 200,
         attack: 15,
-        power: 6,
+        power: 8,
         image: "assets/images/maul.png"
     };
     $(".mattack").text(maul.attack);
@@ -78,7 +78,7 @@ $(document).ready(function () {
         name: "Darth Sidious",
         health: 125,
         attack: 25,
-        power: 8,
+        power: 10,
         image: "assets/images/sidious.jpg"
     };
     $(".sattack").text(sidious.attack);
@@ -110,7 +110,7 @@ $(document).ready(function () {
         $(".heroattack").text(obiwan.attack);
         $(".herohealth").text(obiwan.health);
         $(".heroimage").attr("src", obiwan.image);
-        which = 0
+        which = 0;
         //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
@@ -122,7 +122,7 @@ $(document).ready(function () {
         $(".heroattack").text(luke.attack);
         $(".herohealth").text(luke.health);
         $(".heroimage").attr("src", luke.image);
-        which = 0
+        which = 0;
         //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
@@ -134,7 +134,7 @@ $(document).ready(function () {
         $(".heroattack").text(yoda.attack);
         $(".herohealth").text(yoda.health);
         $(".heroimage").attr("src", yoda.image);
-        which = 0
+        which = 0;
         //Change page
         $("#lightside").hide();
         $("#darksideOpp").show();
@@ -148,7 +148,7 @@ $(document).ready(function () {
         $(".heroattack").text(vader.attack);
         $(".herohealth").text(vader.health);
         $(".heroimage").attr("src", vader.image);
-        which = 1
+        which = 1;
         //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
@@ -160,7 +160,7 @@ $(document).ready(function () {
         $(".heroattack").text(maul.attack);
         $(".herohealth").text(maul.health);
         $(".heroimage").attr("src", maul.image);
-        which = 1
+        which = 1;
         //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
@@ -172,7 +172,7 @@ $(document).ready(function () {
         $(".heroattack").text(sidious.attack);
         $(".herohealth").text(sidious.health);
         $(".heroimage").attr("src", sidious.image);
-        which = 1
+        which = 1;
         //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
@@ -183,37 +183,39 @@ $(document).ready(function () {
     //Light side opponent
     //Opponent = Obiwan
     $(".oppben").click(function () {
+        oppstats = [];
         oppstats.push(obiwan.attack, obiwan.health, obiwan.name);
         $(".oppname").text(obiwan.name);
         $(".oppattack").text(obiwan.attack);
         $(".opphealth").text(obiwan.health);
         $(".oppimage").attr("src", obiwan.image);
-        $(".oppben").empty()
-        
+        $(".oppben").empty();
         //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Luke
     $(".oppluke").click(function () {
+        oppstats = [];
         oppstats.push(luke.attack, luke.health, luke.name);
         $(".oppname").text(luke.name);
         $(".oppattack").text(luke.attack);
         $(".opphealth").text(luke.health);
         $(".oppimage").attr("src", luke.image);
-        $(".oppluke").empty()
+        $(".oppluke").empty();
         //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Yoda
     $(".oppyoda").click(function () {
+        oppstats = [];
         oppstats.push(yoda.attack, yoda.health, yoda.name);
         $(".oppname").text(yoda.name);
         $(".oppattack").text(yoda.attack);
         $(".opphealth").text(yoda.health);
         $(".oppimage").attr("src", yoda.image);
-        $(".oppyoda").empty()
+        $(".oppyoda").empty();
         //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
@@ -222,41 +224,44 @@ $(document).ready(function () {
     //Dark side opponent
     //Opponent = Vader
     $(".oppvader").click(function () {
+        oppstats = [];
         oppstats.push(vader.attack, vader.health, vader.name);
         $(".oppname").text(vader.name);
         $(".oppattack").text(vader.attack);
         $(".opphealth").text(vader.health);
         $(".oppimage").attr("src", vader.image);
-        $(".oppvader").empty()
+        $(".oppvader").empty();
         //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Maul
     $(".oppmaul").click(function () {
+        oppstats = [];
         oppstats.push(maul.attack, maul.health, maul.name);
         $(".oppname").text(maul.name);
         $(".oppattack").text(maul.attack);
         $(".opphealth").text(maul.health);
         $(".oppimage").attr("src", maul.image);
-        $(".oppmaul").empty()
+        $(".oppmaul").empty();
         //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     });
     //Opponent = Sidious
     $(".oppsidious").click(function () {
+        oppstats = [];
         oppstats.push(sidious.attack, sidious.health, sidious.name);
         $(".oppname").text(sidious.name);
         $(".oppattack").text(sidious.attack);
         $(".opphealth").text(sidious.health);
         $(".oppimage").attr("src", sidious.image);
-        $(".oppsidious").empty()
+        $(".oppsidious").empty();
         //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
     }); //Opponent to fight - Close
-    
+
 
     //Battle variables
     var herostats = []; //Attack = 0 | Health = 1 | Power = 2 | Name = 3
@@ -290,7 +295,14 @@ $(document).ready(function () {
         }
 
         //If the oppenent is dead then choose another opponent
+        var w = 0
         if (oppstats[1] <= 0) {
+            if (w == 3) {
+                $("#fight").hide();
+                $("#win").show();
+            }
+            w++;
+            console.log(w)
             if (which == 0) {
                 $("#fight").hide();
                 $("#darksideOpp").show();
@@ -307,7 +319,7 @@ $(document).ready(function () {
     $(".newgame").click(function () {
         location.reload();
         //gamestart();
-        
+
     }); //Navigation - Close
-    
+
 }); //On ready - Close
