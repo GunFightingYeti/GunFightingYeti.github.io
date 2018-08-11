@@ -23,7 +23,7 @@ $(document).ready(function () {
         name: "Luke Skywalker",
         health: 175,
         attack: 20,
-        power: 8,
+        power: 12,
         image: "assets/images/luke.png"
     };
     $(".lattack").text(luke.attack);
@@ -34,7 +34,7 @@ $(document).ready(function () {
         name: "Obiwan Kenobi",
         health: 200,
         attack: 15,
-        power: 9,
+        power: 13,
         image: "assets/images/obiwan.jpg"
     };
     $(".oattack").text(obiwan.attack);
@@ -45,7 +45,7 @@ $(document).ready(function () {
         name: "Yoda",
         health: 150,
         attack: 25,
-        power: 10,
+        power: 14,
         image: "assets/images/yoda.jpg"
     };
     $(".yattack").text(yoda.attack);
@@ -56,7 +56,7 @@ $(document).ready(function () {
         name: "Darth Vader",
         health: 175,
         attack: 20,
-        power: 9,
+        power: 15,
         image: "assets/images/vader.jpg"
     };
     $(".vattack").text(vader.attack);
@@ -67,7 +67,7 @@ $(document).ready(function () {
         name: "Darth Maul",
         health: 200,
         attack: 15,
-        power: 8,
+        power: 12,
         image: "assets/images/maul.png"
     };
     $(".mattack").text(maul.attack);
@@ -78,7 +78,7 @@ $(document).ready(function () {
         name: "Darth Sidious",
         health: 125,
         attack: 25,
-        power: 10,
+        power: 14,
         image: "assets/images/sidious.jpg"
     };
     $(".sattack").text(sidious.attack);
@@ -266,6 +266,7 @@ $(document).ready(function () {
     //Battle variables
     var herostats = []; //Attack = 0 | Health = 1 | Power = 2 | Name = 3
     var oppstats = []; //Attack = 0 | Health = 1 | Name = 2
+    var w = 0; //Win counter
 
     //Fight Button
     $(".fight").click(function () {
@@ -288,27 +289,40 @@ $(document).ready(function () {
         //Hero's Power increase
         herostats[0] = herostats[0] + herostats[2];
 
+
         // If you're dead then you lose 
         if (herostats[1] <= 0) {
+            $("#lightsideOpp").hide();
+            $("#darksideOpp").hide();
             $("#fight").hide();
             $("#lose").show();
+            $("#song").play();
         }
 
         //If the oppenent is dead then choose another opponent
-        var w = 0
+        //If opponent health is 0
         if (oppstats[1] <= 0) {
-            if (w == 3) {
-                $("#fight").hide();
-                $("#win").show();
-            }
-            w++;
-            console.log(w)
+
+
+            //If hero is lightside show darkside opponents
             if (which == 0) {
                 $("#fight").hide();
                 $("#darksideOpp").show();
+                //If hero is darkside show lightside opponents
             } else {
                 $("#fight").hide();
                 $("#lightsideOpp").show();
+            }
+
+            
+            //Increment wins
+            w++;
+
+            //If wins = 3 then you win
+            if (w == 3) {
+                $("#fight").hide();
+                $("#win").show();
+                $("#song").play();
             }
         }
 
