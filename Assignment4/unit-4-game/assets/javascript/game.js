@@ -300,6 +300,15 @@ $(document).ready(function () {
             $("#lose").show();
             audiolose.play();
         }
+        
+        // If you tie then you win 
+        if (herostats[1] <= 0 && oppstats[1] <= 0) {
+            $("#lightsideOpp").hide();
+            $("#darksideOpp").hide();
+            $("#fight").hide();
+            $("#lose").show();
+            audiolose.play();
+        }
 
         //If the oppenent is dead then choose another opponent
         //If opponent health is 0
@@ -315,13 +324,15 @@ $(document).ready(function () {
                 $("#fight").hide();
                 $("#lightsideOpp").show();
             }
-            
+
             //Increment wins
             w++;
 
             //If wins = 3 then you win
             if (w == 3) {
                 $("#fight").hide();
+                $("#darksideOpp").hide();
+                $("#lightsideOpp").hide();
                 $("#win").show();
                 audiowin.play();
             }
