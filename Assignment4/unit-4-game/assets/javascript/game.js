@@ -17,7 +17,6 @@ $(document).ready(function () {
     gamestart()
     //New game - Close
 
-
     //Character objects - Start
     //Luke
     var luke = {
@@ -85,6 +84,7 @@ $(document).ready(function () {
     $(".sattack").text(sidious.attack);
     $(".shealth").text(sidious.health);
     //Character objects - Close
+
 
     //Navigation - Open
     //Choose to Hero
@@ -176,8 +176,7 @@ $(document).ready(function () {
         //Change page
         $("#darkside").hide();
         $("#lightsideOpp").show();
-    });
-    // Hero to Opponent - Close
+    }); // Hero to Opponent - Close
 
 
     //Opponent to fight - Open
@@ -190,6 +189,7 @@ $(document).ready(function () {
         $(".opphealth").text(obiwan.health);
         $(".oppimage").attr("src", obiwan.image);
         $(".oppben").empty()
+        
         //Change page
         $("#lightsideOpp").hide();
         $("#fight").show();
@@ -255,8 +255,8 @@ $(document).ready(function () {
         //Change page
         $("#darksideOpp").hide();
         $("#fight").show();
-    });
-    //Opponent to fight - Close
+    }); //Opponent to fight - Close
+    
 
     //Battle variables
     var herostats = []; //Attack = 0 | Health = 1 | Power = 2 | Name = 3
@@ -300,29 +300,14 @@ $(document).ready(function () {
             }
         }
 
-        //Fight button - Close
-    });
-
-    $(".newopp").click(function () {
-        var t = 0;
-        t++;
-        console.log(t);
-
-        if (t == 2); {
-            $("#fight").hide();
-            $("#win").show();
-        };
-    });
+    }); //Fight button - Close
 
     //New Game
     //Restart
     $(".newgame").click(function () {
         location.reload();
         //gamestart();
-
-
-        //Navigation - Close
-    });
-
-    //On ready - Close
-});
+        
+    }); //Navigation - Close
+    
+}); //On ready - Close
