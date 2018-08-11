@@ -293,20 +293,11 @@ $(document).ready(function () {
 
 
         // If you're dead then you lose 
-        if (herostats[1] <= 0) {
-            $("#lightsideOpp").hide();
-            $("#darksideOpp").hide();
-            $("#fight").hide();
-            $("#lose").show();
-            audiolose.play();
-        }
-        
-        // If you tie then you win 
         if (herostats[1] <= 0 && oppstats[1] <= 0) {
             $("#lightsideOpp").hide();
             $("#darksideOpp").hide();
             $("#fight").hide();
-            $("#lose").show();
+            $("#win").show();
             audiolose.play();
         }
 
