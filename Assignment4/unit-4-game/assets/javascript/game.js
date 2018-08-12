@@ -21,10 +21,11 @@ $(document).ready(function () {
     //Luke
     var luke = {
         name: "Luke Skywalker",
-        health: 175,
+        health: 170,
         attack: 20,
         power: 12,
-        image: "assets/images/luke.png"
+        image: "assets/images/luke.png",
+        T_16: "Dead womp rats"
     };
     $(".lattack").text(luke.attack);
     $(".lhealth").text(luke.health);
@@ -32,7 +33,7 @@ $(document).ready(function () {
     //Obiwan
     var obiwan = {
         name: "Obiwan Kenobi",
-        health: 200,
+        health: 195,
         attack: 15,
         power: 12,
         image: "assets/images/obiwan.jpg"
@@ -76,7 +77,7 @@ $(document).ready(function () {
     //Darth Sidious
     var sidious = {
         name: "Darth Sidious",
-        health: 125,
+        health: 155,
         attack: 25,
         power: 14,
         image: "assets/images/sidious.jpg"
@@ -291,16 +292,6 @@ $(document).ready(function () {
         //Hero's Power increase
         herostats[0] = herostats[0] + herostats[2];
 
-
-        // If you're dead then you lose 
-        if (herostats[1] <= 0 && oppstats[1] <= 0) {
-            $("#lightsideOpp").hide();
-            $("#darksideOpp").hide();
-            $("#fight").hide();
-            $("#win").show();
-            audiolose.play();
-        }
-
         //If the oppenent is dead then choose another opponent
         //If opponent health is 0
         if (oppstats[1] <= 0) {
@@ -325,6 +316,22 @@ $(document).ready(function () {
                 $("#darksideOpp").hide();
                 $("#lightsideOpp").hide();
                 $("#win").show();
+                audiowin.play();
+            }
+
+
+            // If you're dead then you lose 
+            if (herostats[1] <= 0) {
+                $("#lose").show();
+                $("#lightsideOpp").hide();
+                $("#darksideOpp").hide();
+                $("#fight").hide();
+                audiolose.play();
+            } else if (herostats[1] <= 0 && oppstats[1] <= 0) {
+                $("#win").show();
+                $("#lightsideOpp").hide();
+                $("#darksideOpp").hide();
+                $("#fight").hide();
                 audiowin.play();
             }
         }
