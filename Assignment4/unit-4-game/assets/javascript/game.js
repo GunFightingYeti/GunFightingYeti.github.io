@@ -34,7 +34,7 @@ $(document).ready(function () {
         name: "Obiwan Kenobi",
         health: 200,
         attack: 15,
-        power: 13,
+        power: 12,
         image: "assets/images/obiwan.jpg"
     };
     $(".oattack").text(obiwan.attack);
@@ -45,7 +45,7 @@ $(document).ready(function () {
         name: "Yoda",
         health: 150,
         attack: 25,
-        power: 14,
+        power: 13,
         image: "assets/images/yoda.jpg"
     };
     $(".yattack").text(yoda.attack);
@@ -56,7 +56,7 @@ $(document).ready(function () {
         name: "Darth Vader",
         health: 175,
         attack: 20,
-        power: 15,
+        power: 14,
         image: "assets/images/vader.jpg"
     };
     $(".vattack").text(vader.attack);
@@ -67,7 +67,7 @@ $(document).ready(function () {
         name: "Darth Maul",
         health: 200,
         attack: 15,
-        power: 12,
+        power: 11,
         image: "assets/images/maul.png"
     };
     $(".mattack").text(maul.attack);
