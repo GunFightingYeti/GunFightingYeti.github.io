@@ -1,9 +1,14 @@
 
+body {
+    min-width: 400px;
+}
+
 .chamberimage {
     background-image: url("../images/TestChamber.jpg");
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
 h1 {
@@ -31,16 +36,23 @@ hr {
 
 .triviaheader {
     font-size: 3rem;
-    text-shadow: 1px 1px black;
+    color: #444444;
+    text-shadow: 1px 2px black;
 }
 
-.trivia {
+.triviabox {
     background-color: #b6b6b68a;
+    min-height: 400px;
+}
+
+.timer {
+    background-color: #fd6600;
 }
 
 .question {
     font-size: 3rem;
-    text-shadow: 1px 1px black;
+    color: #444444;
+    text-shadow: 1px 2px black;
 }
 .answers {
     text-align: justify;
