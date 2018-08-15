@@ -43,6 +43,7 @@ hr {
 .triviabox {
     background-color: #b6b6b68a;
     min-height: 400px;
+    border-radius: 5px;
 }
 
 .timer {
