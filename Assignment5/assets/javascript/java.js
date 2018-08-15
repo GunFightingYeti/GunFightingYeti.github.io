@@ -55,7 +55,7 @@ var timer = {
 
     start: function () {
         if (!timerRunning) {
-            intervalId = setInterval(timer.count, 100);
+            intervalId = setInterval(timer.count, 10000);
             timerRunning = true;
         }
     },
@@ -101,10 +101,6 @@ function fill(x) {
     $(".a4").text(x.answer4);
 };
 
-// function correct() {
-//     //correct answer holding area
-// }
-
 //On ready
 $(document).ready(function () {
 
@@ -114,30 +110,30 @@ $(document).ready(function () {
     $(".noanswer").hide();
 
 
-    //Game start or restart
+    //Game start on click
     $(".start").click(function () {
         $(".start").hide();
         $(".game").show();
         $(".timer").text("00:30")
-         fill(q1);
+        fill(q1);
         timer.start();
     });
 
+    //Restart after time out on click
     $(".restart").click(function () {
         $(".start").hide();
+        $(".noanswer").hide();
         $(".game").show();
         $(".timer").text("00:30")
-         fill(q1);
+        fill(q1);
         timer.start();
     });
 
-    // $(".button").click(function () {
-    //     if ($("") == ) {
-    //     //Check if answer is correct
-    //     };
-    //     });
+    //Check if answer is correct on click
+    $(".button").click(function () {
+        if (text == correct) {
 
-
-    // fill(q2);
+        };
+    });
 
 });
