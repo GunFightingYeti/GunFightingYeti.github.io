@@ -51,11 +51,11 @@ var intervalId;
 var timerRunning = false;
 var timer = {
 
-    time: 5,
+    time: 30,
 
     start: function () {
         if (!timerRunning) {
-            intervalId = setInterval(timer.count, 1000);
+            intervalId = setInterval(timer.count, 100);
             timerRunning = true;
         }
     },
@@ -70,8 +70,9 @@ var timer = {
         $(".timer").text(converted);
         if (timer.time < 1) {
             timer.stop();
+            timer.time = 30;
             $(".game").hide();
-            $(".wronganswer").show();
+            $(".noanswer").show();
         }
     },
 
@@ -110,7 +111,7 @@ $(document).ready(function () {
     //Show landing page
     $(".game").hide();
     $(".rightanswer").hide();
-    $(".wronganswer").hide();
+    $(".noanswer").hide();
 
 
     //Game start or restart
