@@ -138,23 +138,22 @@ $(document).ready(function () {
         timer.start();
     });
 
+    var n = 0;
+
     function checkanswer(a) {
         timer.stop();
-        var n = 0;
         if ($(a).text() == trivia[n].correct) {
             $(".game").hide();
             $(".timer").hide();
             $(".rightanswer").show();
-            n++
+            n++;
             fill(trivia[n]);
-            console.log("Current question: " + trivia[n]);
-            console.log("Current answer: " + trivia[n].correct);
         } else {
             $(".game").hide();
             $(".timer").hide();
             $(".wronganswer").show();
         };
-    }
+    };
 
     //Answer options
     $(".button1").click(function () {
