@@ -102,13 +102,19 @@ function fill(x) {
     $(".a4").text(x.answer4);
 };
 
-//Show landing page
-function restart() {
-    $(".start").show();
+function hideall() {
+    $(".start").hide();
     $(".game").hide();
     $(".rightanswer").hide();
     $(".wronganswer").hide();
     $(".noanswer").hide();
+    $(".win").hide();
+}
+
+//Show landing page
+function restart() {
+    hideall();
+    $(".start").show();
     $(".timer").text("00:30");
 };
 
@@ -119,7 +125,7 @@ $(document).ready(function () {
 
     //Game start on click
     $(".start").click(function () {
-        $(".start").hide();
+        hideall();
         $(".game").show();
         $(".timer").text("00:30");
         fill(q1);
@@ -128,10 +134,7 @@ $(document).ready(function () {
 
     //Restart after time out
     $(".restart").click(function () {
-        $(".start").hide();
-        $(".noanswer").hide();
-        $(".wronganswer").hide();
-        $(".rightanswer").hide();
+        hideall();
         $(".game").show();
         $(".timer").show();
         $(".timer").text("00:30");
@@ -147,7 +150,13 @@ $(document).ready(function () {
             $(".timer").hide();
             $(".rightanswer").show();
             n++;
+            if (n > 4) {
+                hideall();
+                $(".win").show();
+                $(".retake").show();
+            } else {
             fill(trivia[n]);
+            }
         } else {
             $(".game").hide();
             $(".timer").hide();
@@ -170,14 +179,17 @@ $(document).ready(function () {
     });
 
     $(".next").click(function () {
-        $(".start").hide();
-        $(".noanswer").hide();
-        $(".wronganswer").hide();
-        $(".rightanswer").hide();
+        hideall();
         $(".game").show();
         $(".timer").show();
         $(".timer").text("00:30");
         timer.start();
+    });
+
+    $(".retake").click(function () {
+        hideall();
+        $(".start").show();
+        n = 0;
     });
 
 });
