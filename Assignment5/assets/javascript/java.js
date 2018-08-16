@@ -46,12 +46,12 @@ var q5 = {
 
 var trivia = [q1, q2, q3, q4, q5];
 
-//30 second timer - open
+//25 second timer - open
 var intervalId;
 var timerRunning = false;
 var timer = {
 
-    time: 30,
+    time: 25,
 
     start: function () {
         if (!timerRunning) {
@@ -62,7 +62,7 @@ var timer = {
     stop: function () {
         clearInterval(intervalId);
         timerRunning = false;
-        timer.time = 30;
+        timer.time = 25;
     },
 
     count: function () {
@@ -71,7 +71,7 @@ var timer = {
         $(".timer").text(converted);
         if (timer.time < 1) {
             timer.stop();
-            timer.time = 30;
+            timer.time = 25;
             $(".game").hide();
             $(".noanswer").show();
         }
@@ -91,7 +91,7 @@ var timer = {
         return minutes + ":" + seconds;
     }
 };
-//30 second timer - close
+//25 second timer - close
 
 //Fill in the info for the question and answers
 function fill(x) {
