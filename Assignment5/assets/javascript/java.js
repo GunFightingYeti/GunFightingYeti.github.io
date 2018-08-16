@@ -155,7 +155,7 @@ $(document).ready(function () {
                 $(".win").show();
                 $(".retake").show();
             } else {
-            fill(trivia[n]);
+                fill(trivia[n]);
             }
         } else {
             $(".game").hide();

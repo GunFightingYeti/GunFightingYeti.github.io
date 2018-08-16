@@ -1,4 +1,3 @@
-
 body {
     min-width: 400px;
 }
@@ -31,7 +30,9 @@ h1 {
 }
 
 hr {
-   background-color: #fd6600; height: 1px; border: 0;
+    background-color: #fd6600;
+    height: 1px;
+    border: 0;
 }
 
 .triviaheader {
@@ -55,6 +56,7 @@ hr {
     color: #444444;
     text-shadow: 1px 2px black;
 }
+
 .answers {
     text-align: justify;
 }
@@ -63,15 +65,22 @@ hr {
     margin-bottom: 20px;
 }
 
-.button1, .button2, .button3, .button4 {
+.button1,
+.button2,
+.button3,
+.button4 {
     width: 50px;
     height: 50px;
-    margin: 5px;
+    margin-left: 20px;
     background-image: url("../images/button.png");
     background-size: contain;
     background-color: transparent;
     cursor: url("../images/tinycube.png") 15 15, pointer;
     border: none;
+}
+
+.button4 {
+    margin-bottom: 20px;
 }
 
 h3 {
