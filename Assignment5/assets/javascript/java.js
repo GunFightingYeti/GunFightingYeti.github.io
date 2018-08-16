@@ -9,39 +9,39 @@ var q1 = {
 };
 
 var q2 = {
-    question: "What food item was used to keep you motivated that may or may not be a lie?",
-    answer1: "The goose",
-    answer2: "The cheese",
-    answer3: "The pickle",
+    question: "What is hidden in the basement of this facility?",
+    answer1: "The Holy Hand Grenade",
+    answer2: "The one ring",
+    answer3: "The goblet of fire",
     answer4: "The cake",
     correct: "The cake"
 };
 
 var q3 = {
-    question: "What is the name of the artificial intelligence that is breifly housed in a potato?",
-    answer1: "Phillis",
-    answer2: "ArGon",
-    answer3: "GLaDOS",
-    answer4: "Atlas",
-    correct: "GLaDOS"
-};
-
-var q4 = {
     question: "The gun you were testing used which two colors to differenciate between portals?",
     answer1: "Orange & Blue",
-    answer2: "Purple & Orange",
-    answer3: "Blue & Yellow",
+    answer2: "Red & Blue",
+    answer3: "Black & Yellow",
     answer4: "Green & Red",
     correct: "Orange & Blue"
 };
 
+var q4 = {
+    question: "What is the name of the artificial intelligence that is breifly housed in a potato?",
+    answer1: "Hal 9000",
+    answer2: "Sonny",
+    answer3: "GLaDOS",
+    answer4: "WOPR",
+    correct: "GLaDOS"
+};
+
 var q5 = {
-    question: "",
-    answer1: "",
-    answer2: "",
-    answer3: "",
-    answer4: "",
-    correct: ""
+    question: "Who are Atlas and Peabody?",
+    answer1: "A drunk pirate and a blacksmith",
+    answer2: "Two mice trying to take over the world",
+    answer3: "Robot 'friends' trying to live",
+    answer4: "A very smart dog and a boy",
+    correct: "Robot 'friends' trying to live"
 };
 
 var trivia = [q1, q2, q3, q4, q5];
@@ -55,13 +55,14 @@ var timer = {
 
     start: function () {
         if (!timerRunning) {
-            intervalId = setInterval(timer.count, 10000);
+            intervalId = setInterval(timer.count, 1000);
             timerRunning = true;
         }
     },
     stop: function () {
         clearInterval(intervalId);
         timerRunning = false;
+        timer.time = 30;
     },
 
     count: function () {
@@ -101,39 +102,83 @@ function fill(x) {
     $(".a4").text(x.answer4);
 };
 
+//Show landing page
+function restart() {
+    $(".start").show();
+    $(".game").hide();
+    $(".rightanswer").hide();
+    $(".wronganswer").hide();
+    $(".noanswer").hide();
+    $(".timer").text("00:30");
+};
+
 //On ready
 $(document).ready(function () {
 
-    //Show landing page
-    $(".game").hide();
-    $(".rightanswer").hide();
-    $(".noanswer").hide();
-
+    restart();
 
     //Game start on click
     $(".start").click(function () {
         $(".start").hide();
         $(".game").show();
-        $(".timer").text("00:30")
+        $(".timer").text("00:30");
         fill(q1);
         timer.start();
     });
 
-    //Restart after time out on click
+    //Restart after time out
     $(".restart").click(function () {
         $(".start").hide();
         $(".noanswer").hide();
+        $(".wronganswer").hide();
+        $(".rightanswer").hide();
         $(".game").show();
-        $(".timer").text("00:30")
-        fill(q1);
+        $(".timer").show();
+        $(".timer").text("00:30");
         timer.start();
     });
 
-    //Check if answer is correct on click
-    $(".button").click(function () {
-        if (text == correct) {
-
+    function checkanswer(a) {
+        timer.stop();
+        var n = 0;
+        if ($(a).text() == trivia[n].correct) {
+            $(".game").hide();
+            $(".timer").hide();
+            $(".rightanswer").show();
+            n++
+            fill(trivia[n]);
+            console.log("Current question: " + trivia[n]);
+            console.log("Current answer: " + trivia[n].correct);
+        } else {
+            $(".game").hide();
+            $(".timer").hide();
+            $(".wronganswer").show();
         };
+    }
+
+    //Answer options
+    $(".button1").click(function () {
+        checkanswer(".a1");
+    });
+    $(".button2").click(function () {
+        checkanswer(".a2");
+    });
+    $(".button3").click(function () {
+        checkanswer(".a3");
+    });
+    $(".button4").click(function () {
+        checkanswer(".a4");
+    });
+
+    $(".next").click(function () {
+        $(".start").hide();
+        $(".noanswer").hide();
+        $(".wronganswer").hide();
+        $(".rightanswer").hide();
+        $(".game").show();
+        $(".timer").show();
+        $(".timer").text("00:30");
+        timer.start();
     });
 
 });
