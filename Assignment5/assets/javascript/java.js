@@ -115,7 +115,7 @@ function hideall() {
 function restart() {
     hideall();
     $(".start").show();
-    $(".timer").text("00:30");
+    $(".timer").text("00:25");
 };
 
 //On ready
@@ -127,7 +127,7 @@ $(document).ready(function () {
     $(".start").click(function () {
         hideall();
         $(".game").show();
-        $(".timer").text("00:30");
+        $(".timer").text("00:25");
         fill(q1);
         timer.start();
     });
@@ -137,7 +137,7 @@ $(document).ready(function () {
         hideall();
         $(".game").show();
         $(".timer").show();
-        $(".timer").text("00:30");
+        $(".timer").text("00:25");
         timer.start();
     });
 
@@ -182,7 +182,7 @@ $(document).ready(function () {
         hideall();
         $(".game").show();
         $(".timer").show();
-        $(".timer").text("00:30");
+        $(".timer").text("00:25");
         timer.start();
     });
 
