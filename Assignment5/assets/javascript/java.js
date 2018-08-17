@@ -74,6 +74,7 @@ var timer = {
             timer.time = 25;
             $(".game").hide();
             $(".noanswer").show();
+            minitimer.start();
         }
     },
 
@@ -139,6 +140,7 @@ var minitimer = {
         return minutes + ":" + seconds;
     }
 };
+//10 second timer - close
 
 //Fill in the info for the question and answers
 function fill(x) {
