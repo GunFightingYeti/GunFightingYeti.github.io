@@ -95,6 +95,11 @@ img {
 
 .stats {
     margin-top: 0px;
+    border-style: double;
+    border-width: 2px;
+    border-color: #444444;
+    border-radius: 2px;
+    height: 250px;
 }
 
 p {

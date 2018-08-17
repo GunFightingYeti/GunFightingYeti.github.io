@@ -133,7 +133,7 @@ $(document).ready(function () {
         timer.start();
     });
 
-    //Restart after time out
+    //Retry after time out
     $(".restart").click(function () {
         hideall();
         $(".game").show();
@@ -144,7 +144,6 @@ $(document).ready(function () {
 
     var n = 0;
     var v = 0;
-    var volts = [];
 
     // Check answer and log incorrect
     function checkanswer(a) {
@@ -155,9 +154,11 @@ $(document).ready(function () {
             $(".rightanswer").show();
             n++;
             if (n > 4) {
+                var volts = v * 15;
                 hideall();
                 $(".win").show();
-                $(".volts").text(v);
+                $(".incorrect").text(v);
+                $(".volts").text(volts);
                 $(".retake").show();
             } else {
                 fill(trivia[n]);
