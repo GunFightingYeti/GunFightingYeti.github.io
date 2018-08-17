@@ -127,6 +127,7 @@ $(document).ready(function () {
     $(".start").click(function () {
         hideall();
         $(".game").show();
+        $(".timer").show();
         $(".timer").text("00:25");
         fill(q1);
         timer.start();
@@ -142,7 +143,10 @@ $(document).ready(function () {
     });
 
     var n = 0;
+    var v = 0;
+    var volts = [];
 
+    // Check answer and log incorrect
     function checkanswer(a) {
         timer.stop();
         if ($(a).text() == trivia[n].correct) {
@@ -153,6 +157,7 @@ $(document).ready(function () {
             if (n > 4) {
                 hideall();
                 $(".win").show();
+                $(".volts").text(v);
                 $(".retake").show();
             } else {
                 fill(trivia[n]);
@@ -161,7 +166,9 @@ $(document).ready(function () {
             $(".game").hide();
             $(".timer").hide();
             $(".wronganswer").show();
+            v++;
         };
+
     };
 
     //Answer options
