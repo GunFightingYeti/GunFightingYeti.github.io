@@ -114,6 +114,8 @@ function hideall() {
 //Show landing page
 function restart() {
     hideall();
+    $(".incorrect").text("0");
+    $(".volts").text("0");
     $(".start").show();
     $(".timer").text("00:25");
 };
@@ -150,22 +152,23 @@ $(document).ready(function () {
         timer.stop();
         if ($(a).text() == trivia[n].correct) {
             $(".game").hide();
-            $(".timer").hide();
+            $(".timer").show();
             $(".rightanswer").show();
             n++;
             if (n > 4) {
                 var volts = v * 15;
                 hideall();
                 $(".win").show();
+                $(".timer").show();
                 $(".incorrect").text(v);
-                $(".volts").text(volts);
+                $(".volts").text(volts + ",000");
                 $(".retake").show();
             } else {
                 fill(trivia[n]);
             }
         } else {
             $(".game").hide();
-            $(".timer").hide();
+            $(".timer").show();
             $(".wronganswer").show();
             v++;
         };
