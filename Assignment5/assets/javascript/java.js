@@ -93,6 +93,53 @@ var timer = {
 };
 //25 second timer - close
 
+//10second timer
+var minitimer = {
+
+    time: 10,
+
+    start: function () {
+        if (!timerRunning) {
+            intervalId = setInterval(minitimer.count, 1000);
+            timerRunning = true;
+        }
+    },
+    stop: function () {
+        clearInterval(intervalId);
+        timerRunning = false;
+        minitimer.time = 10;
+    },
+
+    count: function () {
+        minitimer.time--;
+        var converted = minitimer.timeConverter(minitimer.time);
+        $(".timer").text(converted);
+        if (minitimer.time < 1) {
+            minitimer.stop();
+            minitimer.time = 10;
+            hideall();
+            $(".game").show();
+            $(".timer").show();
+            $(".timer").text("00:25");
+            timer.start();
+        }
+    },
+
+    timeConverter: function (t) {
+        var minutes = Math.floor(t / 60);
+        var seconds = t - (minutes * 60);
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        if (minutes === 0) {
+            minutes = "00";
+        } else if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+        return minutes + ":" + seconds;
+    }
+};
+
 //Fill in the info for the question and answers
 function fill(x) {
     $(".question").text(x.question);
@@ -136,7 +183,7 @@ $(document).ready(function () {
     });
 
     //Retry after time out
-    $(".restart").click(function () {
+    $(".retry").click(function () {
         hideall();
         $(".game").show();
         $(".timer").show();
@@ -154,6 +201,8 @@ $(document).ready(function () {
             $(".game").hide();
             $(".timer").show();
             $(".rightanswer").show();
+            $(".timer").text("00:10");
+            minitimer.start();
             n++;
             if (n > 4) {
                 var volts = v * 15;
@@ -168,7 +217,9 @@ $(document).ready(function () {
             }
         } else {
             $(".game").hide();
+            minitimer.start();
             $(".timer").show();
+            $(".timer").text("00:10");
             $(".wronganswer").show();
             v++;
         };
