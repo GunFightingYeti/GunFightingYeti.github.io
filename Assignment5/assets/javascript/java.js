@@ -92,12 +92,12 @@ var q10 = {
 var trivia = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 var t = 0;
 
-//25 second timer - open
+//20 second timer - open
 var intervalId;
 var timerRunning = false;
 var timer = {
 
-    time: 25,
+    time: 20,
 
     start: function () {
         if (!timerRunning) {
@@ -108,7 +108,7 @@ var timer = {
     stop: function () {
         clearInterval(intervalId);
         timerRunning = false;
-        timer.time = 25;
+        timer.time = 20;
     },
 
     count: function () {
@@ -117,7 +117,7 @@ var timer = {
         $(".timer").text(converted);
         if (timer.time < 1) {
             timer.stop();
-            timer.time = 25;
+            timer.time = 20;
             $(".game").hide();
             $(".noanswer").show();
             $(".timer").text("00:10");
@@ -140,7 +140,7 @@ var timer = {
         return minutes + ":" + seconds;
     }
 };
-//25 second timer - close
+//20 second timer - close
 
 //10second timer
 var minitimer = {
@@ -169,7 +169,7 @@ var minitimer = {
             hideall();
             $(".game").show();
             $(".timer").show();
-            $(".timer").text("00:25");
+            $(".timer").text("00:20");
             timer.start();
         }
     },
@@ -214,7 +214,7 @@ function restart() {
     $(".incorrect").text("0");
     $(".volts").text("0");
     $(".start").show();
-    $(".timer").text("00:25");
+    $(".timer").text("00:20");
 };
 
 //On ready
@@ -227,7 +227,7 @@ $(document).ready(function () {
         hideall();
         $(".game").show();
         $(".timer").show();
-        $(".timer").text("00:25");
+        $(".timer").text("00:20");
         fill(q1);
         timer.start();
     });
@@ -238,7 +238,7 @@ $(document).ready(function () {
         $(".game").show();
         $(".timer").show();
         minitimer.stop();
-        $(".timer").text("00:25");
+        $(".timer").text("00:20");
         timer.start();
     });
 
@@ -303,7 +303,7 @@ $(document).ready(function () {
         minitimer.stop();
         $(".game").show();
         $(".timer").show();
-        $(".timer").text("00:25");
+        $(".timer").text("00:20");
         timer.start();
     });
 
