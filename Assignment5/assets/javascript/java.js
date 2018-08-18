@@ -251,6 +251,7 @@ $(document).ready(function () {
 
     $(".next").click(function () {
         hideall();
+        minitimer.stop();
         $(".game").show();
         $(".timer").show();
         $(".timer").text("00:25");
@@ -261,6 +262,8 @@ $(document).ready(function () {
         hideall();
         $(".start").show();
         n = 0;
+        v = 0;
+        t = 0;
     });
 
 });
