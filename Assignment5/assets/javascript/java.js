@@ -199,6 +199,7 @@ function fill(x) {
     $(".a4").text(x.answer4);
 };
 
+//hide all divs
 function hideall() {
     $(".start").hide();
     $(".game").hide();
@@ -298,6 +299,7 @@ $(document).ready(function () {
         checkanswer(".a4");
     });
 
+    //Next question button
     $(".next").click(function () {
         hideall();
         minitimer.stop();
@@ -307,6 +309,7 @@ $(document).ready(function () {
         timer.start();
     });
 
+    //Restart the quiz
     $(".retake").click(function () {
         hideall();
         $(".start").show();
