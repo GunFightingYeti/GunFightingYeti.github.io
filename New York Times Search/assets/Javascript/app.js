@@ -1,20 +1,3 @@
-// <!-- api key = 2f15bd51838d45008f587029ef9089f5 -->
-
-// .container
-// header - New York Times Search
-
-// #parameters (div) - Search Parameters (Search ico)
-//     #term (input) - Search Term:
-//     #records (input) - Number of Records to Retrieve: (Only three options: 1, 5, 10)
-//     #startYear (input) - Start Year (Optional):    
-// #endYear (input) - End Year (Optional:
-// #search - Search (Mag glass ico)
-// #clear - Clear Results (trash ico)
-
-// #articles - Top Articles (calendar ico)
-// <hr>
-// footer - Made with lots and lots of (heart ico)
-
 $("#search").on("click", function (event) {
     event.preventDefault();
 
