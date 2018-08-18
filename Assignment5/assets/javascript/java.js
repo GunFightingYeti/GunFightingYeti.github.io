@@ -45,6 +45,7 @@ var q5 = {
 };
 
 var trivia = [q1, q2, q3, q4, q5];
+var t = 0;
 
 //25 second timer - open
 var intervalId;
@@ -76,6 +77,7 @@ var timer = {
             $(".noanswer").show();
             $(".timer").text("00:10");
             minitimer.start();
+            t++;
         }
     },
 
@@ -215,6 +217,7 @@ $(document).ready(function () {
                 $(".timer").show();
                 $(".incorrect").text(v);
                 $(".volts").text(volts + ",000");
+                $(".notry").text(t);
                 $(".retake").show();
                 minitimer.stop();
                 timer.stop();
