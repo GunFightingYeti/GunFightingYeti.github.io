@@ -13,6 +13,10 @@ h1 {
     padding-top: 36px;
 }
 
+h2 {
+    font-size: 15px;
+}
+
 .header {
     background-color: #305090;
     color: white;
