@@ -74,6 +74,7 @@ var timer = {
             timer.time = 25;
             $(".game").hide();
             $(".noanswer").show();
+            $(".timer").text("00:10");
             minitimer.start();
         }
     },
@@ -189,6 +190,7 @@ $(document).ready(function () {
         hideall();
         $(".game").show();
         $(".timer").show();
+        minitimer.stop();
         $(".timer").text("00:25");
         timer.start();
     });
@@ -214,6 +216,8 @@ $(document).ready(function () {
                 $(".incorrect").text(v);
                 $(".volts").text(volts + ",000");
                 $(".retake").show();
+                minitimer.stop();
+                timer.stop();
             } else {
                 fill(trivia[n]);
             }
