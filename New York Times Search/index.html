@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <title>New York Times Search</title>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!-- Header -->
+        <div class="row-fluid header">
+            <h1>New York Times Search</h1>
+        </div>
+
+        <!-- Form -->
+        <div class="container-fluid parameter">
+            <div class="row-fluid" id="parameters">
+                <h2><i class="fas fa-calendar-alt"></i> Search Parameter</h2>
+
+                <!-- Form Start -->
+                <form>
+
+                    <!-- Search term box -->
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="searchTerm">Search Term: </label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control m-5" id="term" placeholder="Enter Search Term">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="Number of Records">Number of Records to Retrieve</label>
+                        </div>
+                        <div class="col-md-12">
+                            <select class="form-control" id="records">
+                                <option>1</option>
+                                <option>5</option>
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="Start Year">Start Year (Optional)</label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="date" class="form-control" id="startYear" placeholder="yyyy-MM-dd">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="End Year">End Year(Optional</label>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="date" class="form-control" id="endYear" placeholder="yyyy-MM-dd">
+                        </div>
+                    </div>
+                </form>
+
+                <div>
+                    <button type="submit" class="btn btn-primary" id="search"><i class="fas fa-search"></i> Search</button>
+                    <button class="btn btn-danger" id="clear"><i class="fas fa-trash-alt"></i> Clear Results</button>
+                </div>
+
+                <!-- #parameters (div) - Search Parameters (Search ico)
+        #term (input) - Search Term:
+        #records (input) - Number of Records to Retrieve:
+        (Only three options: 1, 5, 10) 
+        #startYear (input) - Start Year (Optional): 
+        #endYear (input) - End Year (Optional:
+        #search - Search (Mag glass ico) 
+        #clear - Clear Results (trash ico) -->
+
+            </div>
+        </div>
+
+
+
+        <!-- Articles -->
+        <div class="container-fluid martb">
+            <div class="row-fluid" id="articles">
+                <h2><i class="fas fa-calendar-alt"></i> Top Articles</h2>
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div class="footer martb">
+        <div class="col-md-12 text-center">
+            <p>Made with lots and lots of <i class="far fa-heart"></i></p>
+        </div>
+    </div>
+
+
+    <!-- External Javascript -->
+    <!-- <script src="app.js"></script> -->
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
