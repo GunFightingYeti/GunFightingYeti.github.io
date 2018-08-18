@@ -39,12 +39,57 @@ var q5 = {
     question: "Who are Atlas and Peabody?",
     answer1: "A drunk pirate and a blacksmith",
     answer2: "Two mice trying to take over the world",
-    answer3: "Robot 'friends' trying to live",
+    answer3: "Robot 'friends' trying to survive",
     answer4: "A very smart dog and a boy",
-    correct: "Robot 'friends' trying to live"
+    correct: "Robot 'friends' trying to survive"
 };
 
-var trivia = [q1, q2, q3, q4, q5];
+var q6 = {
+    question: "Finish the phrase, 'Speedy thing goes in...'",
+    answer1: "Now we're gonna win",
+    answer2: "Speedy thing comes out",
+    answer3: "Ouch!",
+    answer4: "Time to slow it down",
+    correct: "Speedy thing comes out"
+};
+
+var q7 = {
+    question: "What is the purpose of the Aperture Science Material Emancipation Grill?",
+    answer1: "Making your teeth sparkle",
+    answer2: "Cooking delicious meats and veggies",
+    answer3: "Free rights for all cooking equipment",
+    answer4: "Vaporizing stuff you want to take with you",
+    correct: "Vaporizing stuff you want to take with you"
+};
+
+var q8 = {
+    question: "At the end of your second adventure, what sings a beautiful opera",
+    answer1: "Turrets built for murder",
+    answer2: "A field of toasters",
+    answer3: "Doors with perfectly timed squeaks",
+    answer4: "Computers connecting to a dialup connection",
+    correct: "Turrets built for murder"
+};
+
+var q9 = {
+    question: "There a three different gels, what are they?",
+    answer1: "Hair, nail and shaving",
+    answer2: "Chromium, aluminum and biopolymer", 
+    answer3: "Propulsion, repulsion and conversion",
+    answer4: "Ballistic, Aero and Jell-O",
+    correct: "Propulsion, repulsion and conversion"
+};
+
+var q10 = {
+    question: "What is the name of the Blue Intelligence Dampening Sphere?",
+    answer1: "Carat",
+    answer2: "Wheatley",
+    answer3: "2.42",
+    answer4: "Hope",
+    correct: "Wheatley"
+};
+
+var trivia = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 var t = 0;
 
 //25 second timer - open
@@ -210,13 +255,17 @@ $(document).ready(function () {
             $(".timer").text("00:10");
             minitimer.start();
             n++;
-            if (n > 4) {
+            if (n > 9) {
                 var volts = v * 15;
                 hideall();
                 $(".win").show();
                 $(".timer").show();
                 $(".incorrect").text(v);
-                $(".volts").text(volts + ",000");
+                if (volts == 0) {
+                    $(".volts").text(0);
+                } else {
+                    $(".volts").text(volts + ",000");
+                }
                 $(".notry").text(t);
                 $(".retake").show();
                 minitimer.stop();
