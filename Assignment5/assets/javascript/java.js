@@ -245,6 +245,7 @@ $(document).ready(function () {
 
     var n = 0;
     var v = 0;
+    var audio = new Audio("assets/audio/still_alive.mp3");
 
     // Check answer and log incorrect
     function checkanswer(a) {
@@ -271,6 +272,7 @@ $(document).ready(function () {
                 $(".retake").show();
                 minitimer.stop();
                 timer.stop();
+                audio.play();
             } else {
                 fill(trivia[n]);
             }
@@ -312,6 +314,8 @@ $(document).ready(function () {
     //Restart the quiz
     $(".retake").click(function () {
         hideall();
+        audio.pause();
+        audio.currentTime = 0;
         $(".start").show();
         n = 0;
         v = 0;
