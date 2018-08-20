@@ -1,0 +1,44 @@
+body {
+    background-color: #444;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTixbOP0kGaLT4i_kRs7Ge53b42a_EZE2tuw4pTizaECdpQNp0");
+    font-family: monospace;
+    color: white;
+}
+
+.border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a14007;
+}
+
+label {
+    font-size: 20px;
+}
+
+.button {
+    /* margin: 5px; */
+    float: left;
+    clear: both;
+    border-color: black;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #a14007;
+}
+
+#gifs {
+    border-style: solid;
+}
+
+img {
+
+}
+
+input {
+    border-radius: 3px;
+    border-style: groove;
+    border-color: black;
+}
+
+#input {
+    height: 25px;
+}
