@@ -1,5 +1,5 @@
 body {
-    background-color: #444;
+    background-color: #333;
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTixbOP0kGaLT4i_kRs7Ge53b42a_EZE2tuw4pTizaECdpQNp0");
     font-family: monospace;
     color: white;
@@ -9,6 +9,7 @@ body {
     border-style: solid;
     border-width: 1px;
     border-color: #a14007;
+    margin-top: 20px;
 }
 
 label {
@@ -16,29 +17,45 @@ label {
 }
 
 .button {
-    /* margin: 5px; */
+    margin: 5px;
     float: left;
-    clear: both;
     border-color: black;
     border-radius: 3px;
     font-size: 20px;
     background-color: #a14007;
 }
 
-#gifs {
-    border-style: solid;
+form {
+    clear: both;
 }
 
-img {
-
+#gifs {
+    border-style: solid;
+    color: #00000000;
 }
 
 input {
     border-radius: 3px;
     border-style: groove;
     border-color: black;
+    color: black;
 }
 
 #input {
     height: 25px;
+}
+
+.item {
+    display: inline-block;
+    margin: 5px;
+    border-style: solid;
+    border-color: #a14007;
+    border-width: 1px;
+}
+
+p {
+    background-color: black;
+    color: white;
+    margin: 0px;
+    font-size: 18px;
 }

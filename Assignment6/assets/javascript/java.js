@@ -1,57 +1,70 @@
+$(document).ready(function () {
 
+    // Initial array of subjects
+    var subjects = ["Portal 2", "Firefly", "Star Wars", "Jackie Chan", "Adventure Time"];
 
-//Animal gif button classwork - open
-$(".button").on("click", function () {
-    var animal = $(this).attr("data-animal");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?";
+    // Function for displaying new buttons
+    function makeButtons() {
+        $("#buttons").empty();
 
-    $.ajax({
-        url: queryURL,
-        method: "GET",
-        data: {
-                q: animal,
-                tag: "animal",
-                apikey: "dc6zaTOxFJmzC",
-                limit: 10
-            }
-    }).then(function (response) {
-        // Step 1: Run this file, click a button, and see what the response object looks like in the browser's console.
-        // Open up the data key, then open up the 0th, element. Study the keys and how the JSON is structured.
-
-        console.log(response);
-
-        // Step 2: since the image information is inside of the data key,
-        // make a variable named results and set it equal to response.data
-
-        // =============== put step 2 in between these dashes ==================
-        var results = response.data;
-        // ========================
-
-        for (var i = 0; i < results.length; i++) {
-
-            // Step 3: uncomment the for loop above and the closing curly bracket below.
-            // Make a div with jQuery and store it in a variable named animalDiv.
-            var animalDiv = $("<div class='item'>");
-            // Make a paragraph tag with jQuery and store it in a variable named p.
-            var p = $("<p>");
-            // Set the inner text of the paragraph to the rating of the image in results[i].
-            p.text("Rating: " + results[i].rating.toUpperCase());
-            // Make an image tag with jQuery and store it in a variable named animalImage.
-            var animalImage = $("<img>");
-            // Set the image's src to results[i]'s fixed_height.url.
-            animalImage.attr("src", results[i].images.fixed_height.url);
-            // Append the p variable to the animalDiv variable.
-            animalDiv.prepend(p);
-            // Append the animalImage variable to the animalDiv variable.
-            animalDiv.prepend(animalImage);
-            // Prepend the animalDiv variable to the element with an id of gifs-appear-here.
-            $("#gifs-appear-here").prepend(animalDiv);
-            // ============= put step 3 in between these dashes ======================
-
-            // ==================================
+        for (var i = 0; i < subjects.length; i++) {
+            var btnDiv = $("<button>");
+            btnDiv.addClass("subject button");
+            btnDiv.attr("data-name", subjects[i]);
+            btnDiv.text(subjects[i]);
+            $("#buttons").append(btnDiv);
         }
+    };
+
+    makeButtons();
+
+    // Function to clear the input box after pressing enter
+    function inputClear() {
+        $("#input").val('');
+    };
+
+    $("#submit").on("click", function (event) {
+
+        if ($("#input").val() === "") {
+            alert("Input field cannot be empty - Please type something in the box");
+        } else {
+            event.preventDefault();
+            var name = $("#input").val().trim();
+            subjects.push(name);
+            makeButtons();
+            inputClear();
+        };
+    });
+
+    //Call the gif from pushing a button
+    $(".subject").on("click", function () {
+        var queryURL = "https://api.giphy.com/v1/gifs/random?";
+        var search = $(this).attr("data-name");
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+            data: {
+                q: search,
+                limit: 10,
+                apikey: "TgrLk2W8P5SVKS4dfmvCAwhNGY7Gdbpb"
+            }
+        }).then(function (response) {
+            var results = response.data;
+
+            for (var i = 0; i < results.length; i++) {
+                var inputDiv = $("<div class='item'>");
+                var p = $("<p>");
+                p.text("Rating: " + results[i].rating.toUpperCase());
+                var inputImage = $("<img>");
+                inputImage.attr("src", results[i].images.fixed_height.url);
+                inputDiv.prepend(p);
+                inputDiv.prepend(inputImage);
+                $("#gifs").prepend(inputDiv);
+            }
+            console.log(response);
+        });
 
     });
-});
-//Animal gif button classwork - close
 
+});
