@@ -10,6 +10,7 @@ body {
     border-width: 1px;
     border-color: #a14007;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 label {
@@ -32,6 +33,7 @@ form {
 #gifs {
     border-style: solid;
     color: #00000000;
+    min-height: 400px;
 }
 
 input {
@@ -58,4 +60,8 @@ p {
     color: white;
     margin: 0px;
     font-size: 18px;
+}
+
+.padding {
+    padding: 15px;
 }
