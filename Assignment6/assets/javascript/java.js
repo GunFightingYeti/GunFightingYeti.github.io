@@ -1,49 +1,31 @@
 $(document).ready(function () {
 
-    // Initial array of subjects
-    var subjects = ["Adventure Time", "Finn the Human", "Jake the Dog", "Princess Bubblegum", "The Ice King"];
+    // Initial array of topics
+    var topics = ["Jake the Dog", "Finn the Human", "Princess Bubblegum", "Marceline", "The Ice King", "Beemo"];
 
     // Function to clear the input box
     function inputClear() {
         $("#input").val('');
     };
 
-    // Function for displaying new buttons
+    //Function for displaying new buttons
     function makeButtons() {
         $("#buttons").empty();
 
         //Loop through the array and create a button for each item
-        for (var i = 0; i < subjects.length; i++) {
+        for (var i = 0; i < topics.length; i++) {
             var btnDiv = $("<button>");
-            btnDiv.addClass("subject button");
-            btnDiv.attr("data-name", subjects[i]);
-            btnDiv.text(subjects[i]);
+            btnDiv.addClass("subject");
+            btnDiv.addClass("button");
+            btnDiv.attr("data-name", topics[i]);
+            btnDiv.text(topics[i]);
             $("#buttons").append(btnDiv);
         }
     };
 
-    //Submit button function
-    $("#submit").on("click", function (event) {
-        event.preventDefault();
-
-        //If input field is empty then alert
-        if ($("#input").val() === "") {
-            alert("Input field cannot be empty - Please type something in the box");
-
-            //Else, add input text to subjects array
-        } else {
-            var name = $("#input").val().trim();
-            subjects.push(name);
-            makeButtons();
-            inputClear();
-        };
-    });
-
-    //Run the makeButtons function to create the initial buttons 
-    makeButtons();
-
     //Call the gif from pushing a button
-    $(".subject").on("click", function () {
+    $(document).on("click", ".subject", function (event) {
+
         var queryURL = "https://api.giphy.com/v1/gifs/search?";
         var search = $(this).attr("data-name");
         $("#gifs").empty();
@@ -60,9 +42,10 @@ $(document).ready(function () {
                 apikey: "TgrLk2W8P5SVKS4dfmvCAwhNGY7Gdbpb"
             }
         }).then(function (response) {
-            console.log(response.data);
+
             //Make the return into a variable
             var results = response.data;
+            console.log(results);
 
             //Display the return gif on the page
             for (var i = 0; i < results.length; i++) {
@@ -71,7 +54,7 @@ $(document).ready(function () {
                 var p = $("<p>");
                 p.text("Rating: " + results[i].rating.toUpperCase());
                 var inputImage = $("<img>");
-                inputImage.attr("src", results[i].images.fixed_height.url);
+                inputImage.attr("src", results[i].images.fixed_height_still.url);
                 inputImage.attr("data-still", results[i].images.fixed_height_still.url);
                 inputImage.attr("data-animate", results[i].images.fixed_height.url);
                 inputImage.attr("data-state", "still");
@@ -80,24 +63,40 @@ $(document).ready(function () {
                 inputDiv.prepend(inputImage);
                 $("#gifs").prepend(inputDiv);
             }
-
-            //console.log(response);
         });
 
     });
 
-    $(".gif").on("click", function () {
-        console.log("It's been clicked!");
-    var state = $(this).attr("data-state");
+        //Submit button function
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
 
-    if (state === "still") {
-        $(this).attr("src", $(this).attr("data-animate"));
-        $(this).attr("data-state", "animate");
-    } else {
-        $(this).attr("src", $(this).attr("data-still"));
-        $(this).attr("data-state", "still");
-    }
+        //If input field is empty then alert
+        if ($("#input").val() === "") {
+            alert("Input field cannot be empty - Please type something in the box");
 
+            //Else, add input text to topics array
+        } else {
+            var name = $("#input").val().trim();
+            topics.push(name);
+            inputClear();
+            makeButtons();
+        };
     });
+
+    $(document).on("click", ".gif", function (event) {
+        var state = $(this).attr("data-state");
+
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    });
+    
+    //Run the makeButtons function to create the initial buttons 
+    makeButtons();
 
 });

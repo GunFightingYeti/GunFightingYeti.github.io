@@ -8,7 +8,7 @@ body {
 .border {
     border-style: solid;
     border-width: 1px;
-    border-color: #a14007;
+    border-color: #002e91;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -23,7 +23,7 @@ label {
     border-color: black;
     border-radius: 3px;
     font-size: 20px;
-    background-color: #a14007;
+    background-color: #002e91;
 }
 
 form {
@@ -51,7 +51,7 @@ input {
     display: inline-block;
     margin: 5px;
     border-style: solid;
-    border-color: #a14007;
+    border-color: #002e91;
     border-width: 1px;
 }
 
@@ -65,3 +65,8 @@ p {
 .padding {
     padding: 15px;
 }
+
+.background {
+    background-color: #035a005d;
+}
+
