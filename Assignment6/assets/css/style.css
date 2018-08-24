@@ -36,15 +36,25 @@ form {
     min-height: 400px;
 }
 
-input {
-    border-radius: 3px;
-    border-style: groove;
+.formbuttons {
+    margin: 5px;
+    float: left;
     border-color: black;
+    border-style: groove;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #002e91;
     color: black;
 }
 
 #input {
     height: 25px;
+}
+
+#buttons {
+    position: relative;
+    height: auto;
+    z-index: 9999;
 }
 
 .item {
@@ -69,4 +79,3 @@ p {
 .background {
     background-color: #035a005d;
 }
-

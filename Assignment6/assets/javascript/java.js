@@ -23,29 +23,36 @@ $(document).ready(function () {
         }
     };
 
-    //Call the gif from pushing a button
-    $(document).on("click", ".subject", function (event) {
+    //Used to call amount of gifs
+    var amount = 10;
+    var lastsubject;
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?";
-        var search = $(this).attr("data-name");
+    function ajaxCall(press) {
+
+        //Empty any gifs that might be in the div
         $("#gifs").empty();
 
-        //AJAX query
+        //AJAX search URL
+        var queryURL = "https://api.giphy.com/v1/gifs/search?";
+        //AJAX search term
+        var search = $(press).attr("data-name");
+        lastsubject = $(press).attr("data-name");
+
         $.ajax({
             url: queryURL,
             method: "GET",
             data: {
                 q: search,
                 rating: "g",
-                limit: 10,
+                limit: amount,
                 lang: "en",
                 apikey: "TgrLk2W8P5SVKS4dfmvCAwhNGY7Gdbpb"
             }
         }).then(function (response) {
+            amount = 10;
 
             //Make the return into a variable
             var results = response.data;
-            console.log(results);
 
             //Display the return gif on the page
             for (var i = 0; i < results.length; i++) {
@@ -64,10 +71,16 @@ $(document).ready(function () {
                 $("#gifs").prepend(inputDiv);
             }
         });
+    }
+    
+    //Call the gif from pushing a button
+    $(document).on("click", ".subject", function (event) {
 
+        //Call the AJAX function when subject button is pushed
+        ajaxCall(this);
     });
 
-        //Submit button function
+    //Submit button function
     $("#submit").on("click", function (event) {
         event.preventDefault();
 
@@ -95,7 +108,15 @@ $(document).ready(function () {
             $(this).attr("data-state", "still");
         }
     });
-    
+
+    //Add more gifs button
+    $(document).on("click", "#add", function (event) {
+        event.preventDefault();
+        amount = amount + 10;
+        ajaxCall(lastsubject);
+
+    });
+
     //Run the makeButtons function to create the initial buttons 
     makeButtons();
 
