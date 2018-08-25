@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     //Used to call amount of gifs
     var amount = 10;
-    var lastsubject;
+    var lasttopic = ["Adventure Time"];
 
     function ajaxCall(press) {
 
@@ -36,7 +36,6 @@ $(document).ready(function () {
         var queryURL = "https://api.giphy.com/v1/gifs/search?";
         //AJAX search term
         var search = $(press).attr("data-name");
-        lastsubject = $(press).attr("data-name");
 
         $.ajax({
             url: queryURL,
@@ -49,7 +48,6 @@ $(document).ready(function () {
                 apikey: "TgrLk2W8P5SVKS4dfmvCAwhNGY7Gdbpb"
             }
         }).then(function (response) {
-            amount = 10;
 
             //Make the return into a variable
             var results = response.data;
@@ -71,8 +69,9 @@ $(document).ready(function () {
                 $("#gifs").prepend(inputDiv);
             }
         });
+
     }
-    
+
     //Call the gif from pushing a button
     $(document).on("click", ".subject", function (event) {
 
@@ -107,14 +106,6 @@ $(document).ready(function () {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
-    });
-
-    //Add more gifs button
-    $(document).on("click", "#add", function (event) {
-        event.preventDefault();
-        amount = amount + 10;
-        ajaxCall(lastsubject);
-
     });
 
     //Run the makeButtons function to create the initial buttons 
