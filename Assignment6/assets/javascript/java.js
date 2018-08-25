@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Initial array of topics
-    var topics = ["Jake the Dog", "Finn the Human", "Princess Bubblegum", "Marceline", "The Ice King", "Beemo"];
+    var topics = ["Adventure Time", "Jake the Dog", "Finn the Human", "Princess Bubblegum", "Marceline", "The Ice King", "Beemo"];
 
     // Function to clear the input box
     function inputClear() {
@@ -27,6 +27,8 @@ $(document).ready(function () {
     var amount = 10;
     var lasttopic = ["Adventure Time"];
 
+
+    //Function to make ajax call
     function ajaxCall(press) {
 
         //Empty any gifs that might be in the div
@@ -83,19 +85,29 @@ $(document).ready(function () {
     $("#submit").on("click", function (event) {
         event.preventDefault();
 
+        //User input variable
+        var input = $("#input").val().trim();
+
         //If input field is empty then alert
-        if ($("#input").val() === "") {
+        if (input === "") {
             alert("Input field cannot be empty - Please type something in the box");
 
-            //Else, add input text to topics array
+            //Else if, button already exists alert
+        } else if (topics.indexOf(input) !== -1) {
+            alert("You've already made that button");
+
+            //Else, add the button
         } else {
-            var name = $("#input").val().trim();
-            topics.push(name);
-            inputClear();
+            topics.push(input);
             makeButtons();
+
         };
+
+        //Clear the input box
+        inputClear();
     });
 
+    //Animate or pause gif on click
     $(document).on("click", ".gif", function (event) {
         var state = $(this).attr("data-state");
 
@@ -107,6 +119,7 @@ $(document).ready(function () {
             $(this).attr("data-state", "still");
         }
     });
+
 
     //Run the makeButtons function to create the initial buttons 
     makeButtons();
