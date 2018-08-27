@@ -1,0 +1,44 @@
+body {
+    background-color: #222;
+}
+
+.jumbotron {
+    background-color: black;
+    color: #a16e00;
+}
+
+form {
+   padding: 10px;
+}
+
+.blacktext {
+    color: black;
+}
+
+.form-control {
+    background-color: #17a2b8;
+}
+
+.btn {
+    color: white;
+    border-color: black;
+}
+
+.modal-header, .modal-body, .modal-footer {
+    background-color: #17a2b8;
+    color: black;
+}
+
+table, th, td {
+    border: 1px solid #a16e00;
+}
+
+th {
+    width: 500px;
+    height: 40px;
+}
+
+td {
+    width: 500px;
+    height: 30px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#a14007">
+
+    <!-- Link to Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link id="home" rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+
+    <title>Departure Board</title>
+
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1 class="text-center">Train Departure Board</h1>
+
+        <table class="text-center">
+            <tr>
+                <th>Train Name</th>
+                <th>Destination</th>
+                <th>Frequency</th>
+                <th>Next Arrival</th>
+                <th>Minutes Away</th>
+            </tr>
+            <tr>
+                <td>3:10 to Yuma</td>
+                <td>Yuma</td>
+                <td>30 min</td>
+                <td>3:40</td>
+                <td>17 min</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- Button trigger modal -->
+    <div class="container">
+        <button type="button" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#addtrainmodal">
+            Add a New Train
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addtrainmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Train Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label for="newname" class="blacktext">Train Name</label>
+                            <input class="form-control" id="newname" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="newdestination" class="blacktext">Destination</label>
+                            <input class="form-control" id="newdestination" type="text">
+                        </div>
+                        <div class="form-group row">
+                            <label for="firsttime" class="blacktext">Departure Time in Military (15:14)</label>
+                            <input class="form-control" id="firsttime" type="time">
+                        </div>
+                        <div class="form-group row">
+                            <label for="frequency" class="blacktext">Frequency in minutes)</label>
+                            <input class="form-control" id="frequency" type="number">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Add Train</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Nevermind</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- External Javascript -->
+    <script src="assets/javascript/java.js"></script>
+
+</body>
+
+</html>
