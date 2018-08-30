@@ -1,5 +1,5 @@
 body {
-    background-color: #222;
+    background-color: rgb(0, 0, 0);
 }
 
 .blackandyellow {
@@ -60,5 +60,12 @@ th {
 
 td {
     width: 500px;
+    height: 30px;
+}
+
+.delete {
+    background-color: black;
+    color: #a16e00;
+    border: 1px solid #a16e00;
     height: 30px;
 }

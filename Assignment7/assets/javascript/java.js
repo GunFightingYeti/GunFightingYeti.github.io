@@ -1,4 +1,4 @@
-//Firebase
+//  Firebase information
 var config = {
     apiKey: "AIzaSyBtea1dHdG_082p7xKBllA-IPyxk4nGgvc",
     authDomain: "train-tracker-78ba3.firebaseapp.com",
@@ -8,11 +8,9 @@ var config = {
     messagingSenderId: "768865316564"
 };
 firebase.initializeApp(config);
-
 var database = firebase.database();
 
-
-// Clock
+// Current time clock
 var toggle = true;
 setInterval(function () {
     var d = new Date().toLocaleTimeString('en-US', {
@@ -29,7 +27,7 @@ setInterval(function () {
     toggle = !toggle;
 }, 1000);
 
-// Add train button
+// Add new train button
 $("#submit").on("click", function (event) {
     event.preventDefault();
 
@@ -39,6 +37,7 @@ $("#submit").on("click", function (event) {
     var frequency = $("#freqinput").val().trim();
     var deptTime = $("#deptimeinput").val().trim();
 
+    // New train object
     var newTrain = {
         name: trainName,
         destination: destination,
@@ -46,7 +45,7 @@ $("#submit").on("click", function (event) {
         deptTime: deptTime,
     };
 
-    // Uploads employee data to the database
+    // Uploads train data to the database
     database.ref().push(newTrain);
 
     // Clears all of the text-boxes
@@ -57,6 +56,7 @@ $("#submit").on("click", function (event) {
     $('#addtrainmodal').modal('toggle');
 });
 
+// Update every 60 seconds - WIP
 function update() {
     var name = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
@@ -74,14 +74,17 @@ function update() {
         $("<td>").text(destination),
         $("<td>").text("Every " + frequency + " min"),
         $("<td>").text(nextArrival),
-        $("<td>").text(minutesAway + " min")
+        $("<td>").text(minutesAway + " min"),
+
     );
 
     // Append the new row to the table
     $("#infocenter").append(newRow);
 }
 
+// Update on child added
 database.ref().on("child_added", function (childSnapshot) {
+    // Define variables to use in row and cell creation
     var name = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
     var frequency = childSnapshot.val().frequency;
@@ -98,7 +101,8 @@ database.ref().on("child_added", function (childSnapshot) {
         $("<td>").text(destination),
         $("<td>").text("Every " + frequency + " min"),
         $("<td>").text(nextArrival),
-        $("<td>").text(minutesAway + " min")
+        $("<td>").text(minutesAway + " min"),
+        $("<button>").text("X").attr("class", "delete")
     );
 
     // Append the new row to the table
