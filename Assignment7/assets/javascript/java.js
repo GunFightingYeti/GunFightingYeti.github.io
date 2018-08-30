@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 
-// Clock timer
+// Clock
 var toggle = true;
 setInterval(function () {
     var d = new Date().toLocaleTimeString('en-US', {
@@ -36,14 +36,14 @@ $("#submit").on("click", function (event) {
     // Grabs user input
     var trainName = $("#newnameinput").val().trim();
     var destination = $("#newdestinput").val().trim();
-    var deptTime = moment($("#deptimeinput").val().trim()).format("X");
     var frequency = $("#freqinput").val().trim();
+    var deptTime = $("#deptimeinput").val().trim();
 
     var newTrain = {
         name: trainName,
         destination: destination,
+        frequency: frequency,
         deptTime: deptTime,
-        frequency: frequency
     };
 
     // Uploads employee data to the database
@@ -60,18 +60,24 @@ $("#submit").on("click", function (event) {
 database.ref().on("child_added", function (childSnapshot) {
     var name = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
-    var deptTime = childSnapshot.val().deptTime;
     var frequency = childSnapshot.val().frequency;
-
-    // Calculate the train times
-     var nextArrival = moment(deptTime).add(frequency);
-     var minutesAway = moment(deptTime).add(frequency);
+    var deptTime = childSnapshot.val().deptTime;
+    var deptTimeConverted = moment(deptTime, "HH:mm").subtract(1, "years");
+    console.log("deptTimeConverted" + deptTimeConverted);
+    var currentTime = moment();
+    console.log("currentTime: " + moment(currentTime).format("HH:mm"));
+    var diffTime = moment().diff(moment(deptTimeConverted), "minutes");
+    console.log("diffTime: " + diffTime);
+    var remaining = diffTime % frequency;
+    var minutesAway = frequency - remaining;
+    console.log(frequency + " + " + remaining + " = " + minutesAway);
+    var nextArrival = moment().add(minutesAway, "minutes").format("HH:mm");
 
     // Create the new row
     var newRow = $("<tr>").append(
         $("<td>").text(name),
         $("<td>").text(destination),
-        $("<td>").text(frequency + " min"),
+        $("<td>").text("Every " + frequency + " min"),
         $("<td>").text(nextArrival),
         $("<td>").text(minutesAway + " min")
     );
