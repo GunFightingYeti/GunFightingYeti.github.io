@@ -1,11 +1,11 @@
 //Firebase
 var config = {
-    apiKey: "AIzaSyCxeVcHrIPy3Hx1FMO2AYb3ThtW2UeHoXQ",
-    authDomain: "gunfightingyeti-1.firebaseapp.com",
-    databaseURL: "https://gunfightingyeti-1.firebaseio.com",
-    projectId: "gunfightingyeti-1",
-    storageBucket: "gunfightingyeti-1.appspot.com",
-    messagingSenderId: "367801624548"
+    apiKey: "AIzaSyBtea1dHdG_082p7xKBllA-IPyxk4nGgvc",
+    authDomain: "train-tracker-78ba3.firebaseapp.com",
+    databaseURL: "https://train-tracker-78ba3.firebaseio.com",
+    projectId: "train-tracker-78ba3",
+    storageBucket: "",
+    messagingSenderId: "768865316564"
 };
 firebase.initializeApp(config);
 
@@ -57,20 +57,39 @@ $("#submit").on("click", function (event) {
     $('#addtrainmodal').modal('toggle');
 });
 
+function update() {
+    var name = childSnapshot.val().name;
+    var destination = childSnapshot.val().destination;
+    var frequency = childSnapshot.val().frequency;
+    var deptTime = childSnapshot.val().deptTime;
+    var deptTimeConverted = moment(deptTime, "HH:mm").subtract(1, "years");
+    var diffTime = moment().diff(moment(deptTimeConverted), "minutes");
+    var remaining = diffTime % frequency;
+    var minutesAway = frequency - remaining;
+    var nextArrival = moment().add(minutesAway, "minutes").format("HH:mm");
+
+    // Create the new row
+    var newRow = $("<tr>").append(
+        $("<td>").text(name),
+        $("<td>").text(destination),
+        $("<td>").text("Every " + frequency + " min"),
+        $("<td>").text(nextArrival),
+        $("<td>").text(minutesAway + " min")
+    );
+
+    // Append the new row to the table
+    $("#infocenter").append(newRow);
+}
+
 database.ref().on("child_added", function (childSnapshot) {
     var name = childSnapshot.val().name;
     var destination = childSnapshot.val().destination;
     var frequency = childSnapshot.val().frequency;
     var deptTime = childSnapshot.val().deptTime;
     var deptTimeConverted = moment(deptTime, "HH:mm").subtract(1, "years");
-    console.log("deptTimeConverted" + deptTimeConverted);
-    var currentTime = moment();
-    console.log("currentTime: " + moment(currentTime).format("HH:mm"));
     var diffTime = moment().diff(moment(deptTimeConverted), "minutes");
-    console.log("diffTime: " + diffTime);
     var remaining = diffTime % frequency;
     var minutesAway = frequency - remaining;
-    console.log(frequency + " + " + remaining + " = " + minutesAway);
     var nextArrival = moment().add(minutesAway, "minutes").format("HH:mm");
 
     // Create the new row
