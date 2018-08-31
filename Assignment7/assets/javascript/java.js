@@ -58,29 +58,43 @@ $("#submit").on("click", function (event) {
 
 // Update every 60 seconds - WIP
 function update() {
-    var name = childSnapshot.val().name;
-    var destination = childSnapshot.val().destination;
-    var frequency = childSnapshot.val().frequency;
-    var deptTime = childSnapshot.val().deptTime;
-    var deptTimeConverted = moment(deptTime, "HH:mm").subtract(1, "years");
-    var diffTime = moment().diff(moment(deptTimeConverted), "minutes");
-    var remaining = diffTime % frequency;
-    var minutesAway = frequency - remaining;
-    var nextArrival = moment().add(minutesAway, "minutes").format("HH:mm");
 
-    // Create the new row
-    var newRow = $("<tr>").append(
-        $("<td>").text(name),
-        $("<td>").text(destination),
-        $("<td>").text("Every " + frequency + " min"),
-        $("<td>").text(nextArrival),
-        $("<td>").text(minutesAway + " min"),
+    database.ref().on("child_added", function (childSnapshot) {
+        var name = childSnapshot.val().name;
+        var destination = childSnapshot.val().destination;
+        var frequency = childSnapshot.val().frequency;
+        var deptTime = childSnapshot.val().deptTime;
+        var deptTimeConverted = moment(deptTime, "HH:mm").subtract(1, "years");
+        var diffTime = moment().diff(moment(deptTimeConverted), "minutes");
+        var remaining = diffTime % frequency;
+        var minutesAway = frequency - remaining;
+        var nextArrival = moment().add(minutesAway, "minutes").format("HH:mm");
 
-    );
+        // Empty out current information
+        $(".Info").empty();
 
-    // Append the new row to the table
-    $("#infocenter").append(newRow);
+        // Create the new row
+        var newRow = $("<tr>").append(
+            $("<td>").text(name),
+            $("<td>").text(destination),
+            $("<td>").text("Every " + frequency + " min"),
+            $("<td>").text(nextArrival),
+            $("<td>").text(minutesAway + " min"),
+            $("<button>").text("X").attr("class", "delete")
+        );
+
+        // Append the new row to the table
+        newRow.attr("class", "Info")
+        $("#infocenter").append(newRow);
+
+    });
 }
+
+// Run function every 60 seconds
+// setInterval(function () {
+//     update();
+//     console.log("Tick!");
+// }, 1000);
 
 // Update on child added
 database.ref().on("child_added", function (childSnapshot) {
