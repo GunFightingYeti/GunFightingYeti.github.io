@@ -1,55 +1,90 @@
 body {
-    background-color: #96d4ec
+  background-color: #f9f9f9;
 }
+
 .nav {
-    background-color: white;
-  }
-  #map {
-    margin-top: 5%;
-    margin-bottom: 5%;
-  }
-  button {
-    border: none;
-    cursor: pointer;
-  }
-  button:focus {
-    outline:0;
-  }
-  @font-face {
-    font-family: "journal";
-    src: url("journal.ttf");
-  }
-  #swift-head {
-    font-family: "journal";
-    color: red;
-    background-color: #f7f7f7;
-    font-size: 70px;
-    
+  background-color: white;
 }
+
+#map {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 0;
+}
+
+@font-face {
+  font-family: "journal";
+  src: url("journal.ttf");
+}
+
+#swift-head {
+  font-family: "journal";
+  color: red;
+  background-color: white;
+  font-size: 60px;
+
+}
+
 #event-head {
-    /* font-family: "journal"; */
-    color: white;
-    background-color: blue;
-    font-size: 55px;
-    
+  font-family: "journal";
+  color: white;
+  background-color: Black;
+  font-size: 45px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+#previous {
+  background-color: #f9f9f9;
+  margin-left: auto;
+}
+
+#next {
+  background-color: #f9f9f9;
+  margin-left: auto;
+}
+
+@font-face {
+  font-family: "journal";
+  src: url("journal.ttf");
+}
+
 .eventful-badge,
 .eventful-badge * {
-  margin: 0             !important;
-  padding: 0            !important;
-  border: 0             !important;
-  text-align: center    !important;
-  color: #CCC           !important;
-  font-family: Arial    !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: center !important;
+  color: #CCC !important;
+  font-family: Arial !important;
   text-decoration: none !important;
 }
+
 .eventful-medium {
-  position: relative    !important;
-  width: 100px          !important;
-  font-size: 12px       !important;
-  line-height: 13px     !important;
+  position: relative !important;
+  width: 100px !important;
+  font-size: 12px !important;
+  line-height: 13px !important;
 }
 
 small {
-    font-size: 1em;
-  }
+  font-size: 1em;
+}
+
+#home, #fav-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-color: grey;
+
+  height: 30px;
+  margin-top: 17px;
+}
