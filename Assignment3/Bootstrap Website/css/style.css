@@ -293,3 +293,8 @@ a:hover {
 
 footer {
   padding: 2rem 0;
+}
+
+.bg-light {
+  background-color: #a13f0762;
+}
