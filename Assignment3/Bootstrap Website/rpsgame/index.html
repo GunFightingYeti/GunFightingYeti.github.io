@@ -18,8 +18,8 @@
       <h3>Wins: 0</h3>
       <h3>Losses: 0</h3>
       <h3>Ties: 0</h3>
-
     </div>
+    <div id="prev"></div>
   </div>
 
   <script type="text/javascript">
@@ -79,24 +79,44 @@
         }
 
         if (wins === 5) {
-          alert("You Win!\nRandom chance is on your side! ");
+          alert("You Win!\n Random chance is on your side! ");
           window.location.reload();
         }
         if (losses === 5) {
-          alert("You lose.\nLady luck has it out for you. ");
+          alert("You lose.\n Lady luck has it out for you. ");
           window.location.reload();
         }
 
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
+        if (userGuess === "r") {
+          var userGuess = "Rock";
+        }
+        if (userGuess === "p") {
+          var userGuess = "Paper";
+        }
+        if (userGuess === "s") {
+          var userGuess = "Scissors";
+        }
+        if (computerGuess === "r") {
+          var computerGuess = "Rock";
+        }
+        if (computerGuess === "p") {
+          var computerGuess = "Paper";
+        }
+        if (computerGuess === "s") {
+          var computerGuess = "Scissors";
+        }
+
+
         var html =
           "<h1>Rock, Paper, Scissors</h1>" +
           "<h2>Press R, P or S</h2>" +
           "<hr>" +
-          "<h3>You chose: " + userGuess.toUpperCase() + "</h3>" +
-          "<h3>The computer chose: " + computerGuess.toUpperCase() + "</h3>" +
+          "<h3>You chose: " + userGuess + "</h3>" +
+          "<h3>The computer chose: " + computerGuess + "</h3>" +
           "<h3>Wins: " + wins + "</h3>" +
           "<h3>Losses: " + losses + "</h3>" +
-          "<h3>Ties: " + ties + "</h3>";
+          "<h3>Ties: " + ties + "</h3>"
 
         // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
