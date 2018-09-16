@@ -172,7 +172,7 @@ function ajaxCall(search, location) {
             // var div1 = $("<div>");
             // div1.attr("class", "mx-auto accept");
             var a1 = $("<button>");
-            var like = ("<img src='assets/Images/accept-circular-button-outline.svg' id='like-btn" + i + "' style='height:70px; width:70px' alt='Dislike'>");
+            var like = ("<img src='assets/images/accept-circular-button-outline.svg' id='like-btn" + i + "' style='height:70px; width:70px' alt='Like'>");
             a1.append(like);
             div1.append(a1);
             row.append(div1);
@@ -180,7 +180,7 @@ function ajaxCall(search, location) {
             var div2 = $("<div>");
             div2.attr("class", "mx-auto cancel");
             var a2 = $("<button>");
-            var dislike = ("<img src='assets/Images/cancel.svg' id='dislike-btn" + i + "' style='height:70px; width:70px' alt='Dislike'>");
+            var dislike = ("<img src='assets/images/cancel.svg' id='dislike-btn" + i + "' style='height:70px; width:70px' alt='Dislike'>");
             a2.append(dislike);
             div2.append(a2);
             row.append(div2);
@@ -547,7 +547,7 @@ $(document).on("click", "#fav-btn", function () {
         // var div1 = $("<div>");
         // div1.attr("class", "mx-auto accept");
         // var a1 = $("<button>");
-        // var like = ("<img src='assets/Images/accept-circular-button-outline.svg' id='like-btn"+ i +"' style='height:65px; width:65px' alt='Like'>");
+        // var like = ("<img src='assets/images/accept-circular-button-outline.svg' id='like-btn"+ i +"' style='height:65px; width:65px' alt='Like'>");
         // a1.append(like);
         // div1.append(a1);
         // row.append(div1);
@@ -555,7 +555,7 @@ $(document).on("click", "#fav-btn", function () {
         var div2 = $("<div>");
         div2.attr("class", "mx-auto cancel");
         var a2 = $("<button>");
-        var dislike = ("<img src='assets/Images/cancel.svg' style='height:70px; width:70px' alt='Dislike'>");
+        var dislike = ("<img src='assets/images/cancel.svg' style='height:70px; width:70px' alt='Dislike'>");
         a2.append(dislike);
         div2.append(a2);
         row.append(div2);
