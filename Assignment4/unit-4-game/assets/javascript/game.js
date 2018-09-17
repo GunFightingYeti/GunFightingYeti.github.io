@@ -310,29 +310,25 @@ $(document).ready(function () {
             //Increment wins
             w++;
 
-            //If wins = 3 then you win
-            if (w == 3) {
+            //If wins = 3, then you win
+            if (w == 3 && herostats[1] > 0) {
                 $("#fight").hide();
                 $("#darksideOpp").hide();
                 $("#lightsideOpp").hide();
                 $("#win").show();
                 audiowin.play();
-            }
-
-
-            // If you're dead then you lose 
-            if (herostats[1] <= 0) {
-                $("#lose").show();
-                $("#lightsideOpp").hide();
-                $("#darksideOpp").hide();
-                $("#fight").hide();
-                audiolose.play();
             } else if (herostats[1] <= 0 && oppstats[1] <= 0) {
                 $("#win").show();
                 $("#lightsideOpp").hide();
                 $("#darksideOpp").hide();
                 $("#fight").hide();
                 audiowin.play();
+            } else if (herostats[1] <= 0) {
+                $("#lose").show();
+                $("#lightsideOpp").hide();
+                $("#darksideOpp").hide();
+                $("#fight").hide();
+                audiolose.play();
             }
         }
 
