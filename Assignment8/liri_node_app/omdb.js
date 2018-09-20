@@ -1,10 +1,10 @@
-var info = {
-    name: name,
-    rating: rating,
-    year: year,
-    plot: plot,
-    time: time,
-}
+// var omdb = {
+//     name: name,
+//     rating: rating,
+//     year: year,
+//     plot: plot,
+//     time: time,
+// }
 
 function omdb(movie) {
 
@@ -15,14 +15,20 @@ function omdb(movie) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-        name = response.Title
-        rating = response.Rated;
-        vear = response.Year;
-        lot = response.Plot;
-        time = response.Runtime;
+        // var omdb = {
+        // name = response.Title,
+        // rating = response.Rated,
+        // vear = response.Year,
+        // plot = response.Plot,
+        // time = response.Runtime,
+        // }
+        // return omdb;
     })
 }
 
-module.exports = {
-    info: info,
-};
+omdb("Serenity");
+// module.exports = {
+//     omdb: omdb,
+// };
+
+// console.log(omdb);

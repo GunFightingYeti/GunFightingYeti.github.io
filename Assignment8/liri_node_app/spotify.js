@@ -1,4 +1,4 @@
-var info = {
+var spotify = {
     artist: "Ace of Base",
     name: "The Sign",
     songlink: "link",
@@ -23,5 +23,5 @@ function spotify(song) {
 }
 
 module.exports = {
-    info: info,
+    spotify: spotify,
 };

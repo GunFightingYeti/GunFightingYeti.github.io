@@ -1,4 +1,4 @@
-var info = {
+var bands = {
     venue: name,
     location: location,
     date: date, //(use moment to format this as "MM/DD/YYYY")
@@ -21,5 +21,5 @@ function bands(band) {
 }
 
 module.exports = {
-    info: info,
+    bands: bands,
 };
