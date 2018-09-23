@@ -1,3 +1,5 @@
+var request = require("request");
+
 var bands = {
     venue: name,
     location: location,

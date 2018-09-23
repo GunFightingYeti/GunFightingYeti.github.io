@@ -1,15 +1,14 @@
 {
-  "name": "omdb-request",
+  "name": "liri_node_app",
   "version": "1.0.0",
-  "description": "",
-  "main": "omdbRequest.js",
+  "description": "Liri app",
+  "main": "bands.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Tim Lewis",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.88.0"
   }
 }

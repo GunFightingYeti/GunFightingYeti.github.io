@@ -89,10 +89,14 @@
                     <p class="text-white-50">I am extremely hard working and care greatly about impacting the
                         surrounding community for the better
                         with my daily actions. My core values are honesty and integrity above all else and are the
-                        guiding principles in my work and life. I strive to produce high quality results, no matter what I am working towards. Skill sets in varying backgrounds, including; IT, Retail, Construction, Customer
+                        guiding principles in my work and life. I strive to produce high quality results, no matter
+                        what I am working towards. Skill sets in varying backgrounds, including; IT, Retail,
+                        Construction, Customer
                         Service, Landscaping, Teaching and Management contributes to my ability to adapt quickly.
                         No challenge is too small and no puzzle is unsolvable.
                         <h4 class="text-white">"You cannot fail if you never give up. - Abraham Lincoln"</h4>
+                        <a href="resume/Tim Lewis' Resume - Updated 9-20-18.pdf" class="btn btn-primary mt-5" target="_blank">View
+                            resumé</a>
                     </p>
                 </div>
             </div>
@@ -212,8 +216,9 @@
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-white">Giphy App</h4>
                                 <p class="mb-0 text-white-50">Giphy App lets you choose any topic, create a button
-                                    for that topic and query the giphy API to bring back the top 10 gifs that are related.
-                                     It is capped at a G rating to help keep the returned gifs family
+                                    for that topic and query the giphy API to bring back the top 10 gifs that are
+                                    related.
+                                    It is capped at a G rating to help keep the returned gifs family
                                     friendly.</p>
                                 <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Assignment6"
                                     target="_blank">View code here</a>
@@ -279,22 +284,30 @@
         </div>
     </section>
 
-    <!-- Signup Section -->
+    <!-- Contact Section -->
     <section id="signup" class="signup-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-lg-8 mx-auto text-center">
 
                     <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                    <h2 class="text-white mb-5">See how I can help you!</h2>
+                    <h2 class="text-white mb-3">See how I can help you! </h2>
 
-                    <form class="form-inline d-flex">
+                    <div class="project-text w-100 text-center">
+
+                        <h2 class="js-emaillink mb-5"><a class="a2" href="mailto: timothydlewis@icloud.com">timothydlewis@icloud.com</a></h2>
+
+                        <button class="btn btn-primary mt-2 js-emailcopybtn">Copy Email</button>
+
+                    </div>
+
+                    <!-- <form class="form-inline d-flex">
                         <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="clientEmail"
                             placeholder="Enter email address...">
                         <a href="mailto:timothydlewis@icloud.com">
                             <button type="button" id="submit" class="btn btn-primary mx-auto" value="click">Get in
                                 Touch</button></a>
-                    </form>
+                    </form> -->
 
                 </div>
             </div>
@@ -342,6 +355,29 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+    <script>
+        var copyEmailBtn = document.querySelector('.js-emailcopybtn');
+        copyEmailBtn.addEventListener('click', function (event) {
+            // Select the email link anchor text  
+            var emailLink = document.querySelector('.js-emaillink');
+            var range = document.createRange();
+            range.selectNode(emailLink);
+            window.getSelection().addRange(range);
+
+            try {
+                // Now that we've selected the anchor text, execute the copy command  
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successfully' : 'unsuccessfully';
+                alert('Email ' + msg + ' copied');
+            } catch (err) {
+                alert('Something went wrong');
+            }
+
+            // Remove the selections - NOTE: Should use
+            // removeRange(range) when it is supported  
+            window.getSelection().removeAllRanges();
+        });
+    </script>
 
 </body>
 

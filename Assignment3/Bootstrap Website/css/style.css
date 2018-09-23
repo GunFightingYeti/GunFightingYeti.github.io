@@ -280,6 +280,17 @@ a:hover {
   color: #b91919;
 }
 
+.a2 {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.a2:focus,
+.a2:hover {
+  text-decoration: underline;
+  color: #a14007;
+}
+
 .bg-black {
   background-color: #161616 !important;
 }

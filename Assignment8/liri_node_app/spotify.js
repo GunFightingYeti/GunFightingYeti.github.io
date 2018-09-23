@@ -1,3 +1,5 @@
+var request = require("request");
+
 var spotify = {
     artist: "Ace of Base",
     name: "The Sign",
