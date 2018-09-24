@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-
+    <!-- Meta Tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Tim Lewis' Web Developer Website">
     <meta name="author" content="Tim Lewis">
-    <meta name="theme-color" content="#a14007" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#a14007">
+
+    <!-- Favicon -->
     <link id="home" rel="shortcut icon" type="image/png" href="img/favicon.png">
+
     <title>Tim Lewis' Portfolio</title>
 
     <!-- Bootstrap core CSS -->
@@ -266,12 +270,7 @@
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
                                 <h4 class="text-white">Swift Event</h4>
-                                <p class="mb-0 text-white-50">The first group project of DU's Full stack developer
-                                    class. This was a challenge in many ways. Working as a team, being creative in
-                                    new ways, merging and correctly labeling code, as well as the typical
-                                    challenges of writting a new program. Swift Event is an event finder that lets
-                                    you quickly choose and browse different activities happening near you. Or far
-                                    away, go crazy, who am I to judge.</p>
+                                <p class="mb-0 text-white-50">Swift Event is an event finder that lets you quickly browse activities in your area.  Also, the first group project of DU's full stack developer class.</p>
                                 <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Project1"
                                     target="_blank">View code here</a>
                                 <hr class="d-none d-lg-block mb-0 mr-0">
@@ -297,17 +296,30 @@
 
                         <h2 class="js-emaillink mb-5"><a class="a2" href="mailto: timothydlewis@icloud.com">timothydlewis@icloud.com</a></h2>
 
-                        <button class="btn btn-primary mt-2 js-emailcopybtn">Copy Email</button>
+                        <button type="button" class="btn btn-primary mt-2 js-emailcopybtn" data-toggle="modal" data-target="#copied">Copy Email</button>
 
                     </div>
 
-                    <!-- <form class="form-inline d-flex">
-                        <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="clientEmail"
-                            placeholder="Enter email address...">
-                        <a href="mailto:timothydlewis@icloud.com">
-                            <button type="button" id="submit" class="btn btn-primary mx-auto" value="click">Get in
-                                Touch</button></a>
-                    </form> -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="copied" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Thank you!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span id="close" aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>Email copied to clipboard</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" id="nevermind" class="btn btn-primary" data-dismiss="modal">Okay</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -345,7 +357,11 @@
         </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
+    <!-- External links -->
+    <!-- External Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -355,6 +371,8 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
+
+    <!-- Copy to clipboard js -->
     <script>
         var copyEmailBtn = document.querySelector('.js-emailcopybtn');
         copyEmailBtn.addEventListener('click', function (event) {
@@ -368,9 +386,9 @@
                 // Now that we've selected the anchor text, execute the copy command  
                 var successful = document.execCommand('copy');
                 var msg = successful ? 'successfully' : 'unsuccessfully';
-                alert('Email ' + msg + ' copied');
+                console.log('Email ' + msg + ' copied');
             } catch (err) {
-                alert('Something went wrong');
+                console.log('Something went wrong');
             }
 
             // Remove the selections - NOTE: Should use

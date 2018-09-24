@@ -39,39 +39,50 @@
     border-bottom: none;
     background-color: transparent;
     transition: background-color 0.3s ease-in-out;
+
   }
+
   #mainNav .navbar-brand {
     padding: .5rem 0;
     color: rgba(255, 255, 255, 0.8);
   }
+
   #mainNav .nav-link {
     transition: none;
     padding: 1.5rem 1.5rem;
     color: rgba(255, 255, 255, 0.8);
   }
+
   #mainNav .nav-link:hover {
     color: rgba(255, 255, 255, 0.75);
   }
+
   #mainNav .nav-link:active {
     color: white;
   }
+
   #mainNav.navbar-shrink {
     background-color: rgb(230, 230, 230);
   }
+
   #mainNav.navbar-shrink .navbar-brand {
     color: #161616;
   }
+
   #mainNav.navbar-shrink .nav-link {
     color: #161616;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
+
   #mainNav.navbar-shrink .nav-link:hover {
     color: #a14007;
   }
+
   #mainNav.navbar-shrink .nav-link:active {
     color: #467370;
   }
+
   #mainNav.navbar-shrink .nav-link.active {
     color: #a14007;
     outline: none;
@@ -120,11 +131,13 @@
     height: 100vh;
     padding: 0;
   }
+
   .masthead h1 {
     font-size: 5.5rem;
     line-height: 6.5rem;
     letter-spacing: 0.8rem;
   }
+
   .masthead h2 {
     max-width: 30rem;
     font-size: 1.25rem;
@@ -159,12 +172,12 @@
 }
 
 .about-section {
-  padding-top: 10rem;
+  padding-top: 5rem;
   background: linear-gradient(to bottom, #161616 0%, rgba(22, 22, 22, 0.9) 75%, rgba(22, 22, 22, 0.8) 100%);
 }
 
 .about-section p {
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
 .projects-section {
@@ -189,8 +202,9 @@
 
 @media (min-width: 992px) {
   .projects-section .project-text {
-    padding: 5rem;
+    padding: 4rem;
   }
+
   .projects-section .project-text hr {
     border-color: #a14007;
     border-width: .25rem;
