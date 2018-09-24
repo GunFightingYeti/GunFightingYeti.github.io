@@ -292,6 +292,7 @@ a:focus,
 a:hover {
   text-decoration: none;
   color: #b91919;
+  text-shadow: 2px 2px black;
 }
 
 .a2 {
