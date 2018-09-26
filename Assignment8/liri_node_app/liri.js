@@ -3,9 +3,6 @@ require("dotenv").config();
 // require("keys.js");
 var request = require("request");
 var Spotify = require('node-spotify-api');
-// var songs = require("./spotify.js");
-// var omdb = require("./omdb.js");
-// var bands = require("./bands.js");
 
 // Input capture
 var nodeArgs = process.argv;
@@ -31,54 +28,65 @@ function omdb(movie) {
 
     // If the request is successful
     if (!error && response.statusCode === 200) {
-      console.log(body);
-      // console.log(response);
+      // console.log("This is the body: " + body);
 
-      // var omdb = {
-      //   title = body.Title,
-      //   rating = body.Rated,
-      //   year = body.Year,
-      //   plot = body.Plot,
-      //   time = body.Runtime,
-      // }
-      // console.log(omdb);
-      // return omdb;
+      var find = (JSON.parse(body));
+
+      var omdb = {
+        title: find.Title,
+        year: find.Year,
+        rating: find.Rated,
+        tomatoes: find.Ratings[1].Source,
+        tomatoes1: find.Ratings[1].Value,
+        country: find.Country,
+        plot: find.Plot,
+        actors: find.Actors
+      }
+
+      // Write the object to the command line
+      console.log("\n" + "Title : " + omdb.title + "\n" + "Release year : " + omdb.year + "\n" + "Rating : " + omdb.rating + "\n" + omdb.tomatoes + " rating: " + omdb.tomatoes1 + "\n" + "Country of origin: " + omdb.country + "\n" + "Plot: " + omdb.plot + "\n" + "Actors : " + omdb.actors);
+
+    } else {
+      console.log("Something went wrong. Try doing better.");
     }
   });
 }
 
-// function spotify(song) {
-//   // Spotify API
-// var spotify = new Spotify({
-//   id: 1234656789,
-//   secret: 123456789,
-// });
+// Spotify API
+function spotify(song) {
+  // Spotify API
+  var spotify = new Spotify({
+    id: 1234656789,
+    secret: 123456789,
+  });
 
-// spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
-//   if (err) {
-//     return console.log('Error occurred: ' + err);
-//   }
+  spotify.search({
+    type: 'track',
+    query: 'All the Small Things'
+  }, function (err, data) {
+    if (err) {
+      return console.log('Error occurred: ' + err);
+    }
 
-// console.log(data); 
-// });
-//   // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
-//   var queryURL = "https://www." + song + "";
+    console.log(data);
+  });
+  // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
+  var queryURL = "https://www." + song + "";
 
-//   request(queryURL, function (error, response, body) {
+  request(queryURL, function (error, response, body) {
 
-//       // If the request is successful
-//     if (!error && response.statusCode === 200) {
-//       console.log(body);
-//       // console.log(response);
+    // If the request is successful
+    if (!error && response.statusCode === 200) {
+      console.log(body);
+      // console.log(response);
 
-//       var songData = {
+      var songData = {
 
-//       }
-//       return songData;
-//     }
-//   });
-// }
-
+      }
+      return songData;
+    }
+  });
+}
 
 // Bands in Town API
 function bands(band) {
@@ -90,7 +98,6 @@ function bands(band) {
     // If the request is successful
     if (!error && response.statusCode === 200) {
       console.log(body);
-      // console.log(response);
 
       var concert = {
 
@@ -104,22 +111,22 @@ function bands(band) {
 switch (database) {
   case "concert-this":
     bands(media);
-    console.log("Your search database is 'Concert'");
+    console.log("\nYour search database is 'Concert'");
     break;
 
   case "spotify-this-song":
     spotify(media);
-    console.log("Your search database is 'Spotify'");
+    console.log("\nYour search database is 'Spotify'");
     break;
 
   case "movie-this":
     omdb(media);
-    console.log("Your search database is 'OMDB'");
+    console.log("\nYour search database is 'OMDB'");
     break;
 
   case "do-what-it-says":
     spotify(media);
-    console.log("Your search database is 'spotify'");
+    console.log("\nYour search database is 'spotify'");
     break;
 }
 
