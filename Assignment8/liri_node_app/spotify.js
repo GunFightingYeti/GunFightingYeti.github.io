@@ -1,29 +1,41 @@
-var request = require("request");
-
-var spotify = {
-    artist: "Ace of Base",
-    name: "The Sign",
-    songlink: "link",
-    album: "The Sign" 
-}
+var fs = require("fs");
+var keys = require("./keys.js");
+var Spotify = require("node-spotify-api");
 
 function spotify(song) {
+    var divider = "\n------------------------------------------------------------";
+    var spotify = new Spotify({
+        id: keys.spotify.id,
+        secret: keys.spotify.secret,
+    });
 
-    var queryURL = "";
+    spotify.search({
+        type: 'track',
+        query: song,
+    }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        //Not correct yet, explore API response
-        console.log(response);
-        artist = response.artist;
-        name = response.name;
-        songlink = response.link;
-        album = response.album;
-    })
+        for (var i = 0; i < data.tracks.items.length; i++) {
+
+            var find = data.tracks.items[i];
+
+            var info = [
+                "Artist(s): " + find.album.artists[0].name,
+                "Song name: " + find.name,
+                "Album: " + find.album.name,
+                "Preview link: " + find.preview_url,
+            ].join("\n");
+            console.log("Song #" + (i + 1) + ":\n" + info + divider);
+            // console.log("\nSpotify search...\nSong #" + (i + 1) + ":\n" + info + divider);
+
+            fs.appendFile("log.txt", "\nSpotify search...\nSong #" + (i + 1) + ":\n" + info + divider, function (err) {
+                if (err) throw err;
+            });
+
+        }
+    });
 }
 
-module.exports = {
-    spotify: spotify,
-};
+module.exports = spotify;

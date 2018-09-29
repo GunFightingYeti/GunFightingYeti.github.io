@@ -1,42 +1,11 @@
 require("dotenv").config();
-var keys = require("./keys.js");
 var omdb = require("./omdb.js")
 var bands = require("./bands.js")
-var Spotify = require("node-spotify-api");
+var spotify = require("./spotify.js")
 
 // Input capture
 var database = process.argv[2]; //Concert, Movie or Song
 var media = process.argv.slice(3).join(" ");
-
-// Spotify API
-function spotify(song) {
-  var spotify = new Spotify({
-    id: keys.spotify.id,
-    secret: keys.spotify.secret,
-  });
-
-  spotify.search({
-    type: 'track',
-    query: song,
-  }, function (err, body) {
-    if (err) {
-      return console.log('Error occurred: ' + err);
-    }
-
-    var find = body.tracks.items;
-    // console.log(find[0]);
-    // console.log(find[0].artists);
-    for (var i = 0; i < body.length; i++) {
-      var info = [
-        "Artist(s): " + find.name,
-        // "Song name: " + name,
-        // "Preview link: " + link,
-        // "Album: " + album,
-      ].join("\n");
-      console.log("Spotify search...\nSong #" + (i + 1) + ":\n" + info);
-    }
-  });
-}
 
 // Determine which API is needed
 switch (database) {
