@@ -8,6 +8,7 @@ var spotify = require("./spotify.js");
 var database = process.argv[2]; // Search database
 var media = process.argv.slice(3).join(" "); // Search term
 
+// do-what-it-says command, info pulled from random.txt
 if (database === "do-what-it-says") {
   fs.readFile("random.txt", "utf-8", function (err, data) {
     if (err) {
@@ -21,11 +22,11 @@ if (database === "do-what-it-says") {
   });
 }
 
-// Determine which API is needed
+// Determine which call is needed
 function
 switchFunc(database, media) {
   switch (database) {
-    // Pulled from bands.js
+    // BandsInTown get function, pulled from bands.js
     case "concert-this":
     case "concert":
       if (!media) {
@@ -37,7 +38,7 @@ switchFunc(database, media) {
 
       //------------------------------------------------------------//
 
-      // Pulled from bands.js
+      // Spotify get function, pulled from spotify.js
     case "spotify-this-song":
     case "song":
       if (!media) {
@@ -49,7 +50,7 @@ switchFunc(database, media) {
 
       //------------------------------------------------------------//
 
-      // Pulled from omdb.js
+      // OMDB get function, pulled from omdb.js
     case "movie-this":
     case "movie":
       if (!media) {
@@ -60,3 +61,6 @@ switchFunc(database, media) {
       break;
   }
 }
+
+// Run switch function with userInput
+switchFunc(database, media);

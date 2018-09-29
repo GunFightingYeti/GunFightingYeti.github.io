@@ -1,0 +1,10 @@
+
+Movie search...
+Title: John Wick
+Release year: 2014
+Rated: R
+Rotten Tomatoes rating: 86%
+Country: China, USA
+Plot: An ex-hitman comes out of retirement to track down the gangsters that killed his dog and took everything from him.
+Actors: Keanu Reeves, Michael Nyqvist, Alfie Allen, Willem Dafoe
+------------------------------------------------------------
