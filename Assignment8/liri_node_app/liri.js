@@ -1,48 +1,39 @@
-// Variables
 require("dotenv").config();
 var keys = require("./keys.js");
-var request = require("request");
 var omdb = require("./omdb.js")
 var bands = require("./bands.js")
 var Spotify = require("node-spotify-api");
 
 // Input capture
-var database = process.argv[2]; //Conert, Movie or Song
+var database = process.argv[2]; //Concert, Movie or Song
 var media = process.argv.slice(3).join(" ");
 
-// API calls
 // Spotify API
 function spotify(song) {
-  // Spotify API
   var spotify = new Spotify({
-    id: 1234656789,
-    secret: 123456789,
+    id: keys.spotify.id,
+    secret: keys.spotify.secret,
   });
 
   spotify.search({
     type: 'track',
-    query: 'All the Small Things'
-  }, function (err, data) {
+    query: song,
+  }, function (err, body) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
 
-    console.log(data);
-  });
-  // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
-  var queryURL = "https://www." + song + "";
-
-  request(queryURL, function (error, response, body) {
-
-    // If the request is successful
-    if (!error && response.statusCode === 200) {
-      console.log(body);
-      // console.log(response);
-
-      var songData = {
-
-      }
-      return songData;
+    var find = body.tracks.items;
+    // console.log(find[0]);
+    // console.log(find[0].artists);
+    for (var i = 0; i < body.length; i++) {
+      var info = [
+        "Artist(s): " + find.name,
+        // "Song name: " + name,
+        // "Preview link: " + link,
+        // "Album: " + album,
+      ].join("\n");
+      console.log("Spotify search...\nSong #" + (i + 1) + ":\n" + info);
     }
   });
 }
@@ -51,19 +42,28 @@ function spotify(song) {
 switch (database) {
   // Pulled from bands.js
   case "concert-this":
+    if (!media) {
+      media = "Ok Go";
+      console.log("Defaulting to '" + media + "'");
+    }
     bands(media);
-    // console.log("\nYour search database is 'Concert'");
     break;
 
   case "spotify-this-song":
+    if (!media) {
+      media = "The Sign";
+      console.log("Defaulting to '" + media + "'");
+    }
     spotify(media);
-    console.log("\nYour search database is 'Spotify'");
     break;
 
     // Pulled from omdb.js
   case "movie-this":
+    if (!media) {
+      media = "Mr Nobody";
+      console.log("Defaulting to '" + media + "'");
+    }
     omdb(media);
-    // console.log("\nYour search database is 'OMDB'");
     break;
 
   case "do-what-it-says":
@@ -71,5 +71,3 @@ switch (database) {
     console.log("\nYour search database is 'spotify'");
     break;
 }
-
-// console.log("Your Search term is '" + media + "'");
