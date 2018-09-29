@@ -1,0 +1,19 @@
+{
+  "name": "liri_node_app",
+  "version": "1.0.0",
+  "description": "Liri app",
+  "main": "bands.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Lewis",
+  "license": "ISC",
+  "dependencies": {
+    "bandsintown": "^1.0.1",
+    "dotenv": "^6.0.0",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
