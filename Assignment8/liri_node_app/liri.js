@@ -2,8 +2,10 @@
 require("dotenv").config();
 // require("keys.js");
 var request = require("request");
+var fs = require("fs");
 var omdb = require("./omdb.js")
-var Spotify = require('node-spotify-api');
+var bands = require("./bands.js")
+var Spotify = require("node-spotify-api");
 
 // Input capture
 var nodeArgs = process.argv;
@@ -13,8 +15,8 @@ var media = ''; //Bands, Movie title, Song title
 // If argv[3] is more then one word then combine them.
 for (var i = 3; i < nodeArgs.length; i++) {
   if (i > 3 && i < nodeArgs.length) {
-    media = media + "+" + nodeArgs[i];
-  } else if (i == 3) {
+    media = media + " " + nodeArgs[i];
+  } else {
     media = nodeArgs[i];
   }
 }
@@ -52,25 +54,6 @@ function spotify(song) {
 
       }
       return songData;
-    }
-  });
-}
-
-// Bands in Town API
-function bands(band) {
-
-  var queryURL = "https://www." + band + "";
-
-  request(queryURL, function (error, response, body) {
-
-    // If the request is successful
-    if (!error && response.statusCode === 200) {
-      console.log(body);
-
-      var concert = {
-
-      }
-      return concert;
     }
   });
 }
