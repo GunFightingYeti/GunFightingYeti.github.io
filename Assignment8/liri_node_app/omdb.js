@@ -27,7 +27,7 @@ function omdb(movie) {
         // Write the object to the command line
         console.log("\nMovie search:\n" + omdb);
 
-        fs.appendFile("log.txt", "\nMovie search\n" + omdb + divider, function(err) {
+        fs.appendFile("log.txt", "\nMovie search...\n" + omdb + divider, function(err) {
           if (err) throw err;
         });
   

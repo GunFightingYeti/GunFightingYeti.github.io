@@ -7,18 +7,8 @@ var bands = require("./bands.js")
 var Spotify = require("node-spotify-api");
 
 // Input capture
-var nodeArgs = process.argv;
 var database = process.argv[2]; //Conert, Movie or Song
-var media = ''; //Bands, Movie title, Song title
-
-// If argv[3] is more then one word then combine them.
-for (var i = 3; i < nodeArgs.length; i++) {
-  if (i > 3 && i < nodeArgs.length) {
-    media = media + " " + nodeArgs[i];
-  } else {
-    media = nodeArgs[i];
-  }
-}
+var media = process.argv.slice(3).join(" ");
 
 // API calls
 // Spotify API
@@ -82,4 +72,4 @@ switch (database) {
     break;
 }
 
-console.log("Your Search term is '" + media + "'");
+// console.log("Your Search term is '" + media + "'");

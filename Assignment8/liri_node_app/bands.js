@@ -33,7 +33,7 @@ function bands(band) {
           ].join("\n");
           console.log("\nEvent " + (i + 1) + ": " + "\nVenue: " + bands);
 
-          fs.appendFile("log.txt", "\nConcert search\nBand: " + band + "\nEvent " + (i + 1) + ": " + "\nVenue: " + bands + divider, function(err) {
+          fs.appendFile("log.txt", "\nConcert search...\nBand: " + band + "\nEvent " + (i + 1) + ": " + "\nVenue: " + bands + divider, function(err) {
             if (err) throw err;
           });
 
