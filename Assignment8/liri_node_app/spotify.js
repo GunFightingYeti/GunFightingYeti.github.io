@@ -23,6 +23,7 @@ function spotify(song) {
 
             var find = data.tracks.items[i];
 
+            // Create array of information
             var info = [
                 "Artist(s): " + find.album.artists[0].name,
                 "Song name: " + find.name,
@@ -31,6 +32,7 @@ function spotify(song) {
             ].join("\n");
             console.log("Song #" + (i + 1) + ":\n" + info + divider);
 
+            // Append results to the log file
             fs.appendFile("log.txt", "\nSpotify search...\nSong #" + (i + 1) + ":\n" + info + divider, function (err) {
                 if (err) throw err;
             });
