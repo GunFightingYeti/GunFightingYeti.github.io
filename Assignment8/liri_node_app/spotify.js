@@ -3,6 +3,7 @@ var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 
 function spotify(song) {
+    console.log()
     var divider = "\n------------------------------------------------------------";
     var spotify = new Spotify({
         id: keys.spotify.id,
@@ -27,8 +28,7 @@ function spotify(song) {
                 "Album: " + find.album.name,
                 "Preview link: " + find.preview_url,
             ].join("\n");
-            console.log("Song #" + (i + 1) + ":\n" + info + divider);
-            // console.log("\nSpotify search...\nSong #" + (i + 1) + ":\n" + info + divider);
+            console.log("\nSong #" + (i + 1) + ":\n" + info + divider);
 
             fs.appendFile("log.txt", "\nSpotify search...\nSong #" + (i + 1) + ":\n" + info + divider, function (err) {
                 if (err) throw err;

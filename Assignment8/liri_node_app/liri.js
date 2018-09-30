@@ -14,13 +14,20 @@ if (database === "do-what-it-says") {
     if (err) {
       return console.log(err);
     }
-    // console.log(data);
     data = data.split(",");
     database = data[0];
     media = data[1];
     switchFunc(database, media);
   });
 }
+
+// How to handle a blank call
+if (!database && !media) {
+  console.log("\nPlease type a database to search using the commands...\n\n~ movie-this for IMDB search\n~ concert-this to search for bands playing soon\n~ spotify-this-song to look up a favorite (or new favorite) song.\n\nWhile you're thinking, check out this great movie.");
+  database = "movie-this";
+  media = "John Wick";
+}
+
 
 // Determine which call is needed
 function
