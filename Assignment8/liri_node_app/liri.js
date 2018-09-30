@@ -47,7 +47,7 @@ switchFunc(database, media) {
 
       // Spotify get function, pulled from spotify.js
     case "spotify-this-song":
-    case "song":
+    case "spotify":
       if (!media) {
         media = "The Sign";
         console.log("Defaulting to '" + media + "'");

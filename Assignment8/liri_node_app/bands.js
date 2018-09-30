@@ -2,15 +2,15 @@ var request = require("request");
 var fs = require("fs");
 
 function bands(band) {
-    var divider = "\n------------------------------------------------------------";
-
-    var queryURL = "https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp"
+  var divider = "\n------------------------------------------------------------";
   
-    request(queryURL, function (error, response, body) {
+  var queryURL = "https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp"
   
-      // If the request is successful
-      if (!error && response.statusCode === 200) {
-        console.log("\nBand search: " + band);
+  request(queryURL, function (error, response, body) {
+    
+    // If the request is successful
+    if (!error && response.statusCode === 200) {
+        console.log("\nBand search: " + band + "\n");
         var body = JSON.parse(body);
   
         for (var i = 0; i < body.length; i++) {
@@ -31,7 +31,7 @@ function bands(band) {
             "Date: " + date,
             // "Time: " + time,
           ].join("\n");
-          console.log("\nEvent " + (i + 1) + ": " + "\nVenue: " + bands);
+          console.log("Event " + (i + 1) + ":\n" + bands + divider);
 
           fs.appendFile("log.txt", "\nConcert search...\nBand: " + band + "\nEvent " + (i + 1) + ": " + "\nVenue: " + bands + divider, function(err) {
             if (err) throw err;
