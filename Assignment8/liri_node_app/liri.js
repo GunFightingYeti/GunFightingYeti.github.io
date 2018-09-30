@@ -28,7 +28,6 @@ if (!database && !media) {
   media = "John Wick";
 }
 
-
 // Determine which call is needed
 function
 switchFunc(database, media) {

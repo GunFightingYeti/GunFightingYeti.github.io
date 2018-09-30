@@ -3,7 +3,6 @@ var fs = require("fs");
 
 function omdb(movie) {
   var divider = "\n------------------------------------------------------------";
-
   var queryURL = "https://www.omdbapi.com/?i=tt3896198&t=" + movie + "&y=&plot=full&apikey=d07256e8";
 
   request(queryURL, function (error, response, body) {
@@ -11,7 +10,6 @@ function omdb(movie) {
     // If the request is successful
     if (!error && response.statusCode === 200) {
       console.log("\nMovie search:\n");
-
       var find = (JSON.parse(body));
 
       // Create array of information
@@ -25,7 +23,7 @@ function omdb(movie) {
         "Actors: " + find.Actors
       ].join("\n");
 
-      // Write the object to the command line
+      // Display info to user
       console.log(omdb);
 
       // Append results to the log file

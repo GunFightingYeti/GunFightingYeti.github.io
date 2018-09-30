@@ -13,8 +13,8 @@ function bands(band) {
       console.log("\nBand search: " + band + "\n");
       var body = JSON.parse(body);
 
+      // Loop through results and output info for each instance
       for (var i = 0; i < body.length; i++) {
-
         var find = body[i].venue;
         var datetime = body[i].datetime;
 
@@ -30,18 +30,18 @@ function bands(band) {
           "Venue: " + find.name,
           "Location: " + find.city + ", " + find.region,
           "Date: " + date,
-          // "Time: " + time,
+          // "Time: " + time, // Un-used for now
         ].join("\n");
+
+        // Display info to user
         console.log("Event " + (i + 1) + ":\n" + bands + divider);
 
         // Append results to the log file
         fs.appendFile("log.txt", "\nConcert search...\nBand: " + band + "\nEvent " + (i + 1) + ": " + "\nVenue: " + bands + divider, function (err) {
           if (err) throw err;
         });
-
       }
 
-      // Write the object to the command line
     } else {
       console.log("Something went wrong.");
     }

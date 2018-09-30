@@ -3,8 +3,6 @@ var keys = require("./keys.js");
 var Spotify = require("node-spotify-api");
 
 function spotify(song) {
-    console.log("\nSong search: " + song + "\n");
-
     var divider = "\n------------------------------------------------------------";
     var spotify = new Spotify({
         id: keys.spotify.id,
@@ -18,7 +16,9 @@ function spotify(song) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
+        console.log("\nSong search: " + song + "\n");
 
+        // Loop through results and output info for each instance
         for (var i = 0; i < data.tracks.items.length; i++) {
 
             var find = data.tracks.items[i];
@@ -30,6 +30,8 @@ function spotify(song) {
                 "Album: " + find.album.name,
                 "Preview link: " + find.preview_url,
             ].join("\n");
+
+            // Display info to user
             console.log("Song #" + (i + 1) + ":\n" + info + divider);
 
             // Append results to the log file
