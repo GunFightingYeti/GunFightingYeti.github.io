@@ -1,15 +1,15 @@
-Project Title
+Project Title: 
 DU's Full Stack Developer repository
 
-Getting Started
+Getting Started: 
 All projects are deployed online so there is nothing to download or install.
 
-Prerequisites
+Prerequisites: 
 None
 
-Built With
+Built With: 
 VS Code
 
-Authors
+Authors: 
 Tim Lewis - For all repositories
 Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
