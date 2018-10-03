@@ -1,11 +1,10 @@
 // Variables
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var wip = "I haven't made this yet...sorry.";
-
-
+var wip = "\nI haven't made this yet...sorry.\n";
 var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
 var cart = [wip].join("\n");
+
 console.log("------------------------------------------")
 console.log("\nWelcome to the Bamazon marketplace! We have everything from Bay to Zee and at prices that won't cost you a cent.")
 
@@ -43,8 +42,59 @@ var itemsToBuy = [
 ].join("\n");
 
 // Inquirer functions
+function cartFunc() {
+  // console.log("You're in cart()")
+  // Cart
+  inquirer
+    .prompt([{
+      type: "confirm",
+      message: "Would you like to view your cart?",
+      name: "confirm",
+      default: true
+    }, ])
+    .then(function (inquirerResponse) {
+      if (inquirerResponse.confirm) {
+        // If yes then show cart
+        console.log(cart);
+        inquirer
+          .prompt([{
+            type: "confirm",
+            message: "Would you like to continue with your purchase?",
+            name: "confirm",
+            default: true
+          }, ])
+          .then(function (inquirerResponse) {
+            if (inquirerResponse.confirm) {
+              // If yes then show cart
+              console.log("All items purchased!");
+              inquirer
+                .prompt([{
+                  type: "confirm",
+                  message: "Would you like to keep shopping?",
+                  name: "confirm",
+                  default: true
+                }, ])
+                .then(function (inquirerResponse) {
+                  if (inquirerResponse.confirm) {
+                    // If yes then continue shopping
+                    selectItem();
+
+                    // Else, log off
+                  } else {
+                    console.log(goodbye);
+                  }
+                });
+            }
+          });
+      } else {
+        console.log(goodbye);
+      }
+    });
+}
+
 // Ask if the user is done shopping
 function more() {
+  // console.log("You're in more()")
   inquirer
     .prompt([
       // Ask the user if they would like to keep shopping
@@ -60,13 +110,14 @@ function more() {
       if (inquirerResponse.confirm) {
         selectItem();
       } else {
-        console.log(goodbye);
+        cartFunc();
       }
     });
 }
 
 // Select item and quantity
 function selectItem() {
+  // console.log("You're in SelectItem()")
   console.log(itemsToBuy);
   inquirer
     .prompt([
@@ -80,7 +131,13 @@ function selectItem() {
       {
         type: "input",
         message: "How many of that item would you like to purchase?",
-        name: "quantity"
+        name: "quantity",
+        validate: function (value) {
+          if (isNaN(value) === false && parseInt(value) > 0 && parseInt(value) <= 10) {
+            return true;
+          }
+          return false;
+        }
       },
       // Confirm purchase
       {
@@ -89,7 +146,6 @@ function selectItem() {
         name: "confirm",
         default: true
       },
-
     ])
     .then(function (inquirerResponse) {
       // If the inquirerResponse confirms, display the cart and purchase info
@@ -97,9 +153,10 @@ function selectItem() {
         console.log("\nYou've added " + inquirerResponse.quantity + " " + inquirerResponse.name + "'s to your cart\n");
         // cart.push(inquirerResponse.quantity + " " + inquirerResponse.name);
         more();
-      } else {
 
+      } else {
         // Else, ask if the user wants to continue
+        // console.log("You're in SelectItem/Else")
         inquirer
           .prompt([{
             type: "confirm",
@@ -112,59 +169,9 @@ function selectItem() {
               // If yes then continue
               selectItem();
 
+              // Else, cart
             } else {
-              // Else, cart or log off
-              inquirer
-                .prompt([{
-                  type: "confirm",
-                  message: "Would you like to view your cart?",
-                  name: "confirm",
-                  default: true
-                }, ])
-                .then(function (inquirerResponse) {
-                  if (inquirerResponse.confirm) {
-                    // If yes then show cart
-                    console.log(cart);
-                    inquirer
-                      .prompt([{
-                        type: "confirm",
-                        message: "Would you like to continue with your purchase?",
-                        name: "confirm",
-                        default: true
-                      }, ])
-                      .then(function (inquirerResponse) {
-                        if (inquirerResponse.confirm) {
-                          // If yes then show cart
-                          console.log("All items purchased!");
-                          inquirer
-                            .prompt([{
-                              type: "confirm",
-                              message: "Would you like to keep shopping?",
-                              name: "confirm",
-                              default: true
-                            }, ])
-                            .then(function (inquirerResponse) {
-                              if (inquirerResponse.confirm) {
-                                // If yes then continue shopping
-                                selectItem();
-
-                                // Else, log off
-                              } else {
-                                console.log(goodbye);
-                              }
-                            });
-
-                          // Else, log off
-                        } else {
-                          console.log(goodbye);
-                        }
-                      });
-
-                    // Else, log off
-                  } else {
-                    console.log(goodbye);
-                  }
-                });
+              cartFunc();
             }
           });
       }
