@@ -6,44 +6,33 @@ var goodbye = "\nThank you for your shopping with Bamazon.  Please come again so
 var cart = [wip].join("\n");
 
 console.log("------------------------------------------")
-console.log("\nWelcome to the Bamazon marketplace! We have everything from Bay to Zee and at prices that won't cost you a cent.")
+console.log("\nWelcome to the Bamazon marketplace!\n")
 
 // MySQL server connection
+var connection = mysql.createConnection({
+  host: 'localhost',
+  port: 3306,
+  user: 'root',
+  password: 'password', // Replace with secret
+  database: 'bamazon_db'
+});
 
-// var connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: 'secret',
-//   database: 'bamazon_db'
-// });
+connection.connect(function (err) {
+  if (err) throw err;
+  // connection.end();
+})
 
-// connection.connect();
-
-// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });
-
-// connection.end();
-
-// console.log all available products
-var itemsToBuy = [
-  "\nItem id	Product name	  Department name	  Price	    Stock_quantity\n",
-  " 1      River Boat	  Recreation	          $19,995   	3",
-  " 2      Piece of 8	  Toys            	  $10     	27",
-  " 3	Pillow	          Décor	                  $14.95    	19",
-  " 4     	Lego TM	          Toys	                  $29.95 	11",
-  " 5	Lemon Juice       Grocery	          $4.97 	35",
-  " 6     	Shot Glass    	  Home	                  $7.99     	8",
-  " 7     	Tennis Racket	  Sport	                  $48.75 	12",
-  " 8	Pants	          Clothing        	  $99.45    	17",
-  " 9     	Xbox TM	          Electronics     	  $274.95   	9",
-  " 10    	Yoga Mat          Fitness	          $19.99 	14\n"
-].join("\n");
+function showAll(callback) {
+  connection.query("SELECT * FROM products", function (err, res) {
+    for (var i = 0; i < res.length; i++) {
+      console.log("ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Price: $" + res[i].price + " | Amount in stock: " + res[i].stock_quantity);
+    }
+    callback();
+  });
+}
 
 // Inquirer functions
 function cartFunc() {
-  // console.log("You're in cart()")
   // Cart
   inquirer
     .prompt([{
@@ -77,13 +66,15 @@ function cartFunc() {
                 .then(function (inquirerResponse) {
                   if (inquirerResponse.confirm) {
                     // If yes then continue shopping
-                    selectItem();
+                    whatsup();
 
                     // Else, log off
                   } else {
                     console.log(goodbye);
                   }
                 });
+            } else {
+              console.log(goodbye);
             }
           });
       } else {
@@ -94,7 +85,6 @@ function cartFunc() {
 
 // Ask if the user is done shopping
 function more() {
-  // console.log("You're in more()")
   inquirer
     .prompt([
       // Ask the user if they would like to keep shopping
@@ -108,74 +98,75 @@ function more() {
     .then(function (inquirerResponse) {
       // If the inquirerResponse confirms, select new item
       if (inquirerResponse.confirm) {
-        selectItem();
+        whatsup();
       } else {
         cartFunc();
       }
     });
 }
 
-// Select item and quantity
-function selectItem() {
-  // console.log("You're in SelectItem()")
-  console.log(itemsToBuy);
-  inquirer
-    .prompt([
-      // Ask the user which ID they would like to "add to cart"
-      {
-        type: "input",
-        message: "Please enter the name of the item you wish to purchase:",
-        name: "name"
-      },
-      // Ask how many of that item they would like to purchase
-      {
-        type: "input",
-        message: "How many of that item would you like to purchase?",
-        name: "quantity",
-        validate: function (value) {
-          if (isNaN(value) === false && parseInt(value) > 0 && parseInt(value) <= 10) {
-            return true;
-          }
-          return false;
-        }
-      },
-      // Confirm purchase
-      {
-        type: "confirm",
-        message: "Are you sure:",
-        name: "confirm",
-        default: true
-      },
-    ])
-    .then(function (inquirerResponse) {
-      // If the inquirerResponse confirms, display the cart and purchase info
-      if (inquirerResponse.confirm) {
-        console.log("\nYou've added " + inquirerResponse.quantity + " " + inquirerResponse.name + "'s to your cart\n");
-        // cart.push(inquirerResponse.quantity + " " + inquirerResponse.name);
-        more();
-
-      } else {
-        // Else, ask if the user wants to continue
-        // console.log("You're in SelectItem/Else")
-        inquirer
-          .prompt([{
-            type: "confirm",
-            message: "Would you like to keep shopping?",
-            name: "confirm",
-            default: true
-          }, ])
-          .then(function (inquirerResponse) {
-            if (inquirerResponse.confirm) {
-              // If yes then continue
-              selectItem();
-
-              // Else, cart
-            } else {
-              cartFunc();
+function whatsup() {
+  showAll(selectItem);
+  // Select item and quantity
+  function selectItem() {
+    console.log("\n");
+    inquirer
+      .prompt([
+        // Ask the user which ID they would like to "add to cart"
+        {
+          type: "input",
+          message: "Please enter the ID of the item you wish to purchase:",
+          name: "name"
+        },
+        // Ask how many of that item they would like to purchase
+        {
+          type: "input",
+          message: "How many of that item would you like to purchase?",
+          name: "quantity",
+          validate: function (value) {
+            if (isNaN(value) === false) { // && parseInt(value) > 0 && parseInt(value) <= 10) {
+              return true;
             }
-          });
-      }
-    });
+            return false;
+          }
+        },
+        // Confirm purchase
+        {
+          type: "confirm",
+          message: "Are you sure:",
+          name: "confirm",
+          default: true
+        },
+      ])
+      .then(function (inquirerResponse) {
+        // If the inquirerResponse confirms, display the cart and purchase info
+        if (inquirerResponse.confirm) {
+          console.log("\n" + inquirerResponse.quantity + " " + inquirerResponse.name + "'s added to your cart\n");
+          // cart.push(inquirerResponse.quantity + " " + inquirerResponse.name);
+          more();
+
+        } else {
+          // Else, ask if the user wants to continue
+          inquirer
+            .prompt([{
+              type: "confirm",
+              message: "Would you like to keep shopping?",
+              name: "confirm",
+              default: true
+            }, ])
+            .then(function (inquirerResponse) {
+              if (inquirerResponse.confirm) {
+                // If yes then continue
+                whatsup();
+
+                // Else, cart
+              } else {
+                cartFunc();
+              }
+            });
+        }
+      });
+  }
 }
 
-selectItem();
+whatsup();
