@@ -325,3 +325,7 @@ footer {
 .bg-light {
   background-color: #a13f0762;
 }
+
+.projectborder {
+  border: solid 1px black;
+}
