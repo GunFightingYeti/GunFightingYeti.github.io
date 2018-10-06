@@ -1,28 +1,30 @@
 // Variables
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var keys = require("./keys.js");
 var wip = "\nI haven't made this yet...sorry.\n";
 var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
 var cart = [wip].join("\n");
 
-console.log("------------------------------------------")
-console.log("\nWelcome to the Bamazon marketplace!\n")
+console.log("------------------------------------------");
+console.log("\nWelcome to the Bamazon marketplace!");
 
 // MySQL server connection
 var connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'password', // Replace with secret
+  password: keys.mysql.password,
   database: 'bamazon_db'
 });
 
 connection.connect(function (err) {
   if (err) throw err;
-  // connection.end();
-})
+});
 
+// Show all items then begin purchase process
 function showAll(callback) {
+  console.log("\n");
   connection.query("SELECT * FROM products", function (err, res) {
     for (var i = 0; i < res.length; i++) {
       console.log("ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Price: $" + res[i].price + " | Amount in stock: " + res[i].stock_quantity);
@@ -66,19 +68,22 @@ function cartFunc() {
                 .then(function (inquirerResponse) {
                   if (inquirerResponse.confirm) {
                     // If yes then continue shopping
-                    whatsup();
+                    showAllCallback();
 
                     // Else, log off
                   } else {
                     console.log(goodbye);
+                    connection.end();
                   }
                 });
             } else {
               console.log(goodbye);
+              connection.end();
             }
           });
       } else {
         console.log(goodbye);
+        connection.end();
       }
     });
 }
@@ -98,14 +103,14 @@ function more() {
     .then(function (inquirerResponse) {
       // If the inquirerResponse confirms, select new item
       if (inquirerResponse.confirm) {
-        whatsup();
+        showAllCallback();
       } else {
         cartFunc();
       }
     });
 }
 
-function whatsup() {
+function showAllCallback() {
   showAll(selectItem);
   // Select item and quantity
   function selectItem() {
@@ -116,7 +121,13 @@ function whatsup() {
         {
           type: "input",
           message: "Please enter the ID of the item you wish to purchase:",
-          name: "name"
+          name: "name",
+          validate: function(value) {
+            if (isNaN(value) === false && parseInt(value) > 0 && parseInt(value) <= 10) {
+              return true;
+            }
+            return false;
+          }
         },
         // Ask how many of that item they would like to purchase
         {
@@ -124,13 +135,12 @@ function whatsup() {
           message: "How many of that item would you like to purchase?",
           name: "quantity",
           validate: function (value) {
-            if (isNaN(value) === false) { // && parseInt(value) > 0 && parseInt(value) <= 10) {
+            if (isNaN(value) === false && parseInt(value) > 0 && parseInt(value) <= 10) {
               return true;
             }
             return false;
           }
         },
-        // Confirm purchase
         {
           type: "confirm",
           message: "Are you sure:",
@@ -157,7 +167,7 @@ function whatsup() {
             .then(function (inquirerResponse) {
               if (inquirerResponse.confirm) {
                 // If yes then continue
-                whatsup();
+                showAllCallback();
 
                 // Else, cart
               } else {
@@ -169,4 +179,4 @@ function whatsup() {
   }
 }
 
-whatsup();
+showAllCallback();

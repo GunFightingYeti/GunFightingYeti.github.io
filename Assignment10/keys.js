@@ -1,0 +1,4 @@
+
+exports.mysql = {
+    password: "password"
+  };
