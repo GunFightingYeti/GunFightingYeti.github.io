@@ -2,6 +2,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var keys = require("./keys.js");
+
 var wip = "\nI haven't made this yet...sorry.\n";
 var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
 var cart = [wip].join("\n");
