@@ -25,16 +25,18 @@ connection.connect(function (err) {
 });
 
 // Show all items in database
-function showAll(callback) {
+function showAll() {
     console.log(buffer);
     connection.query("SELECT * FROM products", function (err, res) {
         for (var i = 0; i < res.length; i++) {
             console.log("ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Price: $" + res[i].price + " | Amount in stock: " + res[i].stock_quantity);
         }
-        callback();
+        // Browse function
+        browse();
     });
 }
 
+// Ask what the user would like to do next
 function whatNext() {
     console.log(buffer);
     inquirer
@@ -51,7 +53,7 @@ function whatNext() {
         .then(function (answer) {
             switch (answer.action) {
                 case "Browse for an item":
-                    showAll(browse());
+                    showAll();
                     break;
 
                 case "View cart":
@@ -66,6 +68,7 @@ function whatNext() {
         });
 }
 
+// Browse items and choose
 function browse() {
     console.log(buffer);
     inquirer
@@ -88,7 +91,7 @@ function browse() {
                 message: "How many of that item would you like to purchase?",
                 name: "quantity",
                 validate: function (value) {
-                    if (isNaN(value) === false && parseInt(value) > 0 && parseInt(value) <= 10) {
+                    if (isNaN(value) === false) {// && parseInt(value) > 0 && parseInt(value) <= 10) {
                         return true;
                     }
                     return false;
@@ -106,15 +109,18 @@ function browse() {
             if (inquirerResponse.confirm) {
                 console.log("\n" + inquirerResponse.quantity + " " + inquirerResponse.name + "'s added to your cart\n");
                 // cart.push(inquirerResponse.quantity + " " + inquirerResponse.name);
+                whatNext();
             } else {
                 whatNext();
             }
         });
 }
 
+// View cart and confirm/deny purchse
 function viewCart() {
     console.log(buffer);
     console.log(cart);
 }
 
+// Run function to ask what the user wants to do next
 whatNext();
