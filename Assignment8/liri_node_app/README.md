@@ -10,10 +10,10 @@
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="http://img.youtube.com/vi/uyjJM3oopYU/0.jpg" alt="Search the OMDB database" width="240" height="180" border="10" /></a>
 
 
-Getting Started
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-Prerequisites
+## Prerequisites
 What things you need to install the software and how to install them
 
 Give examples
@@ -42,7 +42,7 @@ Give an example
 Deployment
 Add additional notes about how to deploy this on a live system
 
-Built With
+## Built With
 Visual Studio Code
 Node.js
 Bandsintown API
@@ -51,12 +51,12 @@ OMDB API
 Request
 dotenv
 
-Authors
+## Authors
 Tim Lewis
 
-License
+## License
 ISC
 
-Acknowledgments
+## Acknowledgments
 DU's coding botcamp for teaching me almost everything that I know
 The Best Friends Gang for helping me when I got stuck
