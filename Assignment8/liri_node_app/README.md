@@ -1,7 +1,13 @@
-Liri.js
-This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
+#Liri.js
+###This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
 
-./images/liri.png
+![alt text](./images/liri.png "Liri.js")
+
+###There are multiple commands that Liri accepts.  If you don't know those commands then you can just run the file and it will prompt you with acceptable commands.
+
+###Movie-this command
+[![movie-this command](https://youtu.be/uyjJM3oopYU)](https://youtu.be/uyjJM3oopYU)
+
 
 Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
