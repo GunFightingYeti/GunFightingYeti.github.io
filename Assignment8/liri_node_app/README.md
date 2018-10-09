@@ -7,9 +7,7 @@
 
 ### Movie-this command <br>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU
-" target="_blank"><img src="http://img.youtube.com/vi/uyjJM3oopYU/0.jpg" 
-alt="Search the OMDB database" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="http://img.youtube.com/vi/uyjJM3oopYU/0.jpg" alt="Search the OMDB database" width="240" height="180" border="10" /></a>
 
 
 Getting Started
