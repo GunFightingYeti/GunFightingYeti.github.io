@@ -1,7 +1,7 @@
 # Liri.js
 
-
-### This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
+## Here's how the program works
+### This program takes inspiration from Apple's Siri but is limited to command line searches for Songs, Movies and Concerts.
 
 Image
 ![alt text](./images/liri.png "Liri.js")
@@ -42,36 +42,34 @@ Image
 ![Search from the random.txt file](./images/do-what-it-says.png "Search from the random.txt file")
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+Copy the files in the "liri_node_app" folder to your machine.
 
 ## Prerequisites
-What things you need to install the software and how to install them
+For this program to work you will need to create the files that are in the .gitignore file.
+* node_modules
+* DS_Store
+* .env
+* keys.js
 
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+The Node modules are located in the package.json file.
 
-Give the example
-And repeat
 
-until finished
-End with an example of getting some data out of the system or using it for a little demo
+The keys.js file holds the spotify key.  It should look like this...
 
-Running the tests
-Explain how to run the automated tests for this system
+exports.spotify = {
+  id: "YOUR-ID-HERE",
+  secret: process.env.SPOTIFY_SECRET
+};
 
-Break down into end to end tests
-Explain what these tests test and why
 
-Give an example
-And coding style tests
-Explain what these tests test and why
+The .env file holds the secret spotify key.
+SPOTIFY_ID=YOUR-ID-HERE
+SPOTIFY_SECRET=YOUR-ID-HERE
 
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
+
+With all those files and the cloned repository, endless searching can be yours! 
+
 
 ## Built With
 * Visual Studio Code
