@@ -3,10 +3,13 @@
 
 ![alt text](./images/liri.png "Liri.js")
 
-### There are multiple commands that Liri accepts.  If you don't know those commands then you can just run the file and it will prompt you with acceptable commands.
+### There are multiple commands that Liri accepts.  If you don't know those commands yet, then you can run the file and it will prompt you with acceptable commands.
 
 ### Movie-this command <br>
-[![Search the OMDB database](https://youtu.be/uyjJM3oopYU)](https://youtu.be/uyjJM3oopYU)
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=https://youtu.be/uyjJM3oopYU
+" target="_blank"><img src="http://img.youtube.com/vi/https://youtu.be/uyjJM3oopYU/0.jpg" 
+alt="Search the OMDB database" width="240" height="180" border="10" /></a>
 
 
 Getting Started
