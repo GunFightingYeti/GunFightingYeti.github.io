@@ -7,7 +7,7 @@
 
 ### Movie-this command <br>
 
-<iframe width="1263" height="480" src="https://www.youtube.com/embed/uyjJM3oopYU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="public/images/Home.png" alt="Search the OMDB database" width="300" height="200"/></a>
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
