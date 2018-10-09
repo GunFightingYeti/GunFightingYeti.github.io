@@ -1,7 +1,7 @@
 Liri.js
 This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
 
- 
+./images/liri.png
 
 Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
