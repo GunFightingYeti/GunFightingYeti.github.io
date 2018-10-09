@@ -57,15 +57,15 @@ The Node modules are located in the package.json file.
 
 The keys.js file holds the spotify key.  It should look like this...
 
-exports.spotify = {
+```exports.spotify = {
   id: "YOUR-ID-HERE",
   secret: process.env.SPOTIFY_SECRET
-};
+};```
 
 
 The .env file holds the secret spotify key.
-SPOTIFY_ID=YOUR-ID-HERE
-SPOTIFY_SECRET=YOUR-ID-HERE
+```SPOTIFY_ID=YOUR-ID-HERE
+SPOTIFY_SECRET=YOUR-ID-HERE```
 
 
 With all those files and the cloned repository, endless searching can be yours! 
