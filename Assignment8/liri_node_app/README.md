@@ -1,29 +1,25 @@
 # Liri.js
 <br>
 ### This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
-
+Image
 ![alt text](./images/liri.png "Liri.js")
 
 ### There are multiple commands that Liri accepts.  If you don't know those commands yet, then you can run the file and it will prompt you with acceptable commands.
 
 ### Movie-this command
 Video Link
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="./images/movie-this.png" alt="Search the OMDB database" width="700" height="400"/></a>
 
 ### Concert-this command
 Video Link
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xiluqCBvQ28" target="_blank"><img src="./images/concert-this.png" alt="Search the Bands in Town database" width="700" height="400"/></a>
 
 ### Spotify-this-song comman
 Video Link
-
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=h5cH6NjVsVQ" target="_blank"><img src="./images/spotify-this-song.png" alt="Search the Spotify database" width="700" height="400"/></a>
 
 ### Do-What-It-Says command
 Image
-
 ![Search from the random.txt file](./images/do-what-it-says.png "Search from the random.txt file")
 
 ## Getting Started
