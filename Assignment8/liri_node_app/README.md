@@ -7,7 +7,7 @@
 
 ### Movie-this command <br>
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="http://img.youtube.com/vi/uyjJM3oopYU/0.jpg" alt="Search the OMDB database" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="http://img.youtube.com/vi/uyjJM3oopYU/0.jpg" alt="Search the OMDB database" width="240" height="180"></a>
 
 
 ## Getting Started
@@ -43,13 +43,13 @@ Deployment
 Add additional notes about how to deploy this on a live system
 
 ## Built With
-Visual Studio Code
-Node.js
-Bandsintown API
-Spotify API
-OMDB API
-Request
-dotenv
+* Visual Studio Code
+* Node.js
+* Bandsintown API
+* Spotify API
+* OMDB API
+* Request
+* dotenv
 
 ## Authors
 Tim Lewis
@@ -58,5 +58,5 @@ Tim Lewis
 ISC
 
 ## Acknowledgments
-DU's coding botcamp for teaching me almost everything that I know
+DU's coding botcamp for teaching me almost everything that I know<br>
 The Best Friends Gang for helping me when I got stuck
