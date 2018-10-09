@@ -57,7 +57,7 @@ The Node modules are located in the package.json file.
 
 The keys.js file holds the spotify key.  It should look like this...
 
-```
+``` javascript
 exports.spotify = {
   id: "YOUR-ID-HERE",
   secret: process.env.SPOTIFY_SECRET
@@ -66,7 +66,7 @@ exports.spotify = {
 
 
 The .env file holds the secret spotify key.
-```
+``` javascript
 SPOTIFY_ID=YOUR-ID-HERE
 SPOTIFY_SECRET=YOUR-ID-HERE
 ```
