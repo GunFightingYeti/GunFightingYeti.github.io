@@ -9,21 +9,25 @@
 ### Movie-this command
  <br>
   #### Video Link
+  
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=uyjJM3oopYU" target="_blank"><img src="./images/movie-this.png" alt="Search the OMDB database" width="700" height="400"/></a>
 
 ### Concert-this command
  <br>
   #### Video Link
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xiluqCBvQ28" target="_blank"><img src="./images/concert-this.png" alt="Search the Bands in Town database" width="700" height="400"/></a>
 
 ### Spotify-this-song command
  <br>
   #### Video Link
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=h5cH6NjVsVQ" target="_blank"><img src="./images/spotify-this-song.png" alt="Search the Spotify database" width="700" height="400"/></a>
 
 ### Do-What-It-Says command
  <br>
  #### Image
+
 <img src="./images/do-what-it-says.png" alt="Search from the random.txt file" width="700" height="400"/>
 
 ## Getting Started
