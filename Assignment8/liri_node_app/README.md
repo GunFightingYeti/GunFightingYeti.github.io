@@ -1,6 +1,7 @@
 # Liri.js
 <br>
 ### This program is similar to Apple's Siri but it is limited to command line searches for Songs, Movies and Concerts.
+
 Image
 ![alt text](./images/liri.png "Liri.js")
 
