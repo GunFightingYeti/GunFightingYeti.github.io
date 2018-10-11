@@ -2,6 +2,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var keys = require("./keys.js");
+var cTable = require('console.table');
 
 var buffer = "\n"
 var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
