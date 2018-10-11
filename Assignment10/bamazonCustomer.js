@@ -9,14 +9,10 @@ var goodbye = "\nThank you for your shopping with Bamazon.  Please come again so
 var cartItems = [];
 var cartCost = [0];
 
-function add(a, b) {
-    return parseFloat(a) + parseFloat(b);
-}
-
 console.log("------------------------------------------");
 console.log("\nWelcome to the Bamazon marketplace!");
 
-// MySQL server connection
+// MySQL server connection creation
 var connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
@@ -25,9 +21,15 @@ var connection = mysql.createConnection({
     database: 'bamazon_db'
 });
 
+// MySQL server connection
 connection.connect(function (err) {
     if (err) throw err;
 });
+
+// Adds cart prices together when called
+function add(a, b) {
+    return parseFloat(a) + parseFloat(b);
+}
 
 // Show all items in database
 function showAll() {
@@ -75,9 +77,12 @@ function whatNext() {
         });
 }
 
+function checkInv() {
+
+}
+
 // Browse items and choose
 function browse() {
-    console.log(buffer);
     inquirer
         .prompt([{
                 type: "input",
@@ -110,23 +115,39 @@ function browse() {
         ])
         .then(function (answer) {
             // If the answer confirms, display the cart and purchase info
-            var query = "SELECT item_id, product_name, price FROM products WHERE ?";
+            var query = "SELECT item_id, product_name, price, stock_quantity FROM products WHERE ?";
             connection.query(query, {
                 item_id: answer.item_id
             }, function (err, res) {
+                if (res[0].stock_quantity >= answer.quantity) {
 
-                // UPDATE `bamazon_db`.`products` SET `stock_quantity` -= answer.quantity WHERE (`item_id` = answer.item_id);
+                    if (answer.confirm) {
+                        console.log("\n" + answer.quantity + " " + res[0].product_name + "'s added to your cart\n");
+                        var price = (res[0].price * answer.quantity);
+                        updateCart(res[0].product_name + " x" + answer.quantity, price);
+                        console.log("Items in cart:\n" + cartItems.join("\n"));
+                        console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
 
-                if (answer.confirm) {
-                    console.log("\n" + answer.quantity + " " + res[0].product_name + "'s added to your cart\n");
-                    var price = (res[0].price * answer.quantity);
-                    updateCart(res[0].product_name + " x" + answer.quantity, price);
-                    console.log("Items in cart:\n" + cartItems.join("\n"));
-                    console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
-                    whatNext();
+
+
+                        // var query = "UPDATE products SET stock_quantity = stock_quantity - " + answer.quantity + " WHERE ?";
+                        // connection.query(query, {
+                        //     item_id: answer.item_id
+                        // }, function (err, res) {
+                        //     console.log("Hooray!");
+                        // });
+
+
+
+                        whatNext();
+                    } else {
+                        console.log("\nPurchase canceled")
+                        whatNext();
+                    }
                 } else {
-                    console.log("\nPurchase canceled")
-                    whatNext();
+                    console.log("\nI'm sorry, we do not have that many items in stock.");
+                    console.log("There are only " + res[0].stock_quantity + "\nWould you like to choose a smaller quantity?");
+                    showAll();
                 }
             });
         });
@@ -180,11 +201,12 @@ function inCart() {
                             type: "confirm",
                             message: "Are you sure you want to delete all items in your cart?",
                             name: "confirm",
-                            default: true
+                            default: false
                         }, ])
                         .then(function (answer) {
                             if (answer.confirm) {
-                                // Delete cart array
+                                cartItems.length = 0;
+                                cartCost.length = 1;
                                 console.log("\nAll items deleted, your cart is now empty.")
                                 whatNext();
                             } else {
@@ -205,16 +227,16 @@ function inCart() {
         });
 }
 
-// View cart and confirm/deny purchse
+// View cart, if there are items to view
 function viewCart() {
     console.log(buffer);
     if (cartItems.length === 0) {
         console.log("You haven't added anything to your cart.")
         whatNext();
     } else {
-    console.log("Items in cart:\n" + cartItems.join("\n"));
-    console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
-    inCart();
+        console.log("Items in cart:\n" + cartItems.join("\n"));
+        console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
+        inCart();
     }
 }
 
