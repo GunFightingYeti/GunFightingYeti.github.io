@@ -129,14 +129,12 @@ function browse() {
                         console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
 
 
-
                         // var query = "UPDATE products SET stock_quantity = stock_quantity - " + answer.quantity + " WHERE ?";
                         // connection.query(query, {
                         //     item_id: answer.item_id
                         // }, function (err, res) {
                         //     console.log("Hooray!");
                         // });
-
 
 
                         whatNext();
@@ -146,7 +144,7 @@ function browse() {
                     }
                 } else {
                     console.log("\nI'm sorry, we do not have that many items in stock.");
-                    console.log("There are only " + res[0].stock_quantity + "\nWould you like to choose a smaller quantity?");
+                    console.log("There are only " + res[0].stock_quantity + ".\n\nWould you like to choose a smaller quantity?");
                     showAll();
                 }
             });
@@ -231,7 +229,7 @@ function inCart() {
 function viewCart() {
     console.log(buffer);
     if (cartItems.length === 0) {
-        console.log("You haven't added anything to your cart.")
+        console.log("Your cart is empty.")
         whatNext();
     } else {
         console.log("Items in cart:\n" + cartItems.join("\n"));
