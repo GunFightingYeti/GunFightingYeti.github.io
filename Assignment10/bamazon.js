@@ -8,7 +8,6 @@ var buffer = "\n"
 var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
 var cartItems = [];
 var cartCost = [0];
-var sum = cartCost.reduce(add);
 
 function add(a, b) {
     return parseFloat(a) + parseFloat(b);
@@ -80,9 +79,7 @@ function whatNext() {
 function browse() {
     console.log(buffer);
     inquirer
-        .prompt([
-            // Ask the user which ID they would like to "add to cart"
-            {
+        .prompt([{
                 type: "input",
                 message: "Please enter the ID of the item you wish to purchase:",
                 name: "item_id",
@@ -93,13 +90,12 @@ function browse() {
                     return false;
                 }
             },
-            // Ask how many of that item they would like to purchase
             {
                 type: "input",
                 message: "How many of that item would you like to purchase?",
                 name: "quantity",
                 validate: function (value) {
-                    if (isNaN(value) === false) { // && parseInt(value) > 0 && parseInt(value) <= 10) {
+                    if (isNaN(value) === false) {
                         return true;
                     }
                     return false;
@@ -115,20 +111,21 @@ function browse() {
         .then(function (answer) {
             // If the answer confirms, display the cart and purchase info
             var query = "SELECT item_id, product_name, price FROM products WHERE ?";
-            connection.query(query, {item_id: answer.item_id}, function (err, res) {
+            connection.query(query, {
+                item_id: answer.item_id
+            }, function (err, res) {
 
                 // UPDATE `bamazon_db`.`products` SET `stock_quantity` -= answer.quantity WHERE (`item_id` = answer.item_id);
 
                 if (answer.confirm) {
                     console.log("\n" + answer.quantity + " " + res[0].product_name + "'s added to your cart\n");
                     var price = (res[0].price * answer.quantity);
-                    updateCart(res[0].product_name, price);
-                    // console.log("Items in cart:");
-                    console.table(cartItems, "Items in cart:");
-                    console.log("Total: $" + sum);
+                    updateCart(res[0].product_name + " x" + answer.quantity, price);
+                    console.log("Items in cart:\n" + cartItems.join("\n"));
+                    console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
                     whatNext();
                 } else {
-                    console.log("Purchase canceled\n")
+                    console.log("\nPurchase canceled")
                     whatNext();
                 }
             });
@@ -145,26 +142,36 @@ function updateCart(item, price) {
 function inCart() {
     console.log(buffer);
     inquirer
-        .prompt([
-            // Ask the user which ID they would like to "add to cart"
-            {
-                name: "purchase",
-                type: "rawlist",
-                message: "What would you like to do?",
-                choices: [
-                    "Purchase all items in your cart",
-                    "Empty your cart",
-                    "Stop shopping"
-                ]
-            }
-        ])
+        .prompt([{
+            name: "purchase",
+            type: "rawlist",
+            message: "What would you like to do?",
+            choices: [
+                "Purchase all items in your cart",
+                "Empty your cart",
+                "Browse for an item",
+                "Stop shopping"
+            ]
+        }])
         .then(function (answer) {
             switch (answer.purchase) {
                 case "Purchase all items in your cart":
-                    console.log("\n" + cartItems).join("\n")
-                    console.log("$" + cartCost);
-                    console.log("\nAll items purchase!\nYour total is: $###")
-                    whatNext();
+                    inquirer
+                        .prompt({
+                            type: "confirm",
+                            message: "Are you sure:",
+                            name: "confirm",
+                            default: true
+                        })
+                        .then(function (answer) {
+                            if (answer.confirm) {
+                                console.log("Items in cart:\n" + cartItems.join("\n"));
+                                console.log("\nAll items purchased!\nYour total is: $" + cartCost.reduce(add).toFixed(2))
+                                whatNext();
+                            } else {
+                                viewCart();
+                            }
+                        });
                     break;
 
                 case "Empty your cart":
@@ -186,6 +193,10 @@ function inCart() {
                         });
                     break;
 
+                case "Browse for an item":
+                    showAll();
+                    break;
+
                 case "Stop shopping":
                     console.log(goodbye);
                     connection.end();
@@ -197,9 +208,14 @@ function inCart() {
 // View cart and confirm/deny purchse
 function viewCart() {
     console.log(buffer);
-    console.log("Cart Items: " + cartItems);
-    console.log("Total cost: $" + cartCost);
+    if (cartItems.length === 0) {
+        console.log("You haven't added anything to your cart.")
+        whatNext();
+    } else {
+    console.log("Items in cart:\n" + cartItems.join("\n"));
+    console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
     inCart();
+    }
 }
 
 // Run function to ask what the user wants to do next
