@@ -1,12 +1,12 @@
 # GunFightingYeti.github.io
 
-## Project Title: 
+## Project Title
 Tim Lewis' DU Full Stack Developer Repository
 
-## Getting Started: 
+## Getting Started
 Each project will vary but should have its own README to explain what is needed
 
-## Built With: 
+## Built With
 * Visual Studio Code
 * HTML5
 * CSS3
@@ -25,7 +25,7 @@ Each project will vary but should have its own README to explain what is needed
 * Firebase
 * and others
 
-## Authors: 
+## Authors
 Tim Lewis - For all repositories
 Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
 
