@@ -74,6 +74,20 @@ function whatNext() {
                     break;
 
                 case "Stop shopping":
+
+                    // Add cart items back to inventory
+                    if (cartItems.length > 0) {
+                        for (var i = 0; i < cartItems.length; i++) {
+                            var amount = CartAmount[i];
+                            var query = "UPDATE products SET stock_quantity = stock_quantity + " + amount + " WHERE ?";
+                            connection.query(query, {
+                                item_id: cartIDs[i]
+                            }, function (err, res) {
+
+                            });
+                        }
+                    }
+
                     console.log(goodbye);
                     connection.end();
                     break;
@@ -196,6 +210,13 @@ function inCart() {
                         .then(function (answer) {
                             if (answer.confirm) {
                                 console.log("\nAll items purchased!\nYour total is: $" + cartCost.reduce(add).toFixed(2))
+
+                                // Empty all cart arrays
+                                cartItems.length = 0;
+                                cartCost.length = 0;
+                                CartAmount.length = 0;
+                                cartIDs.length = 0;
+
                                 whatNext();
                             } else {
                                 viewCart();
@@ -243,6 +264,20 @@ function inCart() {
                     break;
 
                 case "Stop shopping":
+
+                    // Add cart items back to inventory
+                    if (cartItems.length > 0) {
+                        for (var i = 0; i < cartItems.length; i++) {
+                            var amount = CartAmount[i];
+                            var query = "UPDATE products SET stock_quantity = stock_quantity + " + amount + " WHERE ?";
+                            connection.query(query, {
+                                item_id: cartIDs[i]
+                            }, function (err, res) {
+
+                            });
+                        }
+                    }
+
                     console.log(goodbye);
                     connection.end();
                     break;
