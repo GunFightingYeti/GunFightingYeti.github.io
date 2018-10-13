@@ -5,7 +5,7 @@ var keys = require("./keys.js");
 var cTable = require('console.table');
 
 // Global variables
-var buffer = "\n"
+var buffer = "\n";
 var goodbye = "\nThank you for shopping with Bamazon, please come again soon!";
 var cartItems = [];
 var CartAmount = [];
