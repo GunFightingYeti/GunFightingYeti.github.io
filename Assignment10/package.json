@@ -1,8 +1,8 @@
 {
-  "name": "Assignment9",
+  "name": "Assignment10",
   "version": "1.0.0",
-  "description": "Project Title:  Assignment 8 - Bamazon, interactive marketplace.  Anything you could want from Ba to Ze.",
-  "main": "bamazon.js",
+  "description": "Project Title:  Assignment 10 - Bamazon, interactive marketplace.",
+  "main": "bamazonCustomer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +12,6 @@
   "dependencies": {
     "console.table": "^0.10.0",
     "inquirer": "^6.2.0",
-    "jquery": "^3.3.1",
     "mysql": "^2.16.0"
   }
 }
