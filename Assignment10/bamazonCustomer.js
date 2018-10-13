@@ -1,14 +1,18 @@
-// Variables
+// Required variables
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var keys = require("./keys.js");
 var cTable = require('console.table');
 
+// Global variables
 var buffer = "\n"
-var goodbye = "\nThank you for your shopping with Bamazon.  Please come again soon!";
+var goodbye = "\nThank you for shopping with Bamazon, please come again soon!";
 var cartItems = [];
-var cartCost = [0];
+var CartAmount = [];
+var cartCost = [];
+var cartIDs = [];
 
+// Welcome text
 console.log("------------------------------------------");
 console.log("\nWelcome to the Bamazon marketplace!");
 
@@ -34,12 +38,12 @@ function add(a, b) {
 // Show all items in database
 function showAll() {
     console.log(buffer);
-    var items = [];
+    var allItems = [];
     connection.query("SELECT item_id, product_name, department_name, price FROM products;", function (err, res) {
         for (var i = 0; i < res.length; i++) {
-            items.push(res[i])
+            allItems.push(res[i])
         }
-        console.table(items);
+        console.table(allItems);
         // Browse function
         browse();
     });
@@ -51,7 +55,7 @@ function whatNext() {
     inquirer
         .prompt({
             name: "action",
-            type: "rawlist",
+            type: "list",
             message: "What would you like to do?",
             choices: [
                 "Browse for an item",
@@ -75,10 +79,6 @@ function whatNext() {
                     break;
             }
         });
-}
-
-function checkInv() {
-
 }
 
 // Browse items and choose
@@ -119,32 +119,40 @@ function browse() {
             connection.query(query, {
                 item_id: answer.item_id
             }, function (err, res) {
+
+                // Only allow the purchase if there are enough items
                 if (res[0].stock_quantity >= answer.quantity) {
 
+                    // If they confirm the purchase remove the quantity from the database and add to cart
                     if (answer.confirm) {
                         console.log("\n" + answer.quantity + " " + res[0].product_name + "'s added to your cart\n");
                         var price = (res[0].price * answer.quantity);
-                        updateCart(res[0].product_name + " x" + answer.quantity, price);
-                        console.log("Items in cart:\n" + cartItems.join("\n"));
+                        updateCart(res[0].product_name, price, answer.quantity, res[0].item_id);
+                        console.log("Items in cart:");
+                        for (var i = 0; i < cartItems.length; i++) {
+                            console.log(cartItems[i] + " x" + CartAmount[i]);
+                        }
                         console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
 
+                        // Remove items from inventory
+                        var query = "UPDATE products SET stock_quantity = stock_quantity - " + answer.quantity + " WHERE ?";
+                        connection.query(query, {
+                            item_id: answer.item_id
+                        }, function (err, res) {
 
-                        // var query = "UPDATE products SET stock_quantity = stock_quantity - " + answer.quantity + " WHERE ?";
-                        // connection.query(query, {
-                        //     item_id: answer.item_id
-                        // }, function (err, res) {
-                        //     console.log("Hooray!");
-                        // });
-
+                        });
 
                         whatNext();
+
+                        // If the user cancels the purchase nothing happens
                     } else {
                         console.log("\nPurchase canceled")
                         whatNext();
                     }
+
+                    // If there is not enough quantity don't allow the purchase
                 } else {
-                    console.log("\nI'm sorry, we do not have that many items in stock.");
-                    console.log("There are only " + res[0].stock_quantity + ".\n\nWould you like to choose a smaller quantity?");
+                    console.log("\nI'm sorry, we only have " + res[0].stock_quantity + " items in stock\n\nPlease choose a smaller quantity or a different item\n\nWe apologize for the inconvenience");
                     showAll();
                 }
             });
@@ -152,9 +160,11 @@ function browse() {
 }
 
 // Update cart with purchased items
-function updateCart(item, price) {
+function updateCart(item, price, amount, ID) {
     cartItems.push(item);
     cartCost.push(price);
+    CartAmount.push(amount);
+    cartIDs.push(ID);
 }
 
 // Decide what to do while looking at your cart
@@ -163,7 +173,7 @@ function inCart() {
     inquirer
         .prompt([{
             name: "purchase",
-            type: "rawlist",
+            type: "list",
             message: "What would you like to do?",
             choices: [
                 "Purchase all items in your cart",
@@ -174,6 +184,7 @@ function inCart() {
         }])
         .then(function (answer) {
             switch (answer.purchase) {
+
                 case "Purchase all items in your cart":
                     inquirer
                         .prompt({
@@ -184,7 +195,6 @@ function inCart() {
                         })
                         .then(function (answer) {
                             if (answer.confirm) {
-                                console.log("Items in cart:\n" + cartItems.join("\n"));
                                 console.log("\nAll items purchased!\nYour total is: $" + cartCost.reduce(add).toFixed(2))
                                 whatNext();
                             } else {
@@ -203,9 +213,24 @@ function inCart() {
                         }, ])
                         .then(function (answer) {
                             if (answer.confirm) {
+                                // Add cart items back to inventory
+                                for (var i = 0; i < cartItems.length; i++) {
+                                    var amount = CartAmount[i];
+                                    var query = "UPDATE products SET stock_quantity = stock_quantity + " + amount + " WHERE ?";
+                                    connection.query(query, {
+                                        item_id: cartIDs[i]
+                                    }, function (err, res) {
+
+                                    });
+                                }
+
+                                // Empty all cart arrays
                                 cartItems.length = 0;
-                                cartCost.length = 1;
-                                console.log("\nAll items deleted, your cart is now empty.")
+                                cartCost.length = 0;
+                                CartAmount.length = 0;
+                                cartIDs.length = 0;
+
+                                console.log("\nAll items deleted, your cart is now empty")
                                 whatNext();
                             } else {
                                 inCart();
@@ -229,10 +254,13 @@ function inCart() {
 function viewCart() {
     console.log(buffer);
     if (cartItems.length === 0) {
-        console.log("Your cart is empty.")
+        console.log("Your cart is empty")
         whatNext();
     } else {
-        console.log("Items in cart:\n" + cartItems.join("\n"));
+        console.log("Items in cart:");
+        for (var i = 0; i < cartItems.length; i++) {
+            console.log(cartItems[i] + " x" + CartAmount[i]);
+        }
         console.log("\nTotal: $" + cartCost.reduce(add).toFixed(2));
         inCart();
     }
