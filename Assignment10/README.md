@@ -22,7 +22,7 @@ Video Link
 #### Browse for an item - This will prompt you to answer three questions
  1. Enter the ID of the item you would like to purchase
  2. Enter the quantity of the item(s) you would like to purchase
- 3. Are you sure? - This let's you back out of the purchase
+ 3. Are you sure? - This lets you back out of the purchase
 ###### Once you confirm a purchase and add it to your cart the product is taken out of inventory.  This keeps a customer from over-purchasing an item bacause the database is behind.
 
 
