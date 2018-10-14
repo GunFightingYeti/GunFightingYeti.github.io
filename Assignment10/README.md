@@ -13,6 +13,7 @@ Image
 ##### * View your cart
 ##### * Stop shopping
 
+
 Video Link
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./images/whatnext.png" alt="What would you like to do" width="700" height="400"/></a>
