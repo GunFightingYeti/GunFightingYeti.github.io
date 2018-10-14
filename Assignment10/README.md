@@ -36,9 +36,10 @@ Video Link
    2. Empty your cart
    3. Browse for an item
    4. Stop shopping
-    * If you have not added any items yet, this will show nothing
-    * If there are items in your cart this will show the items and the total cost to purchase your cart
-    * You will then be asked to choose from several questions
+
+* If you have not added any items yet, this will show nothing
+* If there are items in your cart this will show the items and the total cost to purchase your cart
+* You will then be asked to choose from several questions
    
 ###### When you empty the cart or stop shopping, whatever items are in your cart are added back into the database.  The only option that permenantly takes items out of the database is to purchase.
 
