@@ -44,7 +44,7 @@ Video Link
 
 Video Link
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./images/browse.png" alt="Browse for an item" width="700" height="400"/></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./images/cart.png" alt="View your cart" width="700" height="400"/></a>
 
 
 ## Getting Started: 
