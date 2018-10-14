@@ -1,10 +1,28 @@
 # Bamazon.js
 
+Image
+![alt text](./images/bamazon.png "bamazonCustomer.js")
+
 ## Here's how the program works
 ### If the name wasn't a give away, this program is based off of Amazon.  It is an interactive marketplace.  With a MySQL database keeping track of all inventory on the backend and NodeJS running the front.  
 
-Image
-![alt text](./images/bamazon.png "bamazonCustomer.js")
+### Once the program is running you will be given several options.
+
+#### What would you like to do - This is the "main menu" of the app, it lets you choose to...
+##### * Browse for an item
+##### * View your cart
+##### * Stop shopping
+
+Video Link
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./images/whatnext.png" alt="What would you like to do" width="700" height="400"/></a>
+
+
+#### Browse for an item - This will prompt you to answer three questions
+##### * Enter the ID of the item you would like to purchase
+##### * Enter the quantity of the item(s) you would like to purchase
+##### * Are you sure? - This let's you back out of the purchase
+###### Once you confirm a purchase and add it to your cart the product is taken out of inventory.  This keeps a customer from over-purchasing an item bacause the database is behind.
 
 ## Getting Started: 
 ### To start the app, open a command line or terminal window and type, "node bamazonCustomer.js"  This will start the app and begin the prompts.  No other commands are needed.
