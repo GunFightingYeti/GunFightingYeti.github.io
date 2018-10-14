@@ -7,7 +7,7 @@ Image
 ![alt text](./images/bamazon.png "bamazonCustomer.js")
 
 ## Getting Started: 
-### To start the app open a command line or terminal window and type, "node bamazonCustomer.js"  This will start the app and begin the prompts.  No other commands are needed.
+### To start the app, open a command line or terminal window and type, "node bamazonCustomer.js"  This will start the app and begin the prompts.  No other commands are needed.
 
 ## Prerequisites: 
 ### * NodeJS
