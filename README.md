@@ -26,12 +26,12 @@ Each project will vary but should have its own README to explain what is needed
 * and others
 
 ## Authors
-Tim Lewis - For all repositories
-Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
+#### Tim Lewis - For all repositories
+#### Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
 
 ## License
-ISC
+#### ISC
 
 ## Acknowledgments
-DU's coding botcamp for teaching me almost everything that I know<br>
-The Best Friends Gang for helping me when I got stuck
+#### DU's coding botcamp for teaching me almost everything that I know
+#### The Best Friends Gang for helping me when I got stuck
