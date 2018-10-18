@@ -32,6 +32,7 @@ background-color: #a14007;
 border-color: black;
 }
 
-select {
-    background-color: #a14007;
+.form-control {
+    color: white;
+    background-color: rgb(0, 116, 116);
 }
