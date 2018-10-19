@@ -1,4 +1,4 @@
-var placeholder = [
+var guardians = [
 {
     name: "Star Lord",
     image: "../public/assets/images/starlord.jpg",

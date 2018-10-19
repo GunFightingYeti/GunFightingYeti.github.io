@@ -1,4 +1,4 @@
-app.get("/api/friends", function(req, res) {
+app.get("/api/guardians", function(req, res) {
     if (err) {
         return res.status(500).end();
       }
@@ -6,7 +6,7 @@ app.get("/api/friends", function(req, res) {
     res.render(???);
   });
 
-  app.post("/api/friends", function(req, res) {
+  app.post("/api/guardians", function(req, res) {
       if (err) {
         return res.status(500).end();
       }
