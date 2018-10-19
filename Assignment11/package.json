@@ -1,8 +1,8 @@
 {
   "name": "assignment11",
   "version": "1.0.0",
-  "description": "Friend finder app for DU's bootcamp",
-  "main": "server.js",
+  "description": "Friend finder app for DU's bootcamp - Guardians of the Galazy Quiz",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

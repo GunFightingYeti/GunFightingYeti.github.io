@@ -51,8 +51,8 @@
     <div class="container">
 
         <form>
-
             <div class="form-row col-md-12">
+
                 <div class="form-group col-md-5">
                     <h5>Question 1</h5>
                     <label for="q1">What is your weapon of choice?</label>
@@ -182,59 +182,63 @@
                         <option value="5">Concise</option>
                     </select>
                 </div>
+
             </div>
             <br>
             <div class="text-center">
-                <button type="submit" class="btn btn-secondary btn-lg mt-2 mb-5">Submit Answers</button>
+                <button type="submit" id="submit" class="btn btn-secondary btn-lg mt-2 mb-5">Submit Answers</button>
             </div>
         </form>
-    </div>
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="surveyresults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Survey Results</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span id="close" aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h1>You got <span id="resultsname">Character Name</span></h1>
-                    <img id="resultsimage" src="./assets/images/placeholder.jpg" alt="Survey results character image">
-                    <p>
-                        <span id="resultsbio">This is where the bio goes.</span>
-                    </p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="nevermind" class="btn btn-primary" data-dismiss="modal">Hooray!</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="surveyresults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Survey Results</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span id="close" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h1>You got <span id="resultsname">Character Name</span></h1>
+                        <img id="resultsimage" src="./assets/images/placeholder.jpg" alt="Survey results character image">
+                        <p>
+                            <span id="resultsbio">This is where the bio goes.</span>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="nevermind" class="btn btn-primary" data-dismiss="modal">Hooray!</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- footer -->
-    <div class="footer">
+        <!-- footer -->
+        <div class="container foot">
+            <div class="row">
 
-        <!-- Copyright -->
-        <div class="container text-center">
-            <p>Copyright &copy; Tim Lewis 2018</p>
+                <!-- Project links -->
+                <div class="justify-content-left col-sm-6">
+                    <a href="/survey" target="_blank" class="mx-2">
+                        <i class="fas fa-clipboard-list" style="font-size: 1.5em;"></i> Survey</a>
+                    <a href="/api/characters" target="_blank" class="mx-2">
+                        <i class="fas fa-mask" style="font-size: 1.5em;"></i> API Characters</a>
+                    <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Assignment11"
+                        target="_blank" class="mx-2">
+                        <i class="fab fa-github" style="font-size: 1.5em;"></i> Github</a>
+                </div>
+
+
+                <!-- Copyright -->
+                <div class="justify-content-right col-sm-6">
+                    <p>Copyright &copy; Tim Lewis 2018</p>
+                </div>
+            </div>
         </div>
-
-        <!-- Project links -->
-        <div class="social d-flex justify-content-left">
-            <a href="/survey" target="_blank" class="mx-2">
-                <i class="fas fa-clipboard-list" style="font-size: 1.5em;"></i> Survey</a>
-            <a href="/api/characters" target="_blank" class="mx-2">
-                <i class="fas fa-mask" style="font-size: 1.5em;"></i> API Characters</a>
-            <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Assignment11" target="_blank"
-                class="mx-2">
-                <i class="fab fa-github" style="font-size: 1.5em;"></i> Github</a>
-        </div>
-
     </div>
 
 </body>
