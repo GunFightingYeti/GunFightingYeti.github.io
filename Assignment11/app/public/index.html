@@ -20,11 +20,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
     <!-- Custom styles -->
     <link href="./assets/css/style.css" rel="stylesheet">
 
     <!-- Custom scripts -->
-    <link href="./assets/js/scripts.js" rel="stylesheet">
+    <link href="./assets/js/scripts.js" rel="javascript">
 
     <!-- Favicon -->
     <link id="home" rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
@@ -36,15 +40,38 @@
 <body>
 
     <!-- Banner -->
-    <div id="heropose" class="jumbotron jumbotron-fluid">
+    <div id="homebanner" class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Guardians of the Galaxy</h1>
-            <p class="lead">Take the quiz - Find your guardian!</p>
+            <p class="lead mb-5">Take the quiz - Find your guardian!</p>
         </div>
-    </div>
 
-    <div class="container">
-        
+        <div class="container text-center mt-5">
+            <a href="/survey">
+                <button type="button" class="btn btn-secondary btn-lg mt-5 mb-5">Take the quiz</button>
+            </a>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+
+            <!-- Copyright -->
+            <div class="container text-center">
+                <p>Copyright &copy; Tim Lewis 2018</p>
+            </div>
+
+            <!-- Project links -->
+            <div class="social d-flex justify-content-left">
+                <a href="/survey" target="_blank" class="mx-2">
+                    <i class="fas fa-clipboard-list" style="font-size: 1.5em;"></i> Survey</a>
+                <a href="/api/characters" target="_blank" class="mx-2">
+                    <i class="fas fa-mask" style="font-size: 1.5em;"></i> API Characters</a>
+                <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Assignment11" target="_blank"
+                    class="mx-2">
+                    <i class="fab fa-github" style="font-size: 1.5em;"></i> Github</a>
+            </div>
+
+        </div>
     </div>
 
 </body>
