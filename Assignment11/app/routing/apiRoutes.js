@@ -3,7 +3,7 @@ app.get("/api/guardians", function(req, res) {
         return res.status(500).end();
       }
 
-    res.render(???);
+    res.render();
   });
 
   app.post("/api/guardians", function(req, res) {
@@ -11,5 +11,5 @@ app.get("/api/guardians", function(req, res) {
         return res.status(500).end();
       }
       
-      res.render(???);
+      res.render();
   });
