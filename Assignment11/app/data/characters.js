@@ -85,3 +85,5 @@ var guardians = [
 ]
 }
 ]
+
+module.exports = guardians;

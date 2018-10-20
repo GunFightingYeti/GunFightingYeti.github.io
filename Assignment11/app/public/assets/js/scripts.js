@@ -1,11 +1,11 @@
-
 result = [];
 answers = [];
 
 // Submit form button
-function submitAnswers() {
-    console.log("it's working!");
+
+$("#submit").on("click", function () {
     event.preventDefault();
+    console.log("It's working!");
     // Capture user input
     var answers = {
         scores: [
@@ -22,9 +22,9 @@ function submitAnswers() {
         ]
     }
     console.log(answers.scores);
-
+    popModal();
     $('#surveyresults').modal('open');
-}
+})
 
 function popModal() {
     $("#resultsimage").attr("src", results[0].image);
@@ -37,4 +37,4 @@ function emptyArrays() {
     answers = [];
 }
 
-$("#submit").on("click", submitAnswers);
+$("#submit").on("click", submitAnswers());

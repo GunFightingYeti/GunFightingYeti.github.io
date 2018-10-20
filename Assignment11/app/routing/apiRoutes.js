@@ -1,15 +1,19 @@
+var guardians = require("../data/characters.js")
+
+module.exports = function(app) {
 app.get("/api/guardians", function(req, res) {
     if (err) {
         return res.status(500).end();
       }
 
-    res.render();
+    res.json(guardians);
   });
 
-  app.post("/api/guardians", function(req, res) {
-      if (err) {
-        return res.status(500).end();
-      }
+  // app.post("/api/charcters", function(req, res) {
+  //     if (err) {
+  //       return res.status(500).end();
+  //     }
       
-      res.render();
-  });
+  //     res.render();
+  // });
+}
