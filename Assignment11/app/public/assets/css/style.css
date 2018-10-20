@@ -25,6 +25,10 @@ body {
     background-size: 100% 100%;
 }
 
+#take {
+    margin-top: 10rem!important;
+}
+
 label,
 h5 {
     color: rgb(11, 189, 189);
