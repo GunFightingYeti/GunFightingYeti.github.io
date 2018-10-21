@@ -53,6 +53,19 @@ Video Link
 ### To start the app, open a command line or terminal window and type, "node bamazonCustomer.js"  This will start the app and begin the prompts.  No other commands are needed.
 
 ## Prerequisites: 
+#### For this program to work you will need to create the files that are in the .gitignore file.
+* keys.js
+* node_modules
+
+
+#### The keys.js file holds the MySQL password.  It should look like this...
+
+``` javascript
+exports.mysql = {
+password: "YOUR-PASSWORD-HERE"
+};
+```
+
 ### NodeJS
 #### You will need to have node installed on your local machine.
 
