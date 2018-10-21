@@ -44,7 +44,9 @@ Video Link
 
 
 ## Getting Started: 
-### To start the app, you will need to clone the repo to your local machine
+### To start the app, you will need to clone the repo to your local machine.
+### You will need to below programs and dependencies.
+### Once thsoe are installed and running open a terminal window and run the command "node server.js".  "App listening on PORT 8080" should display in the window.  Once that message appears, open up your web browser and go to "localhost:8080".  That's it, you're ready to enjoy the quiz.
 
 
 
