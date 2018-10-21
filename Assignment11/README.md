@@ -41,7 +41,7 @@ Video Link
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./app/public/assets/images/guardians.png" alt="Guardians of the Galaxy Quiz" width="700" height="400"/></a>
 
-
+<br>
 
 ## Getting Started: 
 ### To start the app, you will need to clone the repo to your local machine and install the below programs and dependencies.
