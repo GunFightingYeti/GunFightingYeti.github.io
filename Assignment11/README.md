@@ -42,28 +42,36 @@ Video Link
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=#########" target="_blank"><img src="./app/public/assets/images/guardians.png" alt="Guardians of the Galaxy Quiz" width="700" height="400"/></a>
 
 
+
 ## Getting Started: 
-### To start the app, you will need to
+### To start the app, you will need to clone the repo to your local machine
+
 
 
 ## Prerequisites: 
-### NodeJS
-#### You will need to have node installed on your local machine.
+* NodeJS
+* Browser of choice (Chrome is prefered)
+
 
 ### Node packages (These are noted in the package.json)
-### Console.Table
-#### You will need the npm package console.table in order to display the database information nicely.
+#### Just run the command "npm i" from a terminal window while inside the same directory as server.js to install all dependant packages
+* Express
+* Path
+
 
 
 ## Built With: 
 * VS Code
 * NodeJS
 
+
 ## Authors: 
 Tim Lewis
 
+
 ## License
 ISC
+
 
 ## Acknowledgments
 DU's coding botcamp for teaching me almost everything that I know<br>
