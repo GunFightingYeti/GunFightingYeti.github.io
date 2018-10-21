@@ -6,11 +6,11 @@ Image
 ## Here's how the program works
 
 ### Press a button!
-#### If you have always wondered what Guardian of the Galaxy you are most like then you have come to the right place.  This quiz will ask you ten questions, compare your answers to the actual answers of the guardians and find out which Guardian you are most like.   
+#### If you have always wondered what Guardian of the Galaxy you are most like then you have come to the right place.  This quiz will ask you ten questions, compare your answers to the *actual* answers of the guardians and find out which Guardian you are most like.   
 
-#### After landing on the home page you need to be decisive and click the "Take the Quiz" button.  Otherwise, you're not cut out to be a Guardian.  They need to be able to press button when the time comes.
+#### After landing on the home page you need to be decisive and click the "Take the Quiz" button.  Otherwise, you're not cut out to be a Guardian.  They need to be able to press buttons when the time comes.
 
-#### If you've summoned up the courage to join the Guardians and pressed a single button then you've passed!  You're well on your way to being compare to someone else.  You'll be directed to page two, where the magic really happens.
+#### If you've summoned up the courage to join the Guardians and pressed a single button then congratulations, you've passed!  You're well on your way to being compare to someone else.  You will then be directed to page two, where the magic really happens.
 
 
 ### Enter two things!
