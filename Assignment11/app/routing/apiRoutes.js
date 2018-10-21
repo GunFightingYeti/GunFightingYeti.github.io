@@ -1,4 +1,5 @@
-var guardians = require("../data/characters.js")
+var guardians = require("../data/guardians.js");
+var users = require("../data/users.js");
 
 module.exports = function (app) {
 
@@ -6,11 +7,45 @@ module.exports = function (app) {
     res.json(guardians);
   });
 
-  // app.post("/api/charcters", function(req, res) {
-  //     if (err) {
-  //       return res.status(500).end();
-  //     }
+  app.get("/api/users", function (req, res) {
+    // res.json(users);
+    console.log("Users be activated!");
+  });
 
-  //     res.render();
-  // });
+  app.post("/api/guardians", function(req, res) {
+
+    console.log("Bingo!");
+
+    var match = {
+      name: "",
+      image: "",
+      bio: "",
+      matchScore: 51
+    }
+
+    console.log("req.body: " + req.body);
+
+    var scores = req.body.scores;
+    var totalDif = 0;
+
+    for (var i = 0; i < guardians.length; i++) {
+
+      totalDif = 0;
+
+      for (var n = 0; n < guardians[i].scores.length; n++) {
+
+        totalDif += Math.abs(parseInt(scores[n]) - parseInt(guardians[i].scores[n]));
+      }
+
+      if (totalDif <= match.matchScore) {
+        match.name = guardians[i].name;
+        match.photo = guardians[i].image;
+        match.description = guardians[i].bio;
+        match.matchScore = totalDif;
+      }
+    }
+
+    guardians.push(req.body);
+    res.json(match);
+  });
 }

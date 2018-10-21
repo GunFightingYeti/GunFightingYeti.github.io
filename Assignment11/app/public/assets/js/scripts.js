@@ -1,18 +1,27 @@
 $(document).ready(function () {
 
-	$('.modal').modal();
-
-console.log("Scripts Loaded!")
     result = [];
-    answers = [];
+    useranswers = [];
+
+    function popModal() {
+        $("#resultsimage").attr("src", result[0].image);
+        $("#resultsname").html(result[0].name);
+        $("#resultsbio").html(result[0].bio);
+    }
+
+    function emptyArrays() {
+        result = [];
+        usersanswers = [];
+    }
 
     // Submit form button
-
     $("#submit").click(function (event) {
         event.preventDefault();
-        console.log("It's working!");
+
         // Capture user input
         var answers = {
+            username: $("#username").val(),
+            userimage: $("#userimage").val(),
             scores: [
                 $("#q1").val(),
                 $("#q2").val(),
@@ -25,28 +34,29 @@ console.log("Scripts Loaded!")
                 $("#q9").val(),
                 $("#q10").val(),
             ]
-        }
-        var question = answers.scores;
-        for (var i = 0; i < question.length; i++) {
-            result.push(question[i]);
-        }
-        console.log(result)
-        popModal();
-        $('#surveyresults').modal('open');
+        };
 
-        emptyArrays();
+        console.log(answers.scores);
+
+        $.post("/api/guardians", answers.scores, function (data) {
+
+            console.log("Script.js Post is working")
+
+            console.log("match: " + data.name);
+            console.log(data.bio);
+
+            result.push(data);
+            useranswers.push(answers.scores);
+
+            popModal();
+        });
+
+        $('#surveyresults').modal('toggle');
+
+        // emptyArrays();
+
+        // $.post("/api/users", answers, function (data) {
+        //     console.log("Answer pushed to array");
+        // });
     })
-
-    function popModal() {
-        $("#resultsimage").attr("src", result[0].image);
-        $("#resultsname").html(result[0].name);
-        $("#resultsbio").html(result[0].bio);
-    }
-
-    function emptyArrays() {
-        result = [];
-        answers = [];
-    }
 });
-
-// $("#submit").on("click", submitAnswers());
