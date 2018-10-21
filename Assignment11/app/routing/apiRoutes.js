@@ -45,7 +45,7 @@ module.exports = function (app) {
       }
     }
 
-    guardians.push(req.body);
+    users.push(req.body);
     res.json(match);
   });
 }

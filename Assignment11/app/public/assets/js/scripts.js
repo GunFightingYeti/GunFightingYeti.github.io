@@ -20,8 +20,8 @@ $(document).ready(function () {
 
         // Capture user input
         var answers = {
-            username: $("#username").val(),
-            userimage: $("#userimage").val(),
+            username: $("#username").val().trim(),
+            userimage: $("#userimage").val().trim(),
             scores: [
                 $("#q1").val(),
                 $("#q2").val(),
@@ -36,9 +36,9 @@ $(document).ready(function () {
             ]
         };
 
-        console.log(answers.scores);
-
-        $.post("/api/guardians", answers.scores, function (data) {
+        console.log(answers);
+     // $.post(“/data/friends”, userInput).done(function(data) {
+        $.post("/api/guardians", answers).done(function (data) {
 
             console.log("Script.js Post is working")
 

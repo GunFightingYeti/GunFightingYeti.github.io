@@ -33,7 +33,7 @@ option {
 
 .btn-primary {
     background-color: rgb(0, 116, 116);
-
+    text-shadow: 1px 1px 1px black;
 }
 
 .btn-primary:hover {
