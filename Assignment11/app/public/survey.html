@@ -31,7 +31,7 @@
     <script src="assets/js/scripts.js" rel="javascript"></script>
 
     <!-- Favicon -->
-    <link id="home" rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
 
     <title>Guardians of the Galaxy Finder</title>
 
@@ -41,10 +41,32 @@
 
     <!-- Banner -->
     <div id="heropose" class="jumbotron jumbotron-fluid">
-        <div class="container">
+
+        <div class="container mb-5">
             <h1 class="display-4">Guardians of the Galaxy</h1>
-            <p class="lead">Answer the questions<br> to find your guardian!</p>
+            <p class="lead">Answer the questions <br> to find your guardian!</p>
         </div>
+
+        <div class="container">
+
+            <form>
+                <div class="form-row col-md-12">
+
+                    <div class="form-group col-md-6 text-left">
+
+                        <!-- User name -->
+                        <label for="username" class="mt-1">What is your name?</label>
+                        <input type="text" class="form-control" id="username" placeholder="Bob Anderson" required>
+                        <!-- User image -->
+                        <label for="userimage" class="mt-1">Add an image URL</label>
+                        <input type="text" class="form-control" id="userimage" placeholder="https://bob-anderson.png"
+                            required>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
     </div>
 
     <!-- Quiz Form -->
@@ -200,36 +222,37 @@
         </form>
 
         <!-- Modal -->
-        <div class="modal fade" id="surveyresults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <div class="modal fade hide" id="surveyresults" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Survey Results</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Your guardian is</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span id="close" aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <h1>You got <span id="resultsname">Character Name</span></h1>
+                        <h1><span id="resultsname">Character Name</span></h1>
                         <img id="resultsimage" src="./assets/images/placeholder.jpg" alt="Survey results character image">
                         <p>
-                            <span id="resultsbio">This is where the bio goes.</span>
+                            <span id="resultsbio">You haven't added a bio.</span>
                         </p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" id="nevermind" class="btn btn-primary" data-dismiss="modal">Hooray!</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="home">Hooray!</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="container foot">
+
+        <!-- footer -->
+        <div class="container foot mb-4">
             <div class="row">
 
                 <!-- Project links -->
-                <div class="justify-content-left col-md-6">
+                <div class="col-md-12">
                     <a href="/" class="mx-2">
                         <i class="fas fa-home" style="font-size: 1.5em;"></i> Home</a>
                     <a href="/api/guardians" target="_blank" class="mx-2">
@@ -237,15 +260,13 @@
                     <a href="https://github.com/GunFightingYeti/GunFightingYeti.github.io/tree/master/Assignment11"
                         target="_blank" class="mx-2">
                         <i class="fab fa-github" style="font-size: 1.5em;"></i> Github</a>
-                </div>
 
-
-                <!-- Copyright -->
-                <div class="justify-content-right col-md-6">
-                    <p>Copyright &copy; Tim Lewis 2018</p>
+                    <!-- Copyright -->
+                    <span class="float-right">Copyright &copy; Tim Lewis 2018</span>
                 </div>
             </div>
         </div>
+
     </div>
 
 </body>
