@@ -26,7 +26,7 @@ Image
 Image
 ![alt text](./app/public/assets/images/survey.png "Answer ten questions")
 
-#### Now, the part for which you've been waiting. Choose answers to these ten questions and you will be compared, scrutinized and judged as a person to find out which Guardian you are most like. (You're information will also be saved to be used for future hero needs)
+#### Now, the part for which you've been waiting. Choose answers to these ten questions and you will be compared, scrutinized and judged as a person to find out which Guardian you are most like. (Your information will also be saved and used for future hero needs)
 
 
 ### Receive the knowledge!
