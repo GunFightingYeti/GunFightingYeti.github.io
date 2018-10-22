@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
     result = [];
     useranswers = [];
@@ -38,18 +38,18 @@ $( document ).ready(function() {
 
         console.log(answers);
         var currentURL = window.location.origin;
-        $.post( currentURL + "/api/guardians", answers).done(function (data) {
+        $.post(currentURL + "/api/guardians", answers, function (data) {
 
-            console.log("Script.js Post is working")
+                console.log("Script.js Post is working")
 
-            console.log("match: " + data.name);
-            console.log(data.bio);
+                console.log("match: " + data.name);
+                console.log(data.bio);
 
-            result.push(data);
-            useranswers.push(answers.scores);
+                result.push(data);
+                useranswers.push(answers.scores);
 
-            popModal();
-        });
+                popModal();
+            });
 
         $('#surveyresults').modal('toggle');
 
