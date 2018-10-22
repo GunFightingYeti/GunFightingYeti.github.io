@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$( document ).ready(function() {
 
     result = [];
     useranswers = [];
@@ -37,8 +37,8 @@ $(document).ready(function () {
         };
 
         console.log(answers);
-     // $.post(“/data/friends”, userInput).done(function(data) {
-        $.post("/api/guardians", answers).done(function (data) {
+        var currentURL = window.location.origin;
+        $.post( currentURL + "/api/guardians", answers).done(function (data) {
 
             console.log("Script.js Post is working")
 
