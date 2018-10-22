@@ -9,12 +9,13 @@ module.exports = function (app) {
 
   app.get("/api/users", function (req, res) {
     // res.json(users);
-    console.log("Users be activated!");
+    console.log("Users be activated matey!");
   });
 
   app.post("/api/guardians", function(req, res) {
 
-    console.log("Bingo!");
+    console.log("/api/guardians post activated");
+    console.log("req.body: " + req.body);
 
     var match = {
       name: "",
@@ -23,17 +24,13 @@ module.exports = function (app) {
       matchScore: 51
     }
 
-    console.log("req.body: " + req.body);
-
     var scores = req.body.scores;
     var totalDif = 0;
 
     for (var i = 0; i < guardians.length; i++) {
-
       totalDif = 0;
 
       for (var n = 0; n < guardians[i].scores.length; n++) {
-
         totalDif += Math.abs(parseInt(scores[n]) - parseInt(guardians[i].scores[n]));
       }
 
