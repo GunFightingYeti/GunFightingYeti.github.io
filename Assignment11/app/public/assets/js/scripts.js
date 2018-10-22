@@ -34,7 +34,7 @@ $(document).ready(function () {
                 $("#q7").val(),
                 $("#q8").val(),
                 $("#q9").val(),
-                $("#q10").val(),
+                $("#q10").val()
             ]
         };
 
