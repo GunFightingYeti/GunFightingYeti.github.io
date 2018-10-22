@@ -16,6 +16,7 @@ module.exports = function (app) {
 
     console.log("/api/guardians post activated");
     console.log("req.body: " + req.body);
+    console.log("scores: " + req.body.scores);
 
     var match = {
       name: "",
