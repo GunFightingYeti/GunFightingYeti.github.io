@@ -55,7 +55,7 @@ $(document).ready(function () {
 
         $('#surveyresults').modal('toggle');
 
-        emptyArrays();
+        // emptyArrays();
 
         // $.post("/api/users", answers, function (data) {
         //     console.log("Answer pushed to array");
