@@ -1,0 +1,42 @@
+<h1>All the burgers!</h1>
+
+<h2>Burgers that you want to eat!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+
+
+      {{> cats/cat-block sleep=true}}
+
+      
+    {{/unless}}
+
+
+  {{/each}}
+</ul>
+
+<h2>Burgers that you've eaten!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+
+
+      {{> cats/cat-block sleep=false}}
+
+
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="burgName">Burger Name:</label>
+    <input type="text" id="burgName" name="name">
+  </div>
+
+  <button type="submit">Add burger</button>
+</form>
