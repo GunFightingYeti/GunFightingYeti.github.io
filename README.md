@@ -33,5 +33,5 @@ Each project will vary but should have its own README to explain what is needed
 #### ISC
 
 ## Acknowledgments
-#### DU's coding botcamp for teaching me almost everything that I know
+#### DU's coding bootcamp for teaching me almost everything that I know
 #### The Best Friends Gang for helping me when I got stuck

@@ -75,5 +75,5 @@ ISC
 
 
 ## Acknowledgments
-DU's coding botcamp for teaching me almost everything that I know<br>
+DU's coding bootcamp for teaching me almost everything that I know<br>
 The Best Friends Gang for helping me when I got stuck
