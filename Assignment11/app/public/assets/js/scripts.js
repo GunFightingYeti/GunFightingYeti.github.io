@@ -1,13 +1,11 @@
 $(document).ready(function () {
-    console.log("Hello world!")
     result = [];
     useranswers = [];
 
-    function popModal(result) {
-        $("#resultsname").html(result[0].name);
-        $("#resultsimage").attr("src", result[0].image);
-        $("#resultsbio").html(result[0].bio);
-        console.log("Modal populated");
+    function popModal() {
+        $("#resultname").html(result[0].name);
+        $("#resultimage").attr("src", result[0].image);
+        $("#resultbio").html(result[0].bio);
     }
 
     function emptyArrays() {
@@ -38,27 +36,20 @@ $(document).ready(function () {
             ]
         };
 
-        console.log(answers);
         var currentURL = window.location.origin;
         $.post(currentURL + "/api/guardians", answers, function (data) {
 
-                console.log("Script.js Post is working");
+            result.push(data);
+            useranswers.push(answers);
 
-                console.log("match: " + data.name);
-                console.log(data.bio);
-
-                result.push(data);
-                useranswers.push(answers);
-
-                popModal(data);
-            });
+            popModal();
+        });
 
         $('#surveyresults').modal('toggle');
 
-        // emptyArrays();
+        emptyArrays();
 
-        // $.post("/api/users", answers, function (data) {
-        //     console.log("Answer pushed to array");
-        // });
+        $.post("/api/users", answers, function (data) {
+        });
     })
 });

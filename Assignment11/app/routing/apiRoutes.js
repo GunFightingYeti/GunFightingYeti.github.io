@@ -14,10 +14,6 @@ module.exports = function (app) {
 
   app.post("/api/guardians", function(req, res) {
 
-    console.log("/api/guardians post activated");
-    console.log("req.body: " + req.body);
-    console.log("scores: " + req.body.scores);
-
     var match = {
       name: "",
       image: "",
@@ -37,13 +33,12 @@ module.exports = function (app) {
 
       if (totalDif <= match.matchScore) {
         match.name = guardians[i].name;
-        match.photo = guardians[i].image;
-        match.description = guardians[i].bio;
+        match.image = guardians[i].image;
+        match.bio = guardians[i].bio;
         match.matchScore = totalDif;
       }
     }
 
-    users.push(req.body);
     res.json(match);
   });
 }

@@ -1,8 +1,8 @@
 var guardians = [
 {
     name: "Star Lord",
-    image: "../public/assets/images/starlord.jpg",
-    bio: "In 1988, when Peter Quill was a young boy in Missouri and unable to accept his mother's death due to cancer, he leaves the hospital in tears, and is subsequently abducted by an extraterrestrial star-ship. Twenty-six years later, he is a member of the Ravagers, the mercenary gang who abducted him as a child led by Yondu Udonta, and has had many adventures with this crew around the galaxy.",
+    image: "../assets/images/starlord.jpg",
+    bio: "Peter Jason Quill, also known as Star-Lord, is naturally upbeat and sarcastic, he looks on the bright side. He can think up inventive and extremely unorthodox solutions to problems on the fly. He forms strong emotional bonds with those he cares about.\nRace: Human-Celestial\nAbilities: Hand-To-Hand Combat, Theft, Marksmanship, Skilled Acrobat, Master Pilot, 'Street Smarts'.\nWeapon of Choice: Quad Blasters\nHome World: Earth",
     scores:[
         1, // 1. What is your weapon of choice?
         5, // 2. Favorite color?
@@ -18,8 +18,8 @@ var guardians = [
 },
 {
     name: "Gamora",
-    image: "../public/assets/images/gamora.jpg",
-    bio: "Thanos meets Gamora while he is murdering half the population of her homeworld. He adopts her and raises her to be an assassin. Part of her training is to fight Nebula, another girl adopted by Thanos who Gamora sees as a sister. After being caught and imprisoned by Xandarian police, she joins the other Guardians of the Galaxy (Starlord, Drax, Rocket Raccoon, and Groot) in an escape and they save Xandar from Ronan.",
+    image: "../assets/images/gamora.jpg",
+    bio: "Gamora Zen Whoberi Ben Titan is in many ways a warrior at heart. She is strong-willed, determined, and resourceful. She carries herself with the dignity of a true warrior, but she is also a bit of a lone wolf due to her upbringing. She tends to be the most level-headed of the Guardians, as well as very perceptive.\nRace: Zendonian\nAbilities: Assassin, Fighter, Strategist, Pilot, Great Physical Strength\nWeapon of Choice: Godslayer\nHome World: Unknown",
     scores:[
         2, // 1. What is your weapon of choice?
         4, // 2. Favorite color?
@@ -35,8 +35,8 @@ var guardians = [
 },
 {
     name: "Rocket Raccoon",
-    image: "../public/assets/images/rocket.jpg",
-    bio: "His real name in the film is 89P13. In addition to being genetically altered, Rocket is shown to have cybernetic implants within his body. He serves as the team's pilot and technical expert and weapons expert. Rocket also displays a talent for engineering jailbreaks. Having previously escaped from 22 prisons.",
+    image: "../assets/images/rocket.jpg",
+    bio: "In addition to being genetically altered, Rocket is shown to have cybernetic implants within his body and also displays a talent for engineering jailbreaks. Having previously escaped from 22 prisons.\nRace: Halfworlder\nAbilities:Pilot, Technical and Weapons Expert, Acute Sense of Smell, Sharp Eyesight, Strength, Marksmanship, Fighter\nWeapon of Choice: Laser Cannon\nHome World: HalfWorld",
     scores:[
         5, // 1. What is your weapon of choice?
         1, // 2. Favorite color?
@@ -51,9 +51,9 @@ var guardians = [
 ]
 },
 {
-    name: "Groot",
-    image: "../public/assets/images/groot.jpg",
-    bio: "Groot is a Flora colossus from Planet X, the capital of the branch worlds. The Flora colossi are tree-like beings whose language is almost impossible to understand due to the stiffness of their larynges, causing their speech to sound like they are repeating the phrase 'I am Groot'. Although initially, simply described as Rocket's hired muscle, Groot shows a softer side throughout the film.",
+    name: "Baby Groot",
+    image: "../assets/images/groot.jpg",
+    bio: "Groot is usually very gentle and warm, displaying kindness towards innocent life. His child-like personality often causes him to be distracted. However, he can also be merciless and savagely brutal towards his enemies, especially if they threaten his friends.\nRace: Flora colossus\nAbilities: Superhuman, Speed, Strength and Durability, Body Manipulation\nWeapon of Choice: Himself\nHome World: Planet X",
     scores:[
         4, // 1. What is your weapon of choice?
         3, // 2. Favorite color?
@@ -69,8 +69,8 @@ var guardians = [
 },
 {
     name: "Drax (The Destroyer)",
-    image: "../public/assets/images/drax.jpg",
-    bio: "Drax is an alien whose wife and daughter were slaughtered by Ronan the Accuser. He first meets the other Guardians of the Galaxy in prison, including Gamora, whom he holds responsible for his family's deaths because she is a daughter of Thanos. Drax's powers include; superhuman strength, stamina and resistance to physical injury.",
+    image: "../assets/images/drax.jpg",
+    bio: "Underneath Drax's brutish appearance, serious demeanor and occasional murderous rage, lies a sense of honor, a calm mind and refined eloquence. Drax is fiercely loyal to his friends.\nRace: Enhanced Human\nAbilities: Reflexes, Strength, Healing, Master of Blades.\nWeapon of Choice: Dual Knives\nHome World: Earth",
     scores:[
         3, // 1. What is your weapon of choice?
         2, // 2. Favorite color?
