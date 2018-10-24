@@ -2,8 +2,9 @@
   "name": "assignment11",
   "version": "1.0.0",
   "description": "Friend finder app for DU's bootcamp - Guardians of the Galazy Quiz",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tim Lewis",
