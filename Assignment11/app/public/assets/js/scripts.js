@@ -11,11 +11,11 @@ $(document).ready(function () {
     function emptyArrays() {
         result = [];
         usersanswers = [];
-        console.log("Array's cleared");
+        // console.log("Array's cleared");
     }
 
     // Submit form button
-    $("#submit").click(function (event) {
+    $("#submit").submit(function (event) {
         event.preventDefault();
 
         // Capture user input
@@ -40,7 +40,7 @@ $(document).ready(function () {
         $.post(currentURL + "/api/guardians", answers, function (data) {
 
             result.push(data);
-            useranswers.push(answers);
+            // useranswers.push(answers);
 
             popModal();
         });
@@ -49,7 +49,7 @@ $(document).ready(function () {
 
         emptyArrays();
 
-        $.post("/api/users", answers, function (data) {
-        });
+        // $.post("/api/users", answers, function (data) {
+        // });
     })
 });
