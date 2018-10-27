@@ -1,7 +1,8 @@
 body {
   background-color: #222;
   color: #333;
-  background-image: url("../images/food.png");
+  /* background-image: url("../images/food.png"); */
+  background-image: url("../images/tile-back.jpg");
   font-family: 'Lobster', cursive;
 }
 
@@ -32,6 +33,7 @@ h2 {
 li {
   color: black;
   font-weight: 500;
+  font-size: 1.2em;
   padding: 5px;
   margin: 5px;
 }
