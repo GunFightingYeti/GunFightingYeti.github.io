@@ -1,19 +1,62 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+body {
+  background-color: #222;
+  color: #333;
+  background-image: url("../images/food.png");
+  font-family: 'Lobster', cursive;
 }
 
-.label {
+.jumbotron {
+  background-color: #222;
+  color: white;
+  text-shadow: #222 3px 2px 0px;
+  margin-bottom: 10px;
+}
+
+.display-4 {
+  font-size: 4.5em;
+  font-family: 'Bungee Shade', cursive;
+}
+
+#burgerImg {
+  background-image: url("../images/burger.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  text-shadow: black 2px 2px 2px;
+
+}
+
+li {
+  color: black;
+  font-weight: 500;
+  padding: 5px;
+  margin: 5px;
+}
+
+label {
   font-weight: bold;
+  color: black;
+  font-weight: 500;
 }
 
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
 }
 
 .form-group {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  background: none;
+  border: none;
+}
+
+input {
+  border-radius: 5px;
+  background-color: rgb(255, 222, 200);
 }
