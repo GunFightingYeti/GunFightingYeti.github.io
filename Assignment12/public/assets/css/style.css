@@ -62,3 +62,7 @@ input {
   border-radius: 5px;
   background-color: rgb(255, 222, 200);
 }
+
+.delete-burger {
+  border-radius: 30%;
+}
