@@ -66,6 +66,10 @@ Video Link
 ## Built With: 
 * VS Code
 * NodeJS
+* HTML5
+* CSS3
+* Javascript
+* Jquery
 
 
 ## Authors: 

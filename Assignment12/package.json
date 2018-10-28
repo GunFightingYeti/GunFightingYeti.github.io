@@ -1,8 +1,8 @@
 {
   "name": "assignment12",
   "version": "1.0.0",
-  "description": "Eat Da Burger App",
-  "main": "index.js",
+  "description": "Burger Heaven",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
