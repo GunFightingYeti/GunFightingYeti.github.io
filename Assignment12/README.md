@@ -1,6 +1,7 @@
 # Burger Heaven
 
 Image
+
 ![alt text](./public/assets/images/burgerHeaven.png "Burger Heaven")
 
 ## Here's how the program works
@@ -9,6 +10,7 @@ Image
 #### Simply type the name of the burger into the text box below.  Once you have entered your desired name, click the "+ Add burger" button.  
 
 Image
+
 ![alt text](./public/assets/images/add.png "Adding a burger")
 
 
