@@ -20,7 +20,7 @@ console.log("\nWelcome to the Bamazon marketplace!");
 var connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
-    user: 'root',
+    user: keys.mysql.user,
     password: keys.mysql.password,
     database: 'bamazon_db'
 });
