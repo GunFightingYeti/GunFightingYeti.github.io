@@ -79,7 +79,7 @@ document.onkeyup = function (event) {
             }
             if (t == 8) {
                 // Restart game after loss
-                alert("I'm sorry, you are out of guesses.  Maybe you won't suck so badly at this next word!");
+                alert("I'm sorry, you are out of guesses.  Maybe you will have better luck with this next word!");
                 restart();
             }
 
@@ -134,24 +134,22 @@ function restart() {
     word.innerHTML = usArray.join(" ");
 
     // Clear progress
-    // Guessed letters
-    guessed = "";
-
     // Tries remaining.
-    triesLeft = document.getElementById("triesLeft");
     triesLeft.innerHTML = "a limited number of tries";
     t = 0
 
     // Hangman image
-    hangman = document.getElementById("hangman");
     hangman.src = "assets/images/Hangman/1-Hangman-Gallows.png";
 
     // Letter arrays
     guessedArray = [];
     correct = [];
     incorrect = [];
+
+    // Guessed letters
+    guessed.innerHTML = "";
 }
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    document.getElementsByTagName("body").trigger("tap");
-  });
+// document.addEventListener("DOMContentLoaded", function(event) { 
+//     document.getElementsByTagName("body").trigger("tap");
+//   });
