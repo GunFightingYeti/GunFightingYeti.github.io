@@ -107,7 +107,6 @@ document.onkeyup = function (event) {
 
 // New Game button
 function restart() {
-    word = document.getElementById("word");
     mysteryWord = characters[Math.floor(Math.random() * characters.length)];
 
     // Create array from mysteryWord
