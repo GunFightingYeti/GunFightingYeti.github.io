@@ -150,5 +150,5 @@ function restart() {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    document.getElementsByTagName("body").trigger("tap");
+    document.getElementsByTagName("body").focus();
   });
