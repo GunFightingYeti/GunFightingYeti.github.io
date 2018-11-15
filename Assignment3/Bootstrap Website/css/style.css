@@ -330,3 +330,7 @@ footer {
 .projectborder {
   border: solid 1px black;
 }
+
+h2 {
+  font-size: 1.5rem;
+}
