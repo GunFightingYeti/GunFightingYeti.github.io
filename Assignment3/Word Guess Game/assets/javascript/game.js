@@ -149,6 +149,7 @@ function restart() {
     guessed.innerHTML = "";
 }
 
-document.addEventListener("DOMContentLoaded", function(event) { 
-    document.getElementsByTagName("body").focus();
-  });
+
+function keyboard() {
+    
+}
