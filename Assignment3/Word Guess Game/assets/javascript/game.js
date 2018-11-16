@@ -148,8 +148,3 @@ function restart() {
     // Guessed letters
     guessed.innerHTML = "";
 }
-
-
-function keyboard() {
-    
-}
