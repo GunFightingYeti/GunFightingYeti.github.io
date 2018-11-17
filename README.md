@@ -28,10 +28,11 @@ Each project will vary but should have its own README to explain what is needed
 ## Authors
 #### Tim Lewis - For all repositories
 #### Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
+#### Sassy Cat in Space - Tim Lewis, Matt Auretta, Trevor Li and Bryan Nishi
 
 ## License
 #### ISC
 
 ## Acknowledgments
 #### DU's coding bootcamp for teaching me almost everything that I know
-#### The Best Friends Gang for helping me when I got stuck
+#### BFG for helping me whenever I got stuck
