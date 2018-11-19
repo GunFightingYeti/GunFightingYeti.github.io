@@ -27,8 +27,8 @@ Each project will vary but should have its own README to explain what is needed
 
 ## Authors
 #### Tim Lewis - For all repositories
-#### Project 1 - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
-#### Sassy Cat in Space - Tim Lewis, Matt Auretta, Trevor Li and Bryan Nishi
+#### Project 1 - Swift Event - Tim Lewis, Doug Fanning, Karina Rivas and David Watson
+#### Project 2 - Sassy Cat in Space - Tim Lewis, Matt Auretta, Trevor Li and Bryan Nishi
 
 ## License
 #### ISC
