@@ -2,13 +2,13 @@
 [Try it for yourself!](www.deployed-site.com "News Scraper")
 
 Image
- ![alt text](./imagelink.png "Home page")
+ ![Home page](./imagelink.png "Home page")
 
 ## Explain the site
-#### Explaination
+#### Explanation
 
 ### How to
-#### Explaination
+#### Explanation
 
 <br>
 
@@ -32,7 +32,7 @@ Image
 * Express
 * Express Handlebars
 * Mongoose
-* Sheerio
+* Cheerio
 * Axios
 
 
@@ -43,17 +43,22 @@ Image
 * JavaScript
 * NodeJS
 * MongoDB
+* Mongoose
+* Express
+* Handlebars
+* Cheerio
+* Axios
 * Heroku
 
 
 ## Authors: 
-* Tim Lewis
+#### Tim Lewis
 
 
 ## License
-ISC
+#### ISC
 
 
 ## Acknowledgments
-DU's Full Stack Development Bootcamp<br>
-BFG for helping me when I got stuck
+* DU's Full Stack Development Bootcamp<br>
+* BFG for helping me when I got stuck
