@@ -31,12 +31,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <!-- Local CSS -->
     <link href="assets/css/style.css" rel="stylesheet">
 
     <!-- Local Javascript -->
     <script src="assets/javascript/script.js"></script>
-    
 
     <!-- Title -->
     <title>News Scraper</title>
@@ -44,12 +46,43 @@
 </head>
 
 <body>
-    <div id="wrapper">
-        <h1>News Scraper</h1>
-        <h2>All the news that's fit to scrape.</h2>
-        <div id="articles"></div>
-        <div id="notes"></div>
-      </div>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <img class="logo" src="./assets/images/apple-icon-57.png" width="50" height="50" alt="Tim Lewis Logo">
+        </a>
+        <div class="navbar-brand ml-2 title">News Scraper</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active ml-2">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ml-2" href="/saved">Saved Articles</a>
+                </li>
+                <li class="nav-item ml-2">
+                    <button class="nav-link btn btn-danger" href="/scrape"><i class="far fa-newspaper"></i> Scrape New Articles</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container background-box">
+            <h1>News Scraper</h1>
+            <p>All the news that's fit to scrape.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="articles">
+            <p>Scrape for articles now.</p>
+        </div>
+    </div>
+
 </body>
 
 </html>
