@@ -1,5 +1,10 @@
 body {
     color: white;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   text-shadow: 1px 1px 1px black;
 }
 
 .logo {
@@ -8,7 +13,7 @@ body {
 
 .title {
     font-size: 2rem;
-    text-shadow: 2px 1px 4px black
+    text-shadow: 2px 1px 4px black;
 }
 
 .navbar {
@@ -24,7 +29,7 @@ body {
 }
 
 .jumbotron {
-    background-image: url(../images/newspaper-background.jpg);
+    background-image: url("../images/newspaper-background.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,14 +53,12 @@ p {
     color: #a14007;
     font-size: 1.3rem;
     text-shadow: 1px 1px 1px black;
-
 }
 
 .background-box {
-    padding: 10px;
-    padding-left: 20px;
+    padding: 10px 10px 10px 20px;
     border-radius: 10px;
-    box-shadow: inset 24em 0rem 5rem -3rem rgb(197, 194, 194);
+    box-shadow: inset 24em 0 5rem -3rem rgb(197, 194, 194);
     float: left;
     margin-left: 30px;
 }
@@ -65,7 +68,6 @@ a {
     text-shadow: 1px 1px 1px black;
     text-decoration: none;
 }
-
 a:hover {
     color: #a14007;
     text-shadow: 1px 1px 1px black;
@@ -75,29 +77,83 @@ a:hover {
 .btn-danger {
     background-color: rgb(200, 0, 0);
     border-color: rgb(22, 22, 22);
-    border-width: .5px;    
+    border-width: 0.5px;
     border-style: solid;
     padding-right: 10px !important;
     padding-left: 10px !important;
     text-decoration: none;
 }
-
 .btn-danger:hover {
     background-color: rgb(155, 0, 0);
     border-color: rgb(22, 22, 22);
-    border-width: .5px;
+    border-width: 0.5px;
     border-style: solid;
     padding-right: 10px !important;
     padding-left: 10px !important;
     text-decoration: none;
 }
 
-.articles {
-    background-color: rgb(255, 196, 0);
+#articleBackground {
+    background-color: rgb(177, 177, 177);
+    background-image: url("../images/bg1.png");
     border-radius: 10px;
+    border-style: solid;
+    border-color: black;
     padding-top: 20px;
     padding-bottom: 10px;
     text-align: center;
     height: auto;
     margin-bottom: 30px;
 }
+
+.article {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: 10px;
+    list-style-type: none;
+    margin-right: 50px;
+    color: #a14007;
+    text-shadow: 1px 1px 1px black;
+    padding: 10px;
+}
+
+.article img {
+    height: 300px;
+}
+
+.article h2 {
+    color: #a14007;
+    text-shadow: 1px 1px 1px black;
+}
+
+.article h3 {
+    color: black;
+    color: #a14007;
+    text-shadow: 1px 1px 1px black;
+    text-decoration: underline;
+}
+
+li {
+    padding: 0 0;
+}
+
+/* 
+footer {
+    background-color: #222;
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 5px;
+}
+
+footer a, p {
+    font-size: 1.7em;
+    color: #a14007;
+} */
