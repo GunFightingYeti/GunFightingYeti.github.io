@@ -24,7 +24,7 @@
 
 <div class="jumbotron jumbotron-fluid">
     <div class="container background-box">
-        <h1>News Scraper</h1>
+        <h1>Movie News</h1>
         <p>All the news that's fit to scrape.</p>
     </div>
 </div>
@@ -33,16 +33,15 @@
     <div id="articleBackground">
         <a href="/scrape"><h4>Push the red button to scrape for new articles.</h4></a>
 
-        <h3>Your Articles</h3>
+        <h1>Your Saved Articles</h1>
             <ul>
             {{#each dbSaved}}
                 <li class="article" >
-                <a href="https:/screenrant.com{{this.link}}" target="_blank"><h2>{{this.title}}</h2></a>
-                <img src={{this.image}} alt="{{this.title}}">
-                <p>{{this.excerpt}}</p>
-                <a href="https:/screenrant.com{{this.link}}" target="_blank"><h3>Read the whole story</h3></a>
+                    <a href="https:/screenrant.com{{this.link}}" target="_blank"><h2>{{this.title}}</h2></a>
+                    <img src={{this.image}} alt="{{this.title}}">
+                    <p>{{this.excerpt}}</p>
+                    <a href="https:/screenrant.com{{this.link}}" target="_blank"><h3>Read the whole story</h3></a>
                     <a class="btn btn-outline-danger remove" data-id="{{this._id}}">Remove from Saved</a>
-                    <a class="btn btn-outline-info notes">Make Notes</a>
                 </li>
             {{/each}}
         </ul>
